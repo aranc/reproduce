@@ -5,6 +5,7 @@
 \textclass article
 \begin_preamble
 \date{}
+\usepackage{tikz}
 \end_preamble
 \use_default_options true
 \maintain_unincluded_children false
@@ -108,6 +109,148 @@ Let
 \begin_layout Subsection
 Euler: if f is homegnous of order r, then 
 \begin_inset Formula $x\cdot\nabla f=rf(x)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+we have 
+\begin_inset Formula $f(tx)=t^{r}f(x)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+derive left side 
+\begin_inset Formula $\frac{df(tx)}{dt}=\frac{df(x)}{dx}\frac{d(tx)}{dt}=\nabla f\cdot x$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+derive right side 
+\begin_inset Formula $\frac{d(t^{r}f(x))}{dt}=rt^{r-1}f(x)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+use 
+\begin_inset Formula $t=1$
+\end_inset
+
+ to complete proof
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+must be wrong, cant be the same for all t values
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Area of a triangle: 
+\begin_inset Formula $\frac{1}{2}bc\sin(\alpha)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw (0,0)--(3,2)--(4,0)--(0,0);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw (3,2)--(3,0);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node at (0.5,0.15) {$
+\backslash
+alpha$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node at (2,-.2) {c};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node at (1.5, 1.3) {b};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node at (2.8,.9) {h};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw (3,0.1) -- (2.9,0.1) -- (2.9,0);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\frac{h}{b}=\sin(\alpha)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+so 
+\begin_inset Formula $S_{\triangle}=\frac{1}{2}ch=\frac{1}{2}bc\sin(\alpha)$
 \end_inset
 
 
