@@ -1,0 +1,332 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+\date{}
+\usepackage{tikz}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip smallskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Lagrange Multipliers
+\end_layout
+
+\begin_layout Standard
+we have a cost/utility function
+\begin_inset Formula $f:R^{n}\to R$
+\end_inset
+
+ and m constraints 
+\begin_inset Formula $G:R^{n}\to R^{m}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+we want to find crtitical points under these constraints.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+bigbreak
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Receipie: build 
+\begin_inset Formula $\mathscr{L}(x_{1},...,x_{n},\lambda_{1},...,\lambda_{m})=f(x_{1},...,x_{n})+\lambda_{1}G_{1}(x_{1},...,x_{n})+...+\lambda_{n}G_{n}(x_{1},...,x_{n})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and search for uncostrained criticl points for 
+\begin_inset Formula $\mathscr{L}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+bigbreak
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Proof: we want all the critical points p for f on surfaces that satisfy
+ 
+\begin_inset Formula $G(p)=0.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+these points will satisfy that for every h such that 
+\begin_inset Formula $\nabla G_{p}h=0$
+\end_inset
+
+, also 
+\begin_inset Formula $\nabla f_{p}h=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+that is, for any direction that does not leave the constraints surface,
+ mitkayem that p is a critical point in that profile.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+if 
+\begin_inset Formula $\nabla f_{p}$
+\end_inset
+
+is a linear combination of
+\begin_inset Formula $\nabla G_{p}$
+\end_inset
+
+, then this is happening.
+\end_layout
+
+\begin_layout Plain Layout
+and if this is hapening, then 
+\begin_inset Formula $(\nabla G_{p})^{\perp}\subseteq(\nabla f_{p})^{\perp}$
+\end_inset
+
+ for each of the columns of 
+\begin_inset Formula $\nabla G_{P}.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+and 
+\begin_inset Formula $\nabla f$
+\end_inset
+
+ is spanned by 
+\begin_inset Formula $\nabla G_{p}$
+\end_inset
+
+ (otherwise, take the difference between 
+\begin_inset Formula $\nabla f_{p}$
+\end_inset
+
+and its projection on 
+\begin_inset Formula $\nabla G_{p}$
+\end_inset
+
+, it will zero 
+\begin_inset Formula $\nabla G_{p}$
+\end_inset
+
+, but not 
+\begin_inset Formula $\nabla f_{p}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\uparrow$
+\end_inset
+
+so p is a critical iff 
+\begin_inset Formula $\nabla f_{p}$
+\end_inset
+
+ is a linear combination of 
+\begin_inset Formula $\nabla G_{p}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+lets build the lagrangian 
+\begin_inset Formula $\mathscr{L}(x_{1},...,x_{n},\lambda_{1},...,\lambda_{m})=f(x_{1},...,x_{n})+\lambda_{1}G_{1}(x_{1},...,x_{n})+...+\lambda_{n}G_{n}(x_{1},...,x_{n})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+at the points where 
+\begin_inset Formula $\nabla\mathscr{L}$
+\end_inset
+
+ is zeroed: the constraints mitkayimim + 
+\begin_inset Formula $\nabla f$
+\end_inset
+
+ is a linear combination of 
+\begin_inset Formula $\nabla G$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+on the other hand, in every point p where the constraints are mitkaymim
+ and there are 
+\begin_inset Formula $\lambda_{1}...\lambda_{m}$
+\end_inset
+
+such the 
+\begin_inset Formula $\nabla f_{p}$
+\end_inset
+
+is a linear combination, then the point 
+\begin_inset Formula $[p,\lambda]$
+\end_inset
+
+ will cause 
+\begin_inset Formula $\nabla\mathscr{L}$
+\end_inset
+
+ to be zeroed.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\uparrow$
+\end_inset
+
+so p is a critical point iff 
+\begin_inset Formula $\nabla\mathscr{L}$
+\end_inset
+
+ is zeroed in p
+\end_layout
+
+\end_body
+\end_document
