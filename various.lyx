@@ -107,7 +107,7 @@ Let
 \end_layout
 
 \begin_layout Subsection
-Euler: if f is homegnous of order r, then 
+Euler: if f is homegenous of order r, then 
 \begin_inset Formula $x\cdot\nabla f=rf(x)$
 \end_inset
 
@@ -115,44 +115,11 @@ Euler: if f is homegnous of order r, then
 \end_layout
 
 \begin_layout Standard
-we have 
-\begin_inset Formula $f(tx)=t^{r}f(x)$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-derive left side 
-\begin_inset Formula $\frac{df(tx)}{dt}=\frac{df(x)}{dx}\frac{d(tx)}{dt}=\nabla f\cdot x$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-derive right side 
-\begin_inset Formula $\frac{d(t^{r}f(x))}{dt}=rt^{r-1}f(x)$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-use 
-\begin_inset Formula $t=1$
-\end_inset
-
- to complete proof
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-must be wrong, cant be the same for all t values
-\end_layout
+\begin_inset Formula 
+\begin{eqnarray*}
+df_{x_{0}}x_{0} & = & \left.\frac{d}{dt}f(x_{0}+tx_{0})\right|_{t=0}=\left.\frac{d}{dt}f((1+t)x_{0})\right|_{t=0}\\
+ & = & \left.\frac{d}{dt}(1+t)^{r}f(x_{0})\right|_{t=0}=\left.r(1+t)^{r-1}f(x_{0})\right|_{t=0}=rf(x_{0})
+\end{eqnarray*}
 
 \end_inset
 
