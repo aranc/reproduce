@@ -87,7 +87,7 @@ LatexCommand tableofcontents
 \end_layout
 
 \begin_layout Subsection
-Derivative of homogenous of order r, is homegenous of order r-1
+Derivative of homogeneous of order r, is homogeneous of order r-1
 \end_layout
 
 \begin_layout Standard
@@ -100,14 +100,22 @@ Let
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $df(sx)h=\lim_{t\to0}\frac{f(sx+th)-f(sx)}{t}=\lim_{t\to0}\frac{f(s(x+\nicefrac{t}{s}h))-f(sx)}{t}=s^{r}\lim_{t\to0}\frac{f(x+\nicefrac{t}{s}h)-f(x)}{t}=s^{r-1}\lim_{t\to0}\frac{f(x+\nicefrac{t}{s}h)-f(x)}{\nicefrac{t}{s}}=s^{r-1}\lim_{t\to0}\frac{f(x+th)-f(x)}{t}=s^{r-1}df(x)h$
+\begin_inset Formula 
+\begin{multline*}
+df(sx)h=\lim_{t\to0}\frac{f(sx+th)-f(sx)}{t}=\\
+\lim_{t\to0}\frac{f(s(x+\nicefrac{t}{s}h))-f(sx)}{t}=\\
+s^{r}\lim_{t\to0}\frac{f(x+\nicefrac{t}{s}h)-f(x)}{t}=\\
+s^{r-1}\lim_{t\to0}\frac{f(x+\nicefrac{t}{s}h)-f(x)}{\nicefrac{t}{s}}=\\
+s^{r-1}\lim_{t\to0}\frac{f(x+th)-f(x)}{t}=s^{r-1}df(x)h
+\end{multline*}
+
 \end_inset
 
 
 \end_layout
 
 \begin_layout Subsection
-Euler: if f is homegenous of order r, then 
+Euler: if f is homogeneous of order r, then 
 \begin_inset Formula $x\cdot\nabla f=rf(x)$
 \end_inset
 
@@ -116,10 +124,10 @@ Euler: if f is homegenous of order r, then
 
 \begin_layout Standard
 \begin_inset Formula 
-\begin{eqnarray*}
-df_{x_{0}}x_{0} & = & \left.\frac{d}{dt}f(x_{0}+tx_{0})\right|_{t=0}=\left.\frac{d}{dt}f((1+t)x_{0})\right|_{t=0}\\
- & = & \left.\frac{d}{dt}(1+t)^{r}f(x_{0})\right|_{t=0}=\left.r(1+t)^{r-1}f(x_{0})\right|_{t=0}=rf(x_{0})
-\end{eqnarray*}
+\begin{multline*}
+df_{x_{0}}x_{0}=\left.\frac{d}{dt}f(x_{0}+tx_{0})\right|_{t=0}=\left.\frac{d}{dt}f((1+t)x_{0})\right|_{t=0}=\\
+\left.\frac{d}{dt}(1+t)^{r}f(x_{0})\right|_{t=0}=\left.r(1+t)^{r-1}f(x_{0})\right|_{t=0}=rf(x_{0})
+\end{multline*}
 
 \end_inset
 
@@ -221,6 +229,10 @@ so
 \end_inset
 
 
+\end_layout
+
+\begin_layout Subsection
+tbd
 \end_layout
 
 \end_body
