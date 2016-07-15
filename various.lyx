@@ -232,7 +232,102 @@ so
 \end_layout
 
 \begin_layout Subsection
-tbd
+Derivative of det(A)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{gather*}
+f(A)=det(A)\\
+f:\:R^{n^{2}}\to R
+\end{gather*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+df_{A}h & = & \lim_{t\to0}\frac{det(A+th)-det(A)}{t}\\
+df_{A}\delta_{i}\delta^{j} & = & \lim_{t\to0}\frac{det(A+t\delta_{i}\delta^{j})-det(A)}{t}=\\
+ &  & det(A\delta_{1},...,\delta_{i}\delta^{j},...,A\delta_{n})=\\
+ &  & (-1)^{i+j}\breve{A}_{ij}\\
+df_{A} & = & adjA^{T}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Cauchy: 
+\begin_inset Formula $\left(g(a)-g(b)\right)f^{'}(c)=\left(f(a)-f(b)\right)g^{'}(c)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Let f,g be continuous on [a,b] and differentiable on (a,c).
+\end_layout
+
+\begin_layout Standard
+Define 
+\begin_inset Formula $H(x)=\left(f(a)-f(b)g(x)\right)-\left(g(a)-g(b)f(x)\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+H(a)=\begin{vmatrix}f(a)-f(b) & f(a)\\
+g(a)-g(b) & g(a)
+\end{vmatrix}=\begin{vmatrix}-f(b) & f(a)\\
+-g(b) & g(a)
+\end{vmatrix}=\begin{vmatrix}f(a) & f(b)\\
+g(a) & g(b)
+\end{vmatrix}=\begin{vmatrix}f(a)-f(b) & f(b)\\
+g(a)-g(b) & g(b)
+\end{vmatrix}=h(b)
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Using roll theorem, there exists a point 
+\begin_inset Formula $c\in(a,b)$
+\end_inset
+
+ such that 
+\begin_inset Formula $H^{'}(c)=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+i.e.
+ 
+\begin_inset Formula $\left(f(a)-f(b)g^{'}(c)\right)-\left(g(a)-g(b)f^{'}(c)\right)=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and therefore 
+\begin_inset Formula $\left(g(a)-g(b)\right)f^{'}(c)=\left(f(a)-f(b)\right)g^{'}(c)$
+\end_inset
+
+
 \end_layout
 
 \end_body

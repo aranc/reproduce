@@ -78,6 +78,25 @@ Taylor
 \end_layout
 
 \begin_layout Subsection
+second derivative is a bilinear form 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+d^{2}f_{p}(x,y)=D(\lambda d.df_{d}x,p,y)=\lim_{t\to0}\frac{df_{p+ty}x-df_{p}x}{t}=\\
+\lim_{t\to0}\frac{1}{t}\left(\left(\frac{\partial f}{\partial x_{1}}(p+ty)\cdot x_{1}+\ldots+\frac{\partial f}{\partial x_{n}}(p+ty)\cdot x_{n}\right)-\left(\frac{\partial f}{\partial x_{1}}(p)\cdot x_{1}+\ldots+\frac{\partial f}{\partial x_{n}}(p)\cdot x_{n}\right)\right)=\\
+\lim_{t\to0}\frac{1}{t}\left(\left(\frac{\partial f}{\partial x_{1}}(p+ty)\cdot x_{1}-\frac{\partial f}{\partial x_{1}}(p)\cdot x_{1}\right)+\ldots+\left(\frac{\partial f}{\partial x_{n}}(p+ty)\cdot x_{n}-\frac{\partial f}{\partial x_{n}}(p)\cdot x_{n}\right)\right)=\\
+D(\lambda d.\left(\frac{\partial f}{\partial x_{1}}(d)\right)\cdot x_{1},p,y)+...+D(\lambda d.\left(\frac{\partial f}{\partial x_{n}}(d)\right)\cdot x_{n},p,y)=\\
+\sum_{i=1}^{n}\sum_{j=1}^{n}x_{i}y_{j}\frac{\partial f}{\partial x_{i}x_{j}}=x^{T}\left(d^{2}f\right)y
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
 Multi-dimensional Taylor: 
 \begin_inset Formula $\left[\left(e^{h\cdot\nabla}\right)f\right](x_{0})=f(x_{0}+h)$
 \end_inset
@@ -230,8 +249,7 @@ and so:
 \begin{gather*}
 f(x_{0}+h)=\sum_{k=0}^{n}\frac{1}{k!}\left(\left(h_{1}\frac{\partial}{\partial x_{1}}+\cdots+h_{m}\frac{\partial}{\partial x_{m}}\right)^{k}f\right)(x_{0})+o\left(\lVert h\rVert^{n}\right)\\
 f(x_{0}+h)=\sum_{k=0}^{n}\frac{1}{k!}\left(\left(h\cdot\nabla\right)^{k}f\right)(x_{0})+o\left(\lVert h\rVert^{n}\right)\\
-f(x_{0}+h)=\left(\left(e^{h\cdot\nabla}\right)f\right)(x_{0})+o\left(\lVert h\rVert^{n}\right)\\
-\left[\left(e^{h\cdot\nabla}\right)f\right](x_{0})=f(x_{0}+h)
+f(x_{0}+h)=\left[\left(e^{h\cdot\nabla}\right)f\right](x_{0})
 \end{gather*}
 
 \end_inset
