@@ -84,11 +84,11 @@ second derivative is a bilinear form
 \begin_layout Standard
 \begin_inset Formula 
 \begin{multline*}
-d^{2}f_{p}(x,y)=D(\lambda d.df_{d}x,p,y)=\lim_{t\to0}\frac{df_{p+ty}x-df_{p}x}{t}=\\
-\lim_{t\to0}\frac{1}{t}\left(\left(\frac{\partial f}{\partial x_{1}}(p+ty)\cdot x_{1}+\ldots+\frac{\partial f}{\partial x_{n}}(p+ty)\cdot x_{n}\right)-\left(\frac{\partial f}{\partial x_{1}}(p)\cdot x_{1}+\ldots+\frac{\partial f}{\partial x_{n}}(p)\cdot x_{n}\right)\right)=\\
-\lim_{t\to0}\frac{1}{t}\left(\left(\frac{\partial f}{\partial x_{1}}(p+ty)\cdot x_{1}-\frac{\partial f}{\partial x_{1}}(p)\cdot x_{1}\right)+\ldots+\left(\frac{\partial f}{\partial x_{n}}(p+ty)\cdot x_{n}-\frac{\partial f}{\partial x_{n}}(p)\cdot x_{n}\right)\right)=\\
-D(\lambda d.\left(\frac{\partial f}{\partial x_{1}}(d)\right)\cdot x_{1},p,y)+...+D(\lambda d.\left(\frac{\partial f}{\partial x_{n}}(d)\right)\cdot x_{n},p,y)=\\
-\sum_{i=1}^{n}\sum_{j=1}^{n}x_{i}y_{j}\frac{\partial f}{\partial x_{i}x_{j}}=x^{T}\left(d^{2}f\right)y
+d^{2}f_{p}(h,k)=D(\lambda x.df_{x}h,p,k)=\lim_{t\to0}\frac{df_{p+tk}h-df_{p}h}{t}=\\
+\lim_{t\to0}\frac{1}{t}\left(\left(\frac{\partial f}{\partial x_{1}}(p+tk)\cdot h_{1}+\ldots+\frac{\partial f}{\partial x_{n}}(p+tk)\cdot h_{n}\right)-\left(\frac{\partial f}{\partial x_{1}}(p)\cdot h_{1}+\ldots+\frac{\partial f}{\partial x_{n}}(p)\cdot h_{n}\right)\right)=\\
+\lim_{t\to0}\frac{1}{t}\left(\left(\frac{\partial f}{\partial x_{1}}(p+tk)\cdot h_{1}-\frac{\partial f}{\partial x_{1}}(p)\cdot h_{1}\right)+\ldots+\left(\frac{\partial f}{\partial x_{n}}(p+tk)\cdot h_{n}-\frac{\partial f}{\partial x_{n}}(p)\cdot h_{n}\right)\right)=\\
+D(\lambda x.\left(\frac{\partial f}{\partial x_{1}}(x)\right)\cdot h_{1},p,k)+...+D(\lambda x.\left(\frac{\partial f}{\partial x_{n}}(x)\right)\cdot h_{n},p,k)=\\
+\sum_{i=1}^{n}\sum_{j=1}^{n}h_{i}k_{j}\frac{\partial^{2}f}{\partial x_{i}\partial x_{j}}(p)=h^{T}\left(d^{2}f\right)_{p}k
 \end{multline*}
 
 \end_inset
@@ -176,7 +176,7 @@ Until we get:
 \end_layout
 
 \begin_layout Standard
-Using unidimensional Taylor with Lagrange residue:
+Using unidimensional Taylor with Lagrange remainder:
 \end_layout
 
 \begin_layout Standard
@@ -217,7 +217,7 @@ and so we get:
 \begin_layout Standard
 \begin_inset Formula 
 \[
-f(x_{0}+h)=\sum_{k=0}^{n}\sum_{i_{1}=1}^{m}\cdots\sum_{i_{k}=1}^{m}h_{i_{1}}\cdots h_{i_{k}}\frac{\partial^{k}f}{\partial x_{i_{1}}\ldots x_{i_{k}}}(x_{0})+\underset{o\left(\lVert h\rVert^{n}\right)}{\underbrace{\sum_{i_{1}=1}^{m}\cdots\sum_{i_{n+1}=1}^{m}h_{i_{1}}\cdots h_{i_{k+1}}\frac{\partial^{n+1}f}{\partial x_{i_{1}}\ldots x_{i_{k+1}}}(c)}}
+f(x_{0}+h)=\sum_{k=0}^{n}\sum_{i_{1}=1}^{m}\cdots\sum_{i_{k}=1}^{m}h_{i_{1}}\cdots h_{i_{k}}\frac{\partial^{k}f}{\partial x_{i_{1}}\cdots\partial x_{i_{k}}}(x_{0})+\underset{o\left(\lVert h\rVert^{n}\right)}{\underbrace{\sum_{i_{1}=1}^{m}\cdots\sum_{i_{n+1}=1}^{m}h_{i_{1}}\cdots h_{i_{n+1}}\frac{\partial^{n+1}f}{\partial x_{i_{1}}\cdots\partial x_{i_{n+1}}}(c)}}
 \]
 
 \end_inset
@@ -232,7 +232,7 @@ note that:
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\sum_{i_{1}=1}^{m}\cdots\sum_{i_{k}=1}^{m}h_{i_{1}}\cdots h_{i_{k}}\frac{\partial^{k}}{\partial x_{i_{1}}\ldots x_{i_{k}}}=\left(h_{1}\frac{\partial}{\partial x_{1}}+\cdots+h_{m}\frac{\partial}{\partial x_{m}}\right)^{k}
+\sum_{i_{1}=1}^{m}\cdots\sum_{i_{k}=1}^{m}h_{i_{1}}\cdots h_{i_{k}}\frac{\partial^{k}}{\partial x_{i_{1}}\cdots\partial x_{i_{k}}}=\left(h_{1}\frac{\partial}{\partial x_{1}}+\cdots+h_{m}\frac{\partial}{\partial x_{m}}\right)^{k}
 \]
 
 \end_inset
@@ -248,9 +248,20 @@ and so:
 \begin_inset Formula 
 \begin{gather*}
 f(x_{0}+h)=\sum_{k=0}^{n}\frac{1}{k!}\left(\left(h_{1}\frac{\partial}{\partial x_{1}}+\cdots+h_{m}\frac{\partial}{\partial x_{m}}\right)^{k}f\right)(x_{0})+o\left(\lVert h\rVert^{n}\right)\\
-f(x_{0}+h)=\sum_{k=0}^{n}\frac{1}{k!}\left(\left(h\cdot\nabla\right)^{k}f\right)(x_{0})+o\left(\lVert h\rVert^{n}\right)\\
-f(x_{0}+h)=\left[\left(e^{h\cdot\nabla}\right)f\right](x_{0})
+f(x_{0}+h)=\sum_{k=0}^{n}\frac{1}{k!}\left(\left(h\cdot\nabla\right)^{k}f\right)(x_{0})+o\left(\lVert h\rVert^{n}\right)
 \end{gather*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+if f is analytic (to be explained later), then we can also write:
+\begin_inset Formula 
+\[
+f(x_{0}+h)=\left[\left(e^{h\cdot\nabla}\right)f\right](x_{0})
+\]
 
 \end_inset
 
