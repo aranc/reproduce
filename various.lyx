@@ -302,7 +302,7 @@ g(a)-g(b) & g(b)
 \end_layout
 
 \begin_layout Standard
-Using roll theorem, there exists a point 
+Using roll's theorem, there exists a point 
 \begin_inset Formula $c\in(a,b)$
 \end_inset
 
@@ -597,7 +597,177 @@ A\alpha=A(A^{T}A)^{-1}A^{T}x
 \end_layout
 
 \begin_layout Subsection
-TBD
+Implicit function theorem
+\end_layout
+
+\begin_layout Standard
+Let the 
+\begin_inset Formula $G(x_{1},...,x_{n}):\;R^{n}\to R^{m}$
+\end_inset
+
+ be a diffrential function, we want to know under which conditions we can
+ express some of the inputs as a function of the other inputs under the
+ constraint 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $G(x_{1},...,x_{n})=c\in R^{m}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If the inputs 
+\begin_inset Formula $x_{1},...,x_{n}$
+\end_inset
+
+have a subset y of legth m which satisifes 
+\begin_inset Formula $\frac{\partial G}{\partial y}(p)\ne0$
+\end_inset
+
+ 
+\begin_inset Formula $p\in U\subseteq R^{n}$
+\end_inset
+
+, we will denote those inputs as 
+\begin_inset Formula $y_{1},...,y_{m}$
+\end_inset
+
+and without loss of generality, we will write G as 
+\begin_inset Formula $G(x_{1},...,x_{l},y_{1},...,y_{m})$
+\end_inset
+
+.
+ and we will define a new function 
+\begin_inset Formula $\widetilde{G}(x_{1},...,x_{l},y_{1},...,y_{m})=(x_{1},...,x_{l},z_{1},...,z_{m})\in R^{n}$
+\end_inset
+
+ where 
+\begin_inset Formula $G(x_{1},...,x_{l},y_{1},...,y_{m})=(z_{1},...,z_{m})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Lets look on 
+\begin_inset Formula $d\widetilde{G}$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+d\widetilde{G}=\begin{bmatrix}I & 0\\
+\frac{\partial G}{\partial x} & \frac{\partial G}{\partial y}
+\end{bmatrix}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+if 
+\begin_inset Formula $\frac{\partial G}{\partial y}\ne0$
+\end_inset
+
+, then 
+\begin_inset Formula $d\widetilde{G}\ne0$
+\end_inset
+
+ and by using the inverse function theorem, 
+\begin_inset Formula $\widetilde{G}$
+\end_inset
+
+ is invertible.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Lets calculate 
+\begin_inset Formula $d\widetilde{G}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{bmatrix}I & 0\\
+\frac{\partial G}{\partial x} & \frac{\partial G}{\partial y}
+\end{bmatrix}\begin{bmatrix}\text{dx}\\
+dy
+\end{bmatrix}=\begin{bmatrix}dx\\
+dz
+\end{bmatrix}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+\frac{\partial G}{\partial x}dx+\frac{\partial G}{\partial y}dy & = & dz\\
+\frac{\partial G}{\partial y}dy & = & -\frac{\partial G}{\partial x}dx+dz\\
+dy & = & -\left(\frac{\partial G}{\partial y}\right)^{-1}\frac{\partial G}{\partial x}dx+\left(\frac{\partial G}{\partial y}\right)^{-1}dz
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and we get:
+\begin_inset Formula 
+\[
+\begin{bmatrix}I & 0\\
+-\overset{\qquad-1}{\left(\frac{\partial G}{\partial y}\right)}\frac{\partial G}{\partial x} & \left(\frac{\partial G}{\partial y}\right)^{-1}
+\end{bmatrix}\begin{bmatrix}\text{dx}\\
+dz
+\end{bmatrix}=\begin{bmatrix}dx\\
+dy
+\end{bmatrix}
+\]
+
+\end_inset
+
+
 \end_layout
 
 \end_body
