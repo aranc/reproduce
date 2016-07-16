@@ -106,7 +106,15 @@ Multi-dimensional Taylor:
 \end_layout
 
 \begin_layout Standard
-Let:
+Let 
+\begin_inset Formula $f$
+\end_inset
+
+ be differentiable 
+\begin_inset Formula $k$
+\end_inset
+
+ times:
 \end_layout
 
 \begin_layout Standard
@@ -134,6 +142,26 @@ g(t)=x_{0}+th
 \end_layout
 
 \begin_layout Standard
+Note that for all 
+\begin_inset Formula $t$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+D(g,t,1)=\lim_{s\to0}\frac{g(t+s\cdot1)-g(t)}{s}=\lim_{s\to0}\frac{x_{0}+th+sh-(x_{0}+th)}{s}=h
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Define:
+\end_layout
+
+\begin_layout Standard
 \begin_inset Formula 
 \[
 \phi(t)=f(g(t))=f(x_{0}+th)
@@ -145,14 +173,14 @@ g(t)=x_{0}+th
 \end_layout
 
 \begin_layout Standard
-We recursively apply the chain rule:
+Apply the chain rule recursively:
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \begin{gather*}
-\phi^{(1)}(t)=D(f\circ g,t,1)=D(f,g(t),D(g,0,1))=D(f,g(t),h)=df_{g(t)}h\\
-\phi^{(2)}(t)=D((df_{g(t)}h,t,1)=D(\lambda x.df_{x}h,g(t),D(g,0,1))=D(\lambda x.df_{x}h,g(t),h)=d^{2}f_{g(t)}(h,h)
+\phi^{(1)}(t)=D(f\circ g,t,1)=D(f,g(t),D(g,t,1))=D(f,g(t),h)=df_{g(t)}h\\
+\phi^{(2)}(t)=D((df_{g(t)}h,t,1)=D(\lambda x.df_{x}h,g(t),D(g,t,1))=D(\lambda x.df_{x}h,g(t),h)=d^{2}f_{g(t)}(h,h)
 \end{gather*}
 
 \end_inset
@@ -161,7 +189,11 @@ We recursively apply the chain rule:
 \end_layout
 
 \begin_layout Standard
-Until we get:
+We get for every 
+\begin_inset Formula $k=1..n$
+\end_inset
+
+:
 \end_layout
 
 \begin_layout Standard

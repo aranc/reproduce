@@ -91,9 +91,32 @@ Derivative of homogeneous of degree r, is homogeneous of degree r-1
 \end_layout
 
 \begin_layout Standard
-\noindent
-Let 
-\begin_inset Formula $f(sx)=s^{r}f(x)$
+A function 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $f:\;R^{n}\to R$
+\end_inset
+
+ is called homogeneous of degree 
+\begin_inset Formula $r$
+\end_inset
+
+ if 
+\begin_inset Formula 
+\[
+\forall s\in R:\quad f(sx)=s^{r}f(x)
+\]
+
 \end_inset
 
 
@@ -102,11 +125,11 @@ Let
 \begin_layout Standard
 \begin_inset Formula 
 \begin{multline*}
-df(sx)h=\lim_{t\to0}\frac{f(sx+th)-f(sx)}{t}=\\
+df_{sx}h=\lim_{t\to0}\frac{f(sx+th)-f(sx)}{t}=\\
 \lim_{t\to0}\frac{f(s(x+\nicefrac{t}{s}h))-f(sx)}{t}=\\
 s^{r}\lim_{t\to0}\frac{f(x+\nicefrac{t}{s}h)-f(x)}{t}=\\
 s^{r-1}\lim_{t\to0}\frac{f(x+\nicefrac{t}{s}h)-f(x)}{\nicefrac{t}{s}}=\\
-s^{r-1}\lim_{t\to0}\frac{f(x+th)-f(x)}{t}=s^{r-1}df(x)h
+s^{r-1}\lim_{t\to0}\frac{f(x+th)-f(x)}{t}=s^{r-1}df_{x}h
 \end{multline*}
 
 \end_inset
@@ -116,17 +139,25 @@ s^{r-1}\lim_{t\to0}\frac{f(x+th)-f(x)}{t}=s^{r-1}df(x)h
 
 \begin_layout Subsection
 Euler: if f is homogeneous of degree r, then 
-\begin_inset Formula $x\cdot\nabla f=rf(x)$
+\begin_inset Formula $x\cdot\nabla f_{x}=rf(x)$
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
+for every 
+\begin_inset Formula $x\in R^{n}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
 \begin_inset Formula 
 \begin{multline*}
-df_{x_{0}}x_{0}=\left.\frac{d}{dt}f(x_{0}+tx_{0})\right|_{t=0}=\left.\frac{d}{dt}f((1+t)x_{0})\right|_{t=0}=\\
-\left.\frac{d}{dt}(1+t)^{r}f(x_{0})\right|_{t=0}=\left.r(1+t)^{r-1}f(x_{0})\right|_{t=0}=rf(x_{0})
+df_{x}x=\left.\frac{d}{dt}f(x+tx)\right|_{t=0}=\left.\frac{d}{dt}f((1+t)x)\right|_{t=0}=\\
+\left.\frac{d}{dt}(1+t)^{r}f(x)\right|_{t=0}=\left.r(1+t)^{r-1}f(x)\right|_{t=0}=rf(x)
 \end{multline*}
 
 \end_inset
@@ -238,7 +269,7 @@ Derivative of det(A)
 \begin_layout Standard
 \begin_inset Formula 
 \begin{gather*}
-f(A)=det(A)\\
+f(A)=(A)\\
 f:\:R^{n^{2}}\to R
 \end{gather*}
 
@@ -271,7 +302,19 @@ Cauchy:
 \end_layout
 
 \begin_layout Standard
-Let f,g be continuous on [a,b] and differentiable on (a,c).
+Let 
+\begin_inset Formula $f,g$
+\end_inset
+
+ be continuous on 
+\begin_inset Formula $[a,b]$
+\end_inset
+
+ and differentiable on 
+\begin_inset Formula $(a,c)$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -353,11 +396,19 @@ Differentiating bilinear operations
 \end_layout
 
 \begin_layout Standard
-Let B be a continuous bilinear operation
+Let 
+\begin_inset Formula $B$
+\end_inset
+
+ be a continuous bilinear operation
 \end_layout
 
 \begin_layout Standard
-That is B(ax+by, cz+dw)=acB(x,z)+adB(x,w)+bcB(y,z)+bdB(y,w)
+That is 
+\begin_inset Formula $B(ax+by,cz+dw)=acB(x,z)+adB(x,w)+bcB(y,z)+bdB(y,w)$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -391,7 +442,10 @@ we want to differentiate a quadric:
 \end_layout
 
 \begin_layout Standard
-A is symmetric
+\begin_inset Formula $A$
+\end_inset
+
+is symmetric
 \end_layout
 
 \begin_layout Standard
@@ -426,7 +480,11 @@ let
 \begin_inset Formula $h(x)=x^{T}Mx$
 \end_inset
 
- where M is any matrix
+ where 
+\begin_inset Formula $M$
+\end_inset
+
+ is any matrix
 \end_layout
 
 \begin_layout Standard
@@ -442,7 +500,15 @@ x^{T}Mx & = & \sum_{i=1}^{n}M_{ii}x_{i}^{2}+\sum_{i\ne j}\left(M_{ij}+M_{ji}\rig
 \end_layout
 
 \begin_layout Standard
-let A be the symmetric part of M: 
+let 
+\begin_inset Formula $A$
+\end_inset
+
+ be the symmetric part of 
+\begin_inset Formula $M$
+\end_inset
+
+: 
 \begin_inset Formula $A=\frac{M+M^{T}}{2}$
 \end_inset
 
@@ -550,7 +616,11 @@ lets see that
 \begin_inset Formula $A^{T}A$
 \end_inset
 
- is invertible iff A is independent:
+ is invertible iff 
+\begin_inset Formula $A$
+\end_inset
+
+ is independent:
 \end_layout
 
 \begin_layout Standard
@@ -605,7 +675,7 @@ Let the
 \begin_inset Formula $G(x_{1},...,x_{n}):\;R^{n}\to R^{m}$
 \end_inset
 
- be a diffrential function, we want to know under which conditions we can
+ be a differential function, we want to know under which conditions we can
  express some of the inputs as a function of the other inputs under the
  constraint 
 \family roman
@@ -638,7 +708,11 @@ If the inputs
 \begin_inset Formula $x_{1},...,x_{n}$
 \end_inset
 
-have a subset y of legth m which satisifes 
+have a subset 
+\begin_inset Formula $y$
+\end_inset
+
+ of length m which satisfies 
 \begin_inset Formula $\frac{\partial G}{\partial y}(p)\ne0$
 \end_inset
 
@@ -650,7 +724,11 @@ have a subset y of legth m which satisifes
 \begin_inset Formula $y_{1},...,y_{m}$
 \end_inset
 
-and without loss of generality, we will write G as 
+and without loss of generality, we will write 
+\begin_inset Formula $ $
+\end_inset
+
+G as 
 \begin_inset Formula $G(x_{1},...,x_{l},y_{1},...,y_{m})$
 \end_inset
 
@@ -758,7 +836,7 @@ and we get:
 \[
 \begin{bmatrix}I & 0\\
 -\overset{\qquad-1}{\left(\frac{\partial G}{\partial y}\right)}\frac{\partial G}{\partial x} & \left(\frac{\partial G}{\partial y}\right)^{-1}
-\end{bmatrix}\begin{bmatrix}\text{dx}\\
+\end{bmatrix}\begin{bmatrix}\text{\ensuremath{dx}}\\
 dz
 \end{bmatrix}=\begin{bmatrix}dx\\
 dy
