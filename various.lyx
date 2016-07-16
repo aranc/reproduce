@@ -6,6 +6,7 @@
 \begin_preamble
 \date{}
 \usepackage{tikz}
+\DeclareMathOperator{\adj}{adj}
 \end_preamble
 \use_default_options true
 \maintain_unincluded_children false
@@ -269,7 +270,7 @@ Derivative of det(A)
 \begin_layout Standard
 \begin_inset Formula 
 \begin{gather*}
-f(A)=(A)\\
+f(A)=\det(A)\\
 f:\:R^{n^{2}}\to R
 \end{gather*}
 
@@ -281,11 +282,11 @@ f:\:R^{n^{2}}\to R
 \begin_layout Standard
 \begin_inset Formula 
 \begin{eqnarray*}
-df_{A}h & = & \lim_{t\to0}\frac{det(A+th)-det(A)}{t}\\
-df_{A}\delta_{i}\delta^{j} & = & \lim_{t\to0}\frac{det(A+t\delta_{i}\delta^{j})-det(A)}{t}=\\
- &  & det(A\delta_{1},...,\delta_{i}\delta^{j},...,A\delta_{n})=\\
- &  & (-1)^{i+j}\breve{A}_{ij}\\
-df_{A} & = & adjA^{T}
+df_{A}h & = & \lim_{t\to0}\frac{\det(A+th)-\det(A)}{t}\\
+df_{A}\delta_{i}\delta^{j} & = & \lim_{t\to0}\frac{\det(A+t\delta_{i}\delta^{j})-\det(A)}{t}=\\
+ &  & \det(A\delta_{1},...,\delta_{i}\delta^{j},...,A\delta_{n})=\\
+ &  & (\mbox{\ensuremath{-1}})^{i+j}\breve{A}_{ij}\\
+df_{A} & = & \adj A^{T}
 \end{eqnarray*}
 
 \end_inset
