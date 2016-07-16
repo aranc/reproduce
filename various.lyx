@@ -7,6 +7,7 @@
 \date{}
 \usepackage{tikz}
 \DeclareMathOperator{\adj}{adj}
+\DeclareMathOperator{\Span}{span}
 \end_preamble
 \use_default_options true
 \maintain_unincluded_children false
@@ -125,13 +126,14 @@ A function
 
 \begin_layout Standard
 \begin_inset Formula 
-\begin{multline*}
-df_{sx}h=\lim_{t\to0}\frac{f(sx+th)-f(sx)}{t}=\\
-\lim_{t\to0}\frac{f(s(x+\nicefrac{t}{s}h))-f(sx)}{t}=\\
-s^{r}\lim_{t\to0}\frac{f(x+\nicefrac{t}{s}h)-f(x)}{t}=\\
-s^{r-1}\lim_{t\to0}\frac{f(x+\nicefrac{t}{s}h)-f(x)}{\nicefrac{t}{s}}=\\
-s^{r-1}\lim_{t\to0}\frac{f(x+th)-f(x)}{t}=s^{r-1}df_{x}h
-\end{multline*}
+\begin{eqnarray*}
+df_{sx}h & = & \lim_{t\to0}\frac{f(sx+th)-f(sx)}{t}\\
+ & = & \lim_{t\to0}\frac{f(s(x+\nicefrac{t}{s}h))-f(sx)}{t}\\
+ & = & s^{r}\lim_{t\to0}\frac{f(x+\nicefrac{t}{s}h)-f(x)}{t}\\
+ & = & s^{r-1}\lim_{t\to0}\frac{f(x+\nicefrac{t}{s}h)-f(x)}{\nicefrac{t}{s}}\\
+ & = & s^{r-1}\lim_{t\to0}\frac{f(x+th)-f(x)}{t}\\
+ & = & s^{r-1}df_{x}h
+\end{eqnarray*}
 
 \end_inset
 
@@ -156,10 +158,13 @@ for every
 
 \begin_layout Standard
 \begin_inset Formula 
-\begin{multline*}
-df_{x}x=\left.\frac{d}{dt}f(x+tx)\right|_{t=0}=\left.\frac{d}{dt}f((1+t)x)\right|_{t=0}=\\
-\left.\frac{d}{dt}(1+t)^{r}f(x)\right|_{t=0}=\left.r(1+t)^{r-1}f(x)\right|_{t=0}=rf(x)
-\end{multline*}
+\begin{eqnarray*}
+df_{x}x & = & \left.\frac{d}{dt}f(x+tx)\right|_{t=0}\\
+ & = & \left.\frac{d}{dt}f((1+t)x)\right|_{t=0}\\
+ & = & \left.\frac{d}{dt}(1+t)^{r}f(x)\right|_{t=0}\\
+ & = & \left.r(1+t)^{r-1}f(x)\right|_{t=0}\\
+ & = & rf(x)
+\end{eqnarray*}
 
 \end_inset
 
@@ -264,7 +269,11 @@ so
 \end_layout
 
 \begin_layout Subsection
-Derivative of det(A)
+Derivative of 
+\begin_inset Formula $\det(A)$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -283,9 +292,9 @@ f:\:R^{n^{2}}\to R
 \begin_inset Formula 
 \begin{eqnarray*}
 df_{A}h & = & \lim_{t\to0}\frac{\det(A+th)-\det(A)}{t}\\
-df_{A}\delta_{i}\delta^{j} & = & \lim_{t\to0}\frac{\det(A+t\delta_{i}\delta^{j})-\det(A)}{t}=\\
- &  & \det(A\delta_{1},...,\delta_{i}\delta^{j},...,A\delta_{n})=\\
- &  & (\mbox{\ensuremath{-1}})^{i+j}\breve{A}_{ij}\\
+df_{A}\delta_{i}\delta^{j} & = & \lim_{t\to0}\frac{\det(A+t\delta_{i}\delta^{j})-\det(A)}{t}\\
+ & = & \det(A\delta_{1},...,\delta_{i}\delta^{j},...,A\delta_{n})\\
+ & = & (\mbox{\ensuremath{-1}})^{i+j}\check{A}_{ij}\\
 df_{A} & = & \adj A^{T}
 \end{eqnarray*}
 
@@ -295,7 +304,7 @@ df_{A} & = & \adj A^{T}
 \end_layout
 
 \begin_layout Subsection
-Cauchy: 
+Cauchy's mean value theorem: 
 \begin_inset Formula $\left(g(a)-g(b)\right)f^{'}(c)=\left(f(a)-f(b)\right)g^{'}(c)$
 \end_inset
 
@@ -307,12 +316,16 @@ Let
 \begin_inset Formula $f,g$
 \end_inset
 
- be continuous on 
+: 
+\begin_inset Formula $R\to R$
+\end_inset
+
+ be two functions continuous on 
 \begin_inset Formula $[a,b]$
 \end_inset
 
  and differentiable on 
-\begin_inset Formula $(a,c)$
+\begin_inset Formula $(a,b)$
 \end_inset
 
 .
@@ -320,16 +333,39 @@ Let
 
 \begin_layout Standard
 Define 
-\begin_inset Formula $H(x)=\left(f(a)-f(b)g(x)\right)-\left(g(a)-g(b)f(x)\right)$
+\begin_inset Formula 
+\[
+h(x)=\left(f(a)-f(b)g(x)\right)-\left(g(a)-g(b)f(x)\right)=\begin{vmatrix}f(a)-f(b) & f(x)\\
+g(a)-g(b) & g(x)
+\end{vmatrix}
+\]
+
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
+It follows that 
+\begin_inset Formula $h$
+\end_inset
+
+ is continuous on 
+\begin_inset Formula $[a,b]$
+\end_inset
+
+ and differentiable on 
+\begin_inset Formula $(a,b)$
+\end_inset
+
+.
+ Also:
+\end_layout
+
+\begin_layout Standard
 \begin_inset Formula 
 \begin{multline*}
-H(a)=\begin{vmatrix}f(a)-f(b) & f(a)\\
+h(a)=\begin{vmatrix}f(a)-f(b) & f(a)\\
 g(a)-g(b) & g(a)
 \end{vmatrix}=\begin{vmatrix}-f(b) & f(a)\\
 -g(b) & g(a)
@@ -346,12 +382,12 @@ g(a)-g(b) & g(b)
 \end_layout
 
 \begin_layout Standard
-Using roll's theorem, there exists a point 
+Using Rolle's theorem, there exists a point 
 \begin_inset Formula $c\in(a,b)$
 \end_inset
 
  such that 
-\begin_inset Formula $H^{'}(c)=0$
+\begin_inset Formula $h'(c)=0$
 \end_inset
 
 
@@ -360,7 +396,7 @@ Using roll's theorem, there exists a point
 \begin_layout Standard
 i.e.
  
-\begin_inset Formula $\left(f(a)-f(b)g^{'}(c)\right)-\left(g(a)-g(b)f^{'}(c)\right)=0$
+\begin_inset Formula $\left(f(a)-f(b)g'(c)\right)-\left(g(a)-g(b)f'(c)\right)=0$
 \end_inset
 
 
@@ -368,7 +404,38 @@ i.e.
 
 \begin_layout Standard
 and therefore 
-\begin_inset Formula $\left(g(a)-g(b)\right)f^{'}(c)=\left(f(a)-f(b)\right)g^{'}(c)$
+\begin_inset Formula $\left(g(a)-g(b)\right)f'(c)=\left(f(a)-f(b)\right)g'(c)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In particular if 
+\begin_inset Formula $g'(x)\ne0$
+\end_inset
+
+ for all 
+\begin_inset Formula $x\in(a,b)$
+\end_inset
+
+ then by Rolle's theorem 
+\begin_inset Formula $g(a)\ne g(b)$
+\end_inset
+
+ and 
+\begin_inset Formula 
+\[
+\frac{f(a)-f(b)}{g(a)-g(b)}=\frac{f'(c)}{g'(c)}
+\]
+
 \end_inset
 
 
@@ -381,10 +448,10 @@ Logarithmic differentiation
 \begin_layout Standard
 \begin_inset Formula 
 \begin{eqnarray*}
-y & = & \frac{f_{1}^{\alpha_{1}}(x)\cdots f_{n}^{\alpha_{n}}(x)}{g_{1}^{\beta_{1}}(x)\cdots g_{m}^{\beta_{m}}(x)}\\
-ln(y) & = & \sum_{i=1}^{n}\alpha_{i}ln(f_{i}(x))-\sum_{j=1}^{m}\beta_{j}ln(g_{j}(x))\\
-\frac{y^{'}}{y} & = & \sum_{i=1}^{n}\alpha_{i}\frac{f_{i}^{'}(x)}{f_{i}(x)}-\sum_{j=1}^{m}\beta_{j}\frac{g_{j}^{'}(x)}{g_{j}(x)}\\
-y^{'} & = & \sum_{i=1}^{n}f_{i}^{'}(x)\frac{f_{1}^{\alpha_{1}}(x)\cdots\alpha_{i}f_{i}^{\alpha_{i}-1}(x)\cdots f_{n}^{\alpha_{n}}(x)}{g_{1}^{\beta_{1}}(x)\cdots g_{m}^{\beta_{m}}(x)}-\sum_{j=1}^{m}g_{j}^{'}(x)\frac{f_{1}^{\alpha_{1}}(x)\cdots f_{n}^{\alpha_{n}}(x)}{g_{1}^{\beta_{1}}(x)\cdots\beta_{j}g_{j}^{\beta_{j}+1}(x)\cdots g_{m}^{\beta_{m}}(x)}
+y(x) & = & \frac{f_{1}^{\alpha_{1}}(x)\cdots f_{n}^{\alpha_{n}}(x)}{g_{1}^{\beta_{1}}(x)\cdots g_{m}^{\beta_{m}}(x)}\\
+\ln(y) & = & \sum_{i=1}^{n}\alpha_{i}\ln(f_{i})-\sum_{j=1}^{m}\beta_{j}\ln(g_{j})\\
+\frac{y^{'}}{y} & = & \sum_{i=1}^{n}\alpha_{i}\frac{f_{i}^{'}}{f_{i}}-\sum_{j=1}^{m}\beta_{j}\frac{g_{j}^{'}}{g_{j}}\\
+y^{'} & = & \sum_{i=1}^{n}\alpha_{i}f_{i}^{'}\frac{f_{1}^{\alpha_{1}}\cdots f_{i}^{\alpha_{i}-1}\cdots f_{n}^{\alpha_{n}}}{g_{1}^{\beta_{1}}\cdots g_{m}^{\beta_{m}}}-\sum_{j=1}^{m}\beta_{j}g_{j}^{'}\frac{f_{1}^{\alpha_{1}}\cdots f_{n}^{\alpha_{n}}}{g_{1}^{\beta_{1}}\cdots g_{j}^{\beta_{j}+1}\cdots g_{m}^{\beta_{m}}}
 \end{eqnarray*}
 
 \end_inset
@@ -393,32 +460,73 @@ y^{'} & = & \sum_{i=1}^{n}f_{i}^{'}(x)\frac{f_{1}^{\alpha_{1}}(x)\cdots\alpha_{i
 \end_layout
 
 \begin_layout Subsection
-Differentiating bilinear operations
+Leibniz' rule for differentiating bilinear operations
 \end_layout
 
 \begin_layout Standard
 Let 
+\begin_inset Formula $f,g$
+\end_inset
+
+ be 
+\begin_inset Formula $C^{1}$
+\end_inset
+
+ and 
 \begin_inset Formula $B$
 \end_inset
 
- be a continuous bilinear operation
+ be bilinear:
 \end_layout
 
 \begin_layout Standard
-That is 
-\begin_inset Formula $B(ax+by,cz+dw)=acB(x,z)+adB(x,w)+bcB(y,z)+bdB(y,w)$
+\begin_inset Formula 
+\begin{eqnarray*}
+f: &  & U\subseteq R^{n}\to R^{m_{1}}\\
+g: &  & U\subseteq R^{n}\to R^{m_{2}}\\
+B: &  & R\times R^{m_{2}}\to R^{r}
+\end{eqnarray*}
+
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+then 
+\begin_inset Formula $\forall p\!\in\!u\;\forall h\!\in\!R^{n}$
+\end_inset
+
+: 
+\begin_inset Formula $\lambda x.B(f(x),g(x))$
+\end_inset
+
+ is 
+\begin_inset Formula $C^{1}$
+\end_inset
+
+ and:
+\begin_inset Formula 
+\[
+d\left(\lambda x.B(f(x),g(x)\right)_{p}h=B(df_{p}h,g(p))+B(f(p),dg_{p}h)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Proof:
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \begin{multline*}
-\frac{dB(f(x),g(x))}{dx}=\lim_{t\to0}\frac{B(f(x+t),g(x+t))-B(f(x),g(x))}{t}=\\
-\lim_{t\to0}\frac{B(f(x+t),g(x+t))-B(f(x),g(x+t))+B(f(x),g(x+t))-B(f(x),g(x))}{t}=\\
-B\left(\lim_{t\to0}\frac{f(x+t)-f(x)}{t},\lim_{t\to0}g(x+t)\right)+B\left(f(x),\lim_{t\to0}\frac{g(x+t)-g(x)}{t},\right)=\\
-B(f'(x),g(x))+B(f(x),g'(x))
+d\left(\lambda x.B(f(x),g(x)\right)_{p}h=\lim_{t\to0}\frac{B(f(x+th),g(x+th))-B(f(x),g(x))}{t}\\
+=\lim_{t\to0}\frac{B(f(x+th),g(x+th))-B(f(x),g(x+th))+B(f(x),g(x+th))-B(f(x),g(x))}{t}\\
+=B\left(\lim_{t\to0}\frac{f(x+th)-f(x)}{t},\lim_{t\to0}g(x+th)\right)+B\left(f(x),\lim_{t\to0}\frac{g(x+th)-g(x)}{t},\right)\\
+=B(df_{p}h,g(p))+B(f(p),dg_{p}h)
 \end{multline*}
 
 \end_inset
@@ -446,7 +554,7 @@ we want to differentiate a quadric:
 \begin_inset Formula $A$
 \end_inset
 
-is symmetric
+ is symmetric
 \end_layout
 
 \begin_layout Standard
@@ -462,14 +570,10 @@ let
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
 \begin_inset Formula 
-\begin{gather*}
-g(x)=\sum b_{i}x_{i}\\
-\frac{\partial g}{\partial x_{i}}=b_{i}\Longrightarrow dg\cdot x=b^{T}x
-\end{gather*}
+\[
+dg_{x}h=\lim_{t\to0}\frac{g(x+th)-g(x)}{t}=\lim_{t\to0}\frac{b^{T}(x+th)-b^{T}x}{t}=b^{T}h
+\]
 
 \end_inset
 
@@ -478,7 +582,7 @@ g(x)=\sum b_{i}x_{i}\\
 
 \begin_layout Standard
 let 
-\begin_inset Formula $h(x)=x^{T}Mx$
+\begin_inset Formula $m(x)=x^{T}Mx$
 \end_inset
 
  where 
@@ -491,8 +595,11 @@ let
 \begin_layout Standard
 \begin_inset Formula 
 \begin{eqnarray*}
-x^{T}Mx & = & \sum_{i=1}^{n}M_{ii}x_{i}^{2}+\sum_{i\ne j}\left(M_{ij}+M_{ji}\right)x_{j}x_{i}\\
-\frac{\partial h}{\partial x_{i}} & = & 2M_{ii}x_{i}+\sum_{i\ne j}\left(M_{ij}+M_{ji}\right)x_{j}
+dm_{x}h & = & \lim_{t\to0}\frac{(x+th)^{T}M(x+th)-x^{T}Mx}{t}\\
+ & = & x^{T}Mh+h^{T}Mx\\
+ & = & x^{T}Mh+x^{T}M^{T}h\\
+ & = & x^{T}(M+M^{T})h\\
+ & = & 2x^{T}\left(\frac{M+M^{T}}{2}\right)h
 \end{eqnarray*}
 
 \end_inset
@@ -519,7 +626,7 @@ let
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\frac{\partial h}{\partial x_{i}}=2A_{ii}x_{i}+2\sum_{i\ne j}A_{ij}x_{j}=2x^{T}A
+dm_{x}h=2x^{T}A
 \]
 
 \end_inset
@@ -535,7 +642,7 @@ So, returning to differentiate the quadric:
 \begin_inset Formula 
 \begin{eqnarray*}
 f(x) & = & x^{T}Ax+b^{T}x+c\\
-df & = & x^{T}A+b^{T}
+df_{x} & = & x^{T}A+b^{T}
 \end{eqnarray*}
 
 \end_inset
@@ -548,15 +655,31 @@ Least squares
 \end_layout
 
 \begin_layout Standard
-Given a vector x and a list A of independent vectors 
-\begin_inset Formula $A_{1}...A_{r}$
+Given a vector 
+\begin_inset Formula $x$
 \end_inset
 
-, we want to find the projection 
+ and a matrix 
+\begin_inset Formula $A$
+\end_inset
+
+ whose columns 
+\begin_inset Formula $a_{1}...a_{r}$
+\end_inset
+
+ are linearly independent vectors, we want to find the projection 
 \begin_inset Formula $A\alpha$
 \end_inset
 
- of x on A, such that the error 
+ of 
+\begin_inset Formula $x$
+\end_inset
+
+ on 
+\begin_inset Formula $A$
+\end_inset
+
+, such that the error 
 \begin_inset Formula $x-A\alpha$
 \end_inset
 
@@ -572,8 +695,15 @@ From the theorem of best approximation, we know that for every vector
 \begin_inset Formula $A_{i}\perp x-A\alpha$
 \end_inset
 
- (otherwise, we use Pythagoras to show that the perpendicular from x to
- span(A) is shorter than the selected 
+ (otherwise, we use Pythagoras to show that the perpendicular from 
+\begin_inset Formula $x$
+\end_inset
+
+ to 
+\begin_inset Formula $\Span(A)$
+\end_inset
+
+ is shorter than the selected 
 \begin_inset Formula $A\alpha)$
 \end_inset
 
@@ -613,7 +743,7 @@ A^{T}x & = & A^{T}A\alpha
 \end_layout
 
 \begin_layout Standard
-lets see that 
+Let's see that 
 \begin_inset Formula $A^{T}A$
 \end_inset
 
@@ -673,12 +803,16 @@ Implicit function theorem
 
 \begin_layout Standard
 Let the 
-\begin_inset Formula $G(x_{1},...,x_{n}):\;R^{n}\to R^{m}$
+\begin_inset Formula $G(x_{1},...,x_{n}):\;U\subseteq R^{n}\to R^{m}$
 \end_inset
 
- be a differential function, we want to know under which conditions we can
- express some of the inputs as a function of the other inputs under the
- constraint 
+ be a 
+\begin_inset Formula $C^{1}$
+\end_inset
+
+ function, we want to know under which conditions we can express some of
+ the variables as a function of the other variables under the constraint
+ 
 \family roman
 \series medium
 \shape up
@@ -705,37 +839,41 @@ Let the
 \end_layout
 
 \begin_layout Standard
-If the inputs 
+If the variables 
 \begin_inset Formula $x_{1},...,x_{n}$
 \end_inset
 
-have a subset 
-\begin_inset Formula $y$
-\end_inset
-
- of length m which satisfies 
-\begin_inset Formula $\frac{\partial G}{\partial y}(p)\ne0$
-\end_inset
-
- 
-\begin_inset Formula $p\in U\subseteq R^{n}$
-\end_inset
-
-, we will denote those inputs as 
+ have a subset 
 \begin_inset Formula $y_{1},...,y_{m}$
 \end_inset
 
-and without loss of generality, we will write 
-\begin_inset Formula $ $
+ satisfying 
+\begin_inset Formula $\det(\frac{\partial G}{\partial y}(p))\ne0$
 \end_inset
 
-G as 
+ for 
+\begin_inset Formula $p\in U$
+\end_inset
+
+, we will denote those variables as 
+\begin_inset Formula $y_{1},...,y_{m}$
+\end_inset
+
+ and without loss of generality, we will write 
+\begin_inset Formula $G$
+\end_inset
+
+ as 
 \begin_inset Formula $G(x_{1},...,x_{l},y_{1},...,y_{m})$
 \end_inset
 
 .
- and we will define a new function 
-\begin_inset Formula $\widetilde{G}(x_{1},...,x_{l},y_{1},...,y_{m})=(x_{1},...,x_{l},z_{1},...,z_{m})\in R^{n}$
+ We will define a new function 
+\begin_inset Formula $\widetilde{G}:\;U\subseteq R^{n}\to R^{n}$
+\end_inset
+
+ by 
+\begin_inset Formula $\widetilde{G}(x_{1},...,x_{l},y_{1},...,y_{m})=(x_{1},...,x_{l},z_{1},...,z_{m})$
 \end_inset
 
  where 
@@ -753,11 +891,11 @@ G as
 \end_layout
 
 \begin_layout Standard
-Lets look on 
+Let's look at 
 \begin_inset Formula $d\widetilde{G}$
 \end_inset
 
-
+,
 \begin_inset Formula 
 \[
 d\widetilde{G}=\begin{bmatrix}I & 0\\
@@ -771,19 +909,23 @@ d\widetilde{G}=\begin{bmatrix}I & 0\\
 \end_layout
 
 \begin_layout Standard
-if 
-\begin_inset Formula $\frac{\partial G}{\partial y}\ne0$
+If 
+\begin_inset Formula $\det(\frac{\partial G}{\partial y}(p))\ne0$
 \end_inset
 
 , then 
-\begin_inset Formula $d\widetilde{G}\ne0$
+\begin_inset Formula $\det(d\widetilde{G}_{p})\ne0$
 \end_inset
 
  and by using the inverse function theorem, 
 \begin_inset Formula $\widetilde{G}$
 \end_inset
 
- is invertible.
+ is a local diffeomorphism at 
+\begin_inset Formula $p$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -794,11 +936,11 @@ if
 \end_layout
 
 \begin_layout Standard
-Lets calculate 
+Let's calculate 
 \begin_inset Formula $d\widetilde{G}$
 \end_inset
 
-
+,
 \end_layout
 
 \begin_layout Standard
@@ -806,7 +948,7 @@ Lets calculate
 \[
 \begin{bmatrix}I & 0\\
 \frac{\partial G}{\partial x} & \frac{\partial G}{\partial y}
-\end{bmatrix}\begin{bmatrix}\text{dx}\\
+\end{bmatrix}\begin{bmatrix}dx\\
 dy
 \end{bmatrix}=\begin{bmatrix}dx\\
 dz
