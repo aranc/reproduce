@@ -368,11 +368,10 @@ Differentiating
 \begin_layout Standard
 \begin_inset Formula 
 \begin{eqnarray*}
-df_{A}h & = & \lim_{t\to0}\frac{(A+th)^{-1}-A^{-1}}{t}\\
- & = & \lim_{t\to0}\frac{A^{-1}\left(I+tA^{-1}h\right){}^{-1}-A^{-1}}{t}\\
- & = & \lim_{t\to0}\frac{A^{-1}\left(I-(tA^{-1}h)^{1}+(tA^{-1}h)^{2}-(tA^{-1}h)^{3}+(tA^{-1}h)^{4}-\ldots\right)-A^{-1}}{t}\\
- & = & -A^{-1}A^{-1}h\\
-df_{A} & = & -A^{-2}
+df_{A}H & = & \lim_{t\to0}\frac{(A+tH)^{-1}-A^{-1}}{t}\\
+ & = & \lim_{t\to0}\frac{\left(I+tA^{-1}H\right){}^{-1}A^{-1}-A^{-1}}{t}\\
+ & = & \lim_{t\to0}\frac{\left(I-(tA^{-1}H)^{1}+(tA^{-1}H)^{2}-(tA^{-1}H)^{3}+(tA^{-1}H)^{4}-\ldots\right)A^{-1}-A^{-1}}{t}\\
+ & = & -A^{-1}HA^{-1}
 \end{eqnarray*}
 
 \end_inset
@@ -385,7 +384,7 @@ Notes:
 \end_layout
 
 \begin_layout Enumerate
-\begin_inset Formula $h\in\text{Mat}(n)$
+\begin_inset Formula $H\in\text{Mat}(n)$
 \end_inset
 
 
@@ -541,7 +540,7 @@ Assuming blocks sizes are matching, and blocks are invertible were needed.
 \end_layout
 
 \begin_layout Standard
-Trick #1:
+Trick #1: 
 \begin_inset Formula $\begin{bmatrix}I & 0\\
 C_{1} & I
 \end{bmatrix}\begin{bmatrix}I & 0\\
@@ -825,7 +824,7 @@ Property #1:
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\left\Vert Ax\right\Vert =(Ax)^{H}Ax=x^{H}A^{H}Ax=x^{H}AA^{H}x=(A^{H}x)^{H}A^{H}x=\left\Vert A^{H}x\right\Vert 
+\left\Vert Ax\right\Vert ^{2}=(Ax)^{H}Ax=x^{H}A^{H}Ax=x^{H}AA^{H}x=(A^{H}x)^{H}A^{H}x=\left\Vert A^{H}x\right\Vert ^{2}
 \]
 
 \end_inset
@@ -843,7 +842,7 @@ Property #2:
 \end_inset
 
  have the same eigenvectors.
- matching eigenvalues are conjugate.
+ Matching eigenvalues are conjugate.
 \end_layout
 
 \begin_layout Standard
@@ -885,8 +884,8 @@ Lemma:
 \begin_inset Formula 
 \begin{eqnarray*}
 (\lambda I-A)(\lambda I-A)^{H} & = & (\lambda I-A)(\bar{\lambda}I-A^{H})\\
- & = & \lambda\bar{\lambda}I-\bar{\lambda}A-\lambda A^{H}+AA^{H}\\
- & = & \bar{\lambda}\lambda I-\lambda A^{H}-\bar{\lambda}A+A^{H}A\\
+ & = & \lambda\bar{\lambda}I-\lambda A^{H}-\bar{\lambda}A+AA^{H}\\
+ & = & \bar{\lambda}\lambda I-\bar{\lambda}A-\lambda A^{H}+A^{H}A\\
  & = & (\bar{\lambda}I-A^{H})(\lambda I-A)\\
  & = & (\lambda I-A)^{H}(\lambda I-A)
 \end{eqnarray*}
@@ -948,7 +947,7 @@ Property #3: If a normal matrix
 \begin_inset Formula $y$
 \end_inset
 
- are perpendicular.
+ are orthogonal.
 \end_layout
 
 \begin_layout Standard
@@ -997,7 +996,7 @@ Let
 \end_inset
 
  be a normal matrix.
- then there exists an orthogonal matrix 
+ then there exists an hermitian matrix 
 \begin_inset Formula $Q$
 \end_inset
 
@@ -1024,8 +1023,8 @@ Proof:
 \end_layout
 
 \begin_layout Standard
-Since we are working in a complex vector space, the characteristic polynomial
- of 
+Since we are working in a vector space over the complex field, the characteristi
+c polynomial of 
 \begin_inset Formula $A$
 \end_inset
 
@@ -1037,20 +1036,20 @@ Since we are working in a complex vector space, the characteristic polynomial
 \end_layout
 
 \begin_layout Standard
-Denote 
+Let the distinct eigenvalues of 
 \begin_inset Formula $A$
 \end_inset
 
-'s eigenvalues by 
+ be 
 \begin_inset Formula $\lambda_{1},\ldots,\lambda_{r}$
 \end_inset
 
- and define 
+ and let 
 \begin_inset Formula $U_{i}=\text{ker}(\lambda_{i}I-A)$
 \end_inset
 
- for 
-\begin_inset Formula $U_{1},\ldots,U_{r}$
+ be the eigenspace corresponding to 
+\begin_inset Formula $\lambda_{i}$
 \end_inset
 
 .
@@ -1061,11 +1060,7 @@ If
 \begin_inset Formula $U_{1},\ldots,U_{r}$
 \end_inset
 
- span the entire 
-\begin_inset Formula $R^{n}$
-\end_inset
-
-, find an orthogonal basis for each 
+ span the entire space, find an orthogonal basis for each 
 \begin_inset Formula $U_{i}$
 \end_inset
 
@@ -1078,31 +1073,32 @@ Assume by contradiction that
 \begin_inset Formula $U_{1},\ldots,U_{r}$
 \end_inset
 
- don't span 
-\begin_inset Formula $R^{n}$
-\end_inset
-
-.
+ don't span.
  define 
 \begin_inset Formula $U$
 \end_inset
 
  to be the orthogonal complement for 
-\begin_inset Formula $U_{1},\ldots,U_{r}$
+\begin_inset Formula $U_{1}+\ldots+U_{r}$
 \end_inset
 
 .
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $A$
-\end_inset
-
- is invariant on 
+Claim: 
 \begin_inset Formula $U$
 \end_inset
 
-: let 
+ is an invariant subspace under 
+\begin_inset Formula $A$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+Let 
 \begin_inset Formula $u\in U$
 \end_inset
 
@@ -1110,7 +1106,7 @@ Assume by contradiction that
 \begin_inset Formula $v=\sum\alpha_{i}v_{i}\quad v_{i}\in U_{i}$
 \end_inset
 
-: 
+ 
 \begin_inset Formula 
 \[
 v^{H}Au=(Av)^{H}u=(A\sum\alpha_{i}v_{i})^{H}u=\sum\alpha_{i}\lambda_{i}v_{i}^{T}u=0
@@ -1122,27 +1118,24 @@ v^{H}Au=(Av)^{H}u=(A\sum\alpha_{i}v_{i})^{H}u=\sum\alpha_{i}\lambda_{i}v_{i}^{T}
 \end_layout
 
 \begin_layout Standard
-Let's look on the linear operator 
-\begin_inset Formula $A$
-\end_inset
-
- when defined only on the subspace 
-\begin_inset Formula $U$
-\end_inset
-
-: 
-\begin_inset Formula $\left.A\right|_{U}$
+\begin_inset Formula $\blacktriangledown$
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
+Let's look on the linear operator 
+\begin_inset Formula $\left.A\right|_{U}:\;U\to U$
+\end_inset
+
+.
+ Since 
 \begin_inset Formula $\left.A\right|_{U}$
 \end_inset
 
- is again a linear operator in a complex vector space.
- So it has at least one eigenvalue and eigenvector.
+ is again a linear operator in a vector space over the complex field, it
+ has at least one eigenvalue and eigenvector.
  This eigenvector is also an eigenvector of 
 \begin_inset Formula $A$
 \end_inset
@@ -1167,7 +1160,7 @@ Property #5: a real normal matrix is symmetric iff all it's eigenvalues
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $\Rightarrow$
+\begin_inset Formula $\left(\Rightarrow\right)$
 \end_inset
 
  If 
@@ -1212,7 +1205,7 @@ Since
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $\Leftarrow$
+\begin_inset Formula $\left(\Leftarrow\right)$
 \end_inset
 
  If 
