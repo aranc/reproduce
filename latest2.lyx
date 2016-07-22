@@ -74,7 +74,7 @@
 \begin_body
 
 \begin_layout Title
-Latest2
+Latest #2
 \end_layout
 
 \begin_layout Standard
@@ -87,7 +87,866 @@ LatexCommand tableofcontents
 \end_layout
 
 \begin_layout Subsection
-tbd
+Definition of CDF (cumulative distribution function)
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $X$
+\end_inset
+
+ be a random variable 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+F_{X}(t)=P(X\le t)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Definition of PDF (probability density function)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+f_{x}(t) & = & \frac{dF_{x}}{dt}\\
+ & = & \lim_{\Delta t\to0}\frac{F_{X}(t+\Delta t)-F_{X}(t)}{\Delta t}\\
+ & = & \lim_{\Delta t\to0}\frac{P(X\le t+\Delta t)-P(X\le t)}{\Delta t}\\
+ & = & \lim_{\Delta t\to0}\frac{P(t<X\le t+\Delta t)}{\Delta t}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+From this it follows:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P(a<X\le b)=F_{x}(b)-F_{x}(a)=\intop_{t=a}^{b}f_{x}(t)dt
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Expectation of a continuous random variable
+\end_layout
+
+\begin_layout Standard
+Using the donations metaphor: In order to anticipate how much money each
+ donor will provide, we segment the range of possible donations to little
+ segments, and use a representative 
+\begin_inset Formula $\xi_{i}$
+\end_inset
+
+ to represent the donations of donors in the range 
+\begin_inset Formula $(\Delta s_{i},\Delta s_{i+1}]$
+\end_inset
+
+ .
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+A note about notations, 
+\begin_inset Formula $\Delta s_{i}\in R$
+\end_inset
+
+ and 
+\emph default
+
+\begin_inset Formula $\left|\Delta s_{i}\right|=\Delta s_{i+1}-\Delta s_{i}$
+\end_inset
+
+
+\emph on
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+EX & = & \lim_{\text{max}\left(\left|\Delta s_{i}\right|\right)\to0}\sum_{\Delta s_{i}}\xi_{i}P(\Delta s_{i}\le X\le\Delta s_{i+1})\\
+ & = & \lim_{\text{max}\left(\left|\Delta s_{i}\right|\right)\to0}\sum_{\Delta s_{i}}\xi_{i}f_{X}(\Delta s_{i})\left(\Delta s_{i+1}-\Delta s_{i}\right)\\
+ & = & \intop_{t=-\infty}^{\infty}\!\!\!\!tf_{X}(t)dt
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Linearity of the expectation of a continuous random variable
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\textbf{Additive:}$
+\end_inset
+
+ Let 
+\begin_inset Formula $a\in R$
+\end_inset
+
+, 
+\begin_inset Formula $a>0$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray}
+E(aX) & = & \!\!\!\intop_{t=-\infty}^{\infty}\!\!\!tf_{aX}(t)dt\nonumber \\
+ & = & \!\!\!\intop_{t=-\infty}^{\infty}\!\!\!tP\left(t\le aX\le t+\Delta t\right)\\
+ & = & \!\!\!\intop_{t=-\infty}^{\infty}\!\!\!tP\left(\frac{t}{a}\le X\le\frac{t}{a}+\Delta t\right)\nonumber \\
+ & = & a\!\!\intop_{t=-\infty}^{\infty}\!\!\!\frac{t}{a}f_{aX}(\frac{t}{a})dt\nonumber \\
+ & = & aEx\nonumber 
+\end{eqnarray}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Note: not sure if 
+\begin_inset Formula $\left(1\right)$
+\end_inset
+
+ is legal syntax
+\end_layout
+
+\begin_layout Standard
+\begin_inset Phantom Phantom
+status open
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\textbf{Homogeneous:}$
+\end_inset
+
+ Let 
+\begin_inset Formula $X,Y$
+\end_inset
+
+ be continuous random variables.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+E(X+Y) & = & \iint(x+y)f_{X+Y}(x,y)dxdy
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\fbox{TODO: complete this}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Variance of a continuous random variable
+\end_layout
+
+\begin_layout Standard
+By definition, variance is the expectation of the square distance from the
+ mean.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\text{var}(x)=E(X-EX)^{2}=E(X^{2}-2XEX+\left(EX\right)^{2})=EX^{2}-\left(EX\right)^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\text{var}(X)=EX^{2}-\left(EX\right)^{2}=\intop_{-\infty}^{\infty}t^{2}f_{x}(t)dt-\left(\intop_{-\infty}^{\infty}tf_{x}(t)dt\right)^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Leibniz rule for differentiation under the integral sign
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $f(\alpha,t),\phi_{1}(\alpha),\phi_{2}(\alpha)$
+\end_inset
+
+ be 
+\begin_inset Formula $C^{1}$
+\end_inset
+
+ functions where 
+\begin_inset Formula $\frac{df}{d\alpha}(\alpha,t)$
+\end_inset
+
+ is 
+\begin_inset Formula $C^{1}$
+\end_inset
+
+ as well.
+\end_layout
+
+\begin_layout Standard
+We want to derive 
+\begin_inset Formula $\sideset{_{\phi_{1}(\alpha)}^{\phi_{2}(\alpha)}}{f(\alpha,t)dt}\int$
+\end_inset
+
+ with respect to 
+\begin_inset Formula $\alpha$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+\frac{d}{d\alpha}\left(\stackrel[\phi_{1}(\alpha)\hfill]{\phi_{2}(\alpha)\hfill}{\int f(\alpha,t)dt}\right) & = & \lim_{\Delta\alpha\to0}\frac{1}{\Delta\alpha}\left(\stackrel[\phi_{1}(\alpha+\Delta\alpha)\hfill]{\phi_{2}(\alpha+\Delta\alpha)\hfill}{\int f(\alpha+\Delta\alpha,t)dt}-\stackrel[\phi_{1}(\alpha)\hfill]{\phi_{2}(\alpha)\hfill}{\int f(\alpha,t)dt}\right)
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=\lim_{\Delta\alpha\to0}\frac{1}{\Delta\alpha}\left(\stackrel[\phi_{1}(\alpha+\Delta\alpha)\hfill]{\phi_{1}(\alpha)\hfill}{\int f(\alpha+\Delta\alpha,t)dt}+\stackrel[\phi_{1}(\alpha)\hfill]{\phi_{2}(\alpha)\hfill}{\int f(\alpha+\Delta\alpha,t)dt}+\stackrel[\phi_{2}(\alpha)\hfill]{\phi_{2}(\alpha+\Delta\alpha)\hfill}{\int f(\alpha+\Delta\alpha,t)dt}-\stackrel[\phi_{1}(\alpha)\hfill]{\phi_{2}(\alpha)\hfill}{\int f(\alpha,t)dt}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Let's separate to parts,
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula 
+\begin{eqnarray*}
+\lim_{\Delta\alpha\to0}\frac{1}{\Delta\alpha}\left(\stackrel[\phi_{1}(\alpha)\hfill]{\phi_{2}(\alpha)\hfill}{\int f(\alpha+\Delta\alpha,t)dt}-\stackrel[\phi_{1}(\alpha)\hfill]{\phi_{2}(\alpha)\hfill}{\int f(\alpha,t)dt}\right) & = & \stackrel[\phi_{1}(\alpha)\hfill]{\phi_{2}(\alpha)\hfill}{\int\left(\lim_{\Delta\alpha\to0}\frac{1}{\Delta\alpha}\left(f(\alpha+\Delta\alpha,t)-f(\alpha,t)\right)\right)dt}\\
+ & \phantom{A}\\
+ & = & \stackrel[\phi_{1}(\alpha)\hfill]{\phi_{2}(\alpha)\hfill}{\int\frac{\partial f(\alpha,t)}{\partial\alpha}dt}
+\end{eqnarray*}
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Justification of passing the limit under the integral sign is deferred for
+ now.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula 
+\begin{eqnarray*}
+\lim_{\Delta\alpha\to0}\frac{1}{\Delta\alpha}\stackrel[\phi_{2}(\alpha)\hfill]{\phi_{2}(\alpha+\Delta\alpha)\hfill}{\int f(\alpha+\Delta\alpha,t)dt} & = & \fbox{TODO: complete this}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+And so we get,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{d}{d\alpha}\left(\stackrel[\phi_{1}(\alpha)\hfill]{\phi_{2}(\alpha)\hfill}{\int f(\alpha,t)dt}\right)=\stackrel[\phi_{1}(\alpha)\hfill]{\phi_{2}(\alpha)\hfill}{\int\frac{\partial f(\alpha,t)}{\partial\alpha}dt}+\phi_{2}^{'}(\alpha)f(\alpha,\phi_{2}(\alpha))-\phi_{1}^{'}(\alpha)f(\alpha,\phi_{1}(\alpha))
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Quotes eld
+\end_inset
+
+Bell curve
+\begin_inset Quotes erd
+\end_inset
+
+-like distribution
+\end_layout
+
+\begin_layout Standard
+We want to investigate the family of distributions that have the bell shaped
+ density 
+\begin_inset Formula $e^{-ax^{2}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Let's find the scale coefficient that will make this a probability function
+ (i.e.
+ area under the curve equal to 1).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+I=\intop_{-\infty}^{\infty}e^{-ax^{2}}dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+I^{2} & = & \left(\intop_{x=-\infty}^{\infty}e^{-ax^{2}}dx\right)\left(\intop_{y=-\infty}^{\infty}e^{-ay^{2}}dy\right)\\
+ & = & \intop_{x=-\infty}^{\infty}\intop_{y=-\infty}^{\infty}e^{-a\left(x^{2}+y^{2}\right)}dy\,dx\\
+ & = & \intop_{\phi=0}^{2\pi}\intop_{r=0}^{\infty}e^{-ar^{2}}rdr\,d\phi\\
+ & = & \frac{\pi}{a}\intop_{r=0}^{\infty}e^{-ar^{2}}2ardr\\
+ & = & -\frac{\pi}{a}\left.e^{-ar^{2}}\right|_{0}^{\infty}\\
+ & = & \frac{\pi}{a}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+And the corrected probability density function is 
+\begin_inset Formula $\sqrt{\frac{a}{\pi}}e^{-ax^{2}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Since this density is symmetric, if we want the expectation to be 
+\begin_inset Formula $\mu$
+\end_inset
+
+, than the PDF will be 
+\begin_inset Formula $\sqrt{\frac{a}{\pi}}e^{-a\left(x-\mu\right)^{2}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now we will express 
+\begin_inset Formula $a$
+\end_inset
+
+ in terms of the variance 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+\sigma^{2} & = & \text{var}(X)\\
+ & = & E(X-\mu)^{2}\\
+ & = & \sqrt{\frac{a}{\pi}}\intop_{-\infty}^{\infty}\left(x-\mu\right)^{2}e^{-a\left(x-\mu\right)^{2}}dx\\
+\mbox{\left[\text{Using}\ \ensuremath{t=x-\mu}\right]\quad}\quad & = & \sqrt{\frac{a}{\pi}}\intop_{-\infty}^{\infty}t^{2}e^{-at^{2}}dt\\
+\text{Integration by parts\quad}\\
+\begin{array}{cc}
+u=t & v=\frac{-1}{2a}e^{-at^{2}}\\
+du=1 & dv=te^{-at^{2}}
+\end{array}\\
+ & = & \sqrt{\frac{a}{\pi}}\left[\left.\frac{-t^{2}}{2a}e^{-at^{2}}\right|_{t=-\infty}^{\infty}+\frac{1}{2a}\intop_{-\infty}^{\infty}e^{-at^{2}}dt\right]\\
+ & = & \sqrt{\frac{a}{\pi}}\cdot\frac{1}{2a}\intop_{-\infty}^{\infty}e^{-at^{2}}dt\\
+ & = & \frac{1}{2a}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Therefore 
+\begin_inset Formula $a=\frac{1}{2\sigma^{2}}$
+\end_inset
+
+, and the final expression form of the normal distribution is:
+\begin_inset Formula 
+\[
+\sqrt{\frac{a}{\pi}}e^{-a\left(x-\mu\right)^{2}}=\frac{1}{\sqrt{2\pi\sigma^{2}}}e^{-\frac{\left(x-\mu\right)^{2}}{2\sigma^{2}}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Definition of marginal density
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P(X=x)\quad=\intop_{y=-\infty}^{\infty}\!\!\!\!P(X=x,\ Y=y)dy
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Definition of independence of continuous random variables
+\end_layout
+
+\begin_layout Standard
+Two random variables 
+\begin_inset Formula $X,Y$
+\end_inset
+
+ are called independent if for every 
+\begin_inset Formula $x_{i}\in\text{Im}(X)$
+\end_inset
+
+, 
+\begin_inset Formula $y_{j}\in\text{Im}(Y)$
+\end_inset
+
+: 
+\begin_inset Formula $P(X=x_{i}|Y=y_{j})=P(X=x_{i})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Phantom Phantom
+status open
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Since 
+\begin_inset Formula $P(X=x_{i}|Y=y_{i})=\frac{P(X=x_{i}\wedge Y=y_{j})}{P(Y=y_{j})}$
+\end_inset
+
+, an alternative definition follows: Two random variables 
+\begin_inset Formula $X,Y$
+\end_inset
+
+ are called independent if for every 
+\begin_inset Formula $x_{i}\in\text{Im}(X)$
+\end_inset
+
+, 
+\begin_inset Formula $y_{j}\in\text{Im}(Y)$
+\end_inset
+
+: 
+\begin_inset Formula $P(X=x_{i}\wedge Y=y_{j})=P(X=x_{i})\,P(Y=y_{j})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Phantom Phantom
+status open
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\fbox{Probably missing: definition using density}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Variance formulas (sum and product by scalar)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+\mbox{var}(aX) & = & E(aX)^{2}-\left(EaX\right)^{2}\\
+ & = & Ea^{2}X^{2}-\left(aEX\right)^{2}\\
+ & = & a^{2}EX^{2}-a^{2}\left(EX\right)^{2}\\
+ & = & a^{2}\mbox{var}(X)
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+\mbox{var}(X+Y) & = & E\left(\left(X+Y\right)-E\left(X+Y\right)\right)^{2}\\
+ & = & E\left(\left(X-EX\right)+\left(Y-EY\right)\right)^{2}\\
+ & = & E\left(X-EX\right)^{2}+2E\left(X-EX\right)\left(Y-EY\right)+E\left(Y-EY\right)^{2}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Phantom Phantom
+status open
+
+\begin_layout Plain Layout
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Define 
+\begin_inset Formula $\mbox{cov}(X,Y)=E\left(X-EX\right)\left(Y-EY\right)$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mbox{var}(X+Y)=\mbox{var}(X)+\mbox{var}(Y)+2\mbox{cov}(X,Y)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Formula $-1\le\rho_{XY}\le1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $X,Y$
+\end_inset
+
+ be continuous random variables.
+ define the correlation 
+\begin_inset Formula $\rho_{XY}=\frac{\mbox{cov}(X,Y)}{\sigma_{X}\sigma_{Y}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+\mbox{cov}(X,-Y) & = & E(X-EX)(-Y-E\left(-Y\right))\\
+ & = & -E(X-EX)(Y-EY)\\
+ & = & -\mbox{cov}(X,Y)
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+\mbox{var}(X+Y) & = & \mbox{var}(X)+\mbox{var}(Y)+2\mbox{cov}(X,Y)\\
+\mbox{var}(X-Y) & = & \mbox{var}(X)+\mbox{var}(Y)-2\mbox{cov}(X,Y)
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+And so,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mbox{var}(X+Y)+\mbox{var}(X-Y)=2\left(\mbox{var}(X)+\mbox{var}(Y)\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mbox{var}(X+Y)-\mbox{var}(X-Y)=4\mbox{cov}(X,Y)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\fbox{TODO: complete this}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Independent continuous RVs are uncorrelated
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $X,Y$
+\end_inset
+
+ be continuous independent random variables,
+\end_layout
+
+\begin_layout Standard
+Todo: Justify 
+\begin_inset Formula $EXY=EX\,EY$
+\end_inset
+
+, it follows from there.
+\end_layout
+
+\begin_layout Subsection
+Poisson distribution is a limit of the binomial distribution
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $X_{n}\sim B(n,p)$
+\end_inset
+
+ , 
+\begin_inset Formula $np=\lambda$
+\end_inset
+
+ be a binomial distribution, where 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ is fixed, and 
+\begin_inset Formula $p$
+\end_inset
+
+ is a function of 
+\begin_inset Formula $n$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+\lim_{n\to\infty}P(X_{n}=k) & = & \lim_{n\to\infty}\begin{pmatrix}n\\
+k
+\end{pmatrix}p^{k}\left(1-p\right)^{n-k}\\
+ & = & \lim_{n\to\infty}\frac{n^{\underline{k}}\lambda^{k}\left(1-\frac{\lambda}{n}\right)^{n}}{n^{k}k!\left(1-\frac{\lambda}{n}\right)^{k}}\\
+ & = & e^{-\lambda}\frac{\lambda^{k}}{k!}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We used the following limits:
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula 
+\[
+\left(1-\frac{\lambda}{n}\right)^{k}\to(1-0)^{k}=1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula 
+\[
+\left(1-\frac{\lambda}{n}\right)^{n}\to e^{-\lambda}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula 
+\begin{eqnarray*}
+\frac{n^{\underline{k}}}{n^{k}} & = & \frac{n}{n}\cdot\frac{n-1}{n}\cdot\ldots\cdot\frac{n-k+1}{n}\\
+ & = & 1\cdot\left(1-\frac{1}{n}\right)\cdot\ldots\cdot\left(1-\frac{k+1}{n}\right)\to1
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Memoryless distribution 
+\begin_inset Formula $\iff$
+\end_inset
+
+Exponential or Geometric (if continuous or discrete accordingly)
+\end_layout
+
+\begin_layout Standard
+TODO
+\end_layout
+
+\begin_layout Subsection
+Half-life of a radioactive material
+\end_layout
+
+\begin_layout Standard
+A radioactive material decays at an exponential rate, that is the amount
+ of material 
+\begin_inset Formula $M$
+\end_inset
+
+ at time 
+\begin_inset Formula $t$
+\end_inset
+
+ is 
+\begin_inset Formula $M(t)=M_{0}e^{-\lambda t}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Let's compute the half-time:
+\begin_inset Formula 
+\[
+\frac{M_{0}}{2}=M_{0}e^{-\lambda t}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+-\ln2=-\lambda t
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+t=\frac{\ln2}{\lambda}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\fbox{Not sure if this is the full derivation we did last time}$
+\end_inset
+
+
 \end_layout
 
 \end_body
