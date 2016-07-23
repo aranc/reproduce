@@ -884,7 +884,126 @@ Exponential or Geometric (if continuous or discrete accordingly)
 \end_layout
 
 \begin_layout Standard
-TODO
+Define a random variable 
+\begin_inset Formula $X$
+\end_inset
+
+ to be memoryless if 
+\begin_inset Formula $P(X>s+t|X>t)=P(X>s)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $X\sim G(p)$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+P(X>s+t|X>t) & = & \frac{P(X>s+t\wedge X>t)}{P(X>t)}\\
+ & = & \frac{P(X>s+t)}{P(X>t)}\\
+ & = & \frac{q^{s+t}}{q^{t}}\\
+ & = & q^{s}\\
+ & = & P(X>s)
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $X\sim E(\lambda)$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+P(X>s+t|X>t) & = & \frac{P(X>s+t\wedge X>t)}{P(X>t)}\\
+ & = & \frac{P(X>s+t)}{P(X>t)}\\
+ & = & \frac{1-\left(1-e^{-\lambda(s+t}\right)}{1-\left(1-e^{-\lambda s}\right)}\\
+ & = & \frac{e^{-\lambda(s+t)}}{e^{-\lambda t}}\\
+ & = & e^{-\lambda s}\\
+ & = & 1-\left(1-e^{-\lambda s}\right)\\
+ & = & P(X>s)
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $X$
+\end_inset
+
+ be a memoryless random variable,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+P(X>s) & = & P(X>s+t|X>t)\\
+ & = & \frac{P(X>s+t)}{P(X>t)}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P(X>s+t)=P(X>s)\,P(X>t)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+P(X>2) & = & P(X>1+1)\\
+ & = & P(X>1)\ P(X>1)\\
+ & = & \left(P(X>1)\right)^{2}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+By induction:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P(X>n)=P(X>1)^{n}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Todo: complete this
 \end_layout
 
 \begin_layout Subsection
@@ -943,7 +1062,7 @@ t=\frac{\ln2}{\lambda}
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $\fbox{Not sure if this is the full derivation we did last time}$
+\begin_inset Formula $\fbox{Not sure if this is the full derivation we did last time, e.g. maybe prove that decay is exponential}$
 \end_inset
 
 
