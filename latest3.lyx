@@ -1075,5 +1075,599 @@ A^{-1}=\frac{1}{\det A}\mbox{adj}A
 
 \end_layout
 
+\begin_layout Subsection
+If 
+\begin_inset Formula $A,B$
+\end_inset
+
+ are square matrices and 
+\begin_inset Formula $AB=I$
+\end_inset
+
+ then 
+\begin_inset Formula $BA=I$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Note that if 
+\begin_inset Formula $A,B$
+\end_inset
+
+ are not square, then this is not always true.
+ e.g.
+ 
+\begin_inset Formula $A=\begin{pmatrix}1 & 0\end{pmatrix}$
+\end_inset
+
+, 
+\begin_inset Formula $B=\begin{pmatrix}1\\
+0
+\end{pmatrix}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Phantom Phantom
+status open
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Since 
+\begin_inset Formula $AB=I$
+\end_inset
+
+, we know that both are invertible.
+\end_layout
+
+\begin_layout Standard
+And since 
+\begin_inset Formula $\det(A)\det(B)=\det(AB)=\det(I)=1$
+\end_inset
+
+, we know that 
+\begin_inset Formula $\det(A)\neq0$
+\end_inset
+
+ and 
+\begin_inset Formula $\det$
+\end_inset
+
+
+\begin_inset Formula $B\neq0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Phantom Phantom
+status open
+
+\begin_layout Plain Layout
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Define 
+\begin_inset Formula $\mbox{adj}(A)$
+\end_inset
+
+ as specified above,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+B=IB=\frac{\mbox{adj}(A)}{\det(A)}AB=\frac{\mbox{adj}(A)}{\det(A)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We need to prove that 
+\begin_inset Formula $A\,\mbox{adj}(A)=\mbox{adj}(A)A$
+\end_inset
+
+ i.e.
+ 
+\begin_inset Formula $A\,\mbox{adj}(A)=\det(A)I$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+We know that 
+\begin_inset Formula $\mbox{adj}(A^{T})A^{T}=\det(A^{T})I=\det(A)I$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Therefore, 
+\begin_inset Formula $A\,\mbox{adj}(A^{T})^{T}=\det(A)I$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So its enough to show that 
+\begin_inset Formula $\mbox{adj}(A^{T})^{T}=\mbox{adj}(A)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+\delta^{j}\mbox{adj}(A^{T})^{T}\delta_{k} & = & \delta^{k}\mbox{adj}(A^{T})\delta_{j}\\
+ & = & \left(-1\right)^{k+j}\det(A_{jk}^{T})\\
+ & = & \left(-1\right)^{k+j}\det(A_{kj})\\
+ & = & \delta^{j}\mbox{adj}(A)\delta_{k}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Therefore 
+\begin_inset Formula $BA=AB=I$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Exterior product
+\end_layout
+
+\begin_layout Standard
+Define the exterior product 
+\begin_inset Formula $[a_{1},\ldots,a_{n-1}]$
+\end_inset
+
+ to be a vector that satisfies 
+\begin_inset Formula $[a_{1},\ldots,a_{n-1}]\cdot b=\det(a_{1},\ldots,a_{n-1},b)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Phantom Phantom
+status open
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If the vectors 
+\begin_inset Formula $a_{1},\ldots,a_{n-1}$
+\end_inset
+
+ are dependent, than their exterior product is the 
+\begin_inset Formula $0$
+\end_inset
+
+ vector.
+\end_layout
+
+\begin_layout Standard
+Otherwise, 
+\begin_inset Formula $\forall k\in1..n-1\quad[a_{1},\ldots,a_{n-1}]a_{k}=\det(a_{1},\dots,a_{n-1},a_{k})=0$
+\end_inset
+
+ and the exterior product is a vector in the orthogonal complement to the
+ sub-space of rank 
+\begin_inset Formula $n-1$
+\end_inset
+
+ that is spanned by 
+\begin_inset Formula $a_{1},\ldots,a_{n-1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+It's size is
+\begin_inset Formula $\det(a_{1},\ldots,a_{n-1},\hat{n}),$
+\end_inset
+
+ where 
+\begin_inset Formula $\hat{n}$
+\end_inset
+
+ is the normal to the sub-space.
+ this is the area of the parallelepiped created by 
+\begin_inset Formula $a_{1},\ldots,a_{n-1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Volume identities
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mbox{Vol}(a,b,c)=\left(a\times b\right)\cdot c=\varepsilon_{ijk}a_{i}b_{j}c_{k}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+a\times b=\delta_{i}\left(\varepsilon_{ijk}a_{j}b_{k}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Formula $a\times\left(b\times c\right)=\left(a\cdot c\right)b-\left(a\cdot b\right)c$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+a\times\left(b\times c\right) & = & \delta_{i}\varepsilon_{ijk}a_{j}(b\times c)_{k}\\
+ & = & \delta_{i}\varepsilon_{ijk}a_{j}\varepsilon_{krs}b_{r}c_{s}\\
+ & = & \delta_{i}\varepsilon_{kij}\varepsilon_{krs}a_{j}b_{r}c_{s}\\
+ & = & \delta_{i}\left(\delta_{i}^{r}\delta_{j}^{s}-\delta_{i}^{s}\delta_{j}^{r}\right)a_{j}b_{r}c_{s}\\
+ & = & \delta_{i}\left(a_{j}b_{i}c_{j}-a_{j}b_{j}c_{i}\right)\\
+ & = & \delta_{i}\left(\left(a\cdot c\right)b_{i}-\left(a\cdot b\right)c_{i}\right)\\
+ & = & \left(a\cdot c\right)b-\left(a\cdot b\right)c
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Formula $a\times\left(b\times a\right)=\left(a\times b\right)\times a=\left\Vert a\right\Vert ^{2}P_{a}^{\perp}(b)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Using anti-symmetry,
+\begin_inset Formula 
+\begin{eqnarray*}
+a\times\left(b\times a\right) & = & -a\times\left(a\times b\right)=\left(a\times b\right)\times a
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Phantom Phantom
+status open
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left(\left(a\times b\right)\times a\right)\cdot a=\det(a\times b,a,a)=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So 
+\begin_inset Formula $\left(a\times b\right)\times a$
+\end_inset
+
+ is orthogonal to 
+\begin_inset Formula $a$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The size of 
+\begin_inset Formula $\left(a\times b\right)\times a$
+\end_inset
+
+ is 
+\begin_inset Formula $\left\Vert a\right\Vert \left\Vert b\times a\right\Vert \sin90^{\circ}=\left\Vert a\right\Vert \left\Vert b\times a\right\Vert =\left\Vert a\right\Vert ^{2}\left\Vert b\right\Vert \sin(a,b)=\left\Vert a\right\Vert ^{2}\left\Vert P_{a}^{\perp}(b)\right\Vert $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Cramer's rule
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $Ax=b$
+\end_inset
+
+, where 
+\begin_inset Formula $A$
+\end_inset
+
+ is invertible, and we want to find 
+\begin_inset Formula $x$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Let's look at the determinant 
+\begin_inset Formula $\det(a_{1},\dots,a_{k-1},b,a_{k+1},\ldots,a_{n})$
+\end_inset
+
+ where we replace the 
+\begin_inset Formula $\mbox{k}^{\text{th}}$
+\end_inset
+
+ column with vector 
+\begin_inset Formula $b$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+\det(a_{1},\dots,b,\ldots,a_{n}) & = & \det(a_{1},\dots,Ax,\ldots,a_{n})\\
+ & = & \det(a_{1},\dots,a_{k}x_{k},\ldots,a_{n})\\
+ & = & x_{k}\det(A)
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Therefore, 
+\begin_inset Formula 
+\[
+x_{k}=\frac{\det(a_{1},\dots,a_{k-1},b,a_{k+1},\ldots,a_{n})}{\det(A)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Inverse of a matrix as an exterior product
+\end_layout
+
+\begin_layout Standard
+We know that 
+\begin_inset Formula $\mbox{adj}(A)A=\det\left(A\right)I$
+\end_inset
+
+, therefore, every row in 
+\begin_inset Formula $\mbox{adj}(A)$
+\end_inset
+
+ is satisfying 
+\begin_inset Formula $\left(\delta^{j}\mbox{adj}(A)\right)a_{i}=\delta_{ij}\det(A)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So,
+\begin_inset Formula 
+\[
+\left(\delta^{j}\mbox{adj}(A)\right)=\left(-1\right)^{n-j}[a_{1},\ldots,\check{a_{j}},\ldots,a_{n}]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+And we can express the inverse using the exterior product:
+\begin_inset Formula 
+\[
+\delta^{j}A^{-1}=\frac{\left(-1\right)^{n-j}[a_{1},\ldots,\check{a_{j}},\ldots,a_{n}]}{\det A}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Formula $\mbox{Vol}(a_{1},\ldots,a_{r})=\sqrt{\det A^{T}A}\qquad\left(a_{k}\in R^{n}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Using the QR decomposition, 
+\begin_inset Formula $A=QR$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+A^{T}A & = & R^{T}Q^{T}QR\\
+ & = & R^{T}R\\
+ & = & \left(\mbox{diag}(R)\right)^{2}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+By Gram-Schmidt, we know that the entries on the diagonal of 
+\begin_inset Formula $R$
+\end_inset
+
+, are the lengths of the parallelepiped heights.
+\end_layout
+
+\begin_layout Subsection
+Divergence theorem: 
+\begin_inset Formula $\oiint_{\partial V}A\cdot d\mathbf{s}=\iiint_{V}\left(\nabla\cdot A\right)dV$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We will first prove it on small rectangular cuboids that have edges which
+ are parallel to the axes.
+\end_layout
+
+\begin_layout Standard
+Imagine such a cuboid that has it's center at the point 
+\begin_inset Formula $(x,y,z)$
+\end_inset
+
+, and edges lengths of 
+\begin_inset Formula $dx,dy,dz$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+let's compute the flux flowing via the faces that are parallel to the 
+\begin_inset Formula $YZ$
+\end_inset
+
+ plane.
+ The normals are facing outwards, parallel to the 
+\begin_inset Formula $x$
+\end_inset
+
+ axis, and in opposite directions.
+ the size of each face is 
+\begin_inset Formula $dy\,dz$
+\end_inset
+
+.
+ The value of 
+\begin_inset Formula $A$
+\end_inset
+
+ on these two faces is approx 
+\begin_inset Formula $A(x+\frac{dx}{2},y,z)$
+\end_inset
+
+ and 
+\begin_inset Formula $A(x-\frac{dx}{2},y,z)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+So the flux via these two faces is:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+A(x+\frac{dx}{2},y,z)\begin{pmatrix}1\\
+0\\
+0
+\end{pmatrix}dydz-A(x-\frac{dx}{2},y,z)\begin{pmatrix}1\\
+0\\
+0
+\end{pmatrix}dydz & = & \frac{A_{1}(x+\frac{dx}{2},y,z)-A_{1}(x-\frac{dx}{2},y,z)}{dx}dxdydz\\
+ & = & \frac{\partial A_{1}(x,y,z)}{\partial x}dxdydz
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Using the same reasoning, we see that for all the faces, the total flux
+ is equal to 
+\begin_inset Formula $\nabla\cdot Adxdydz=\nabla\cdot AdV$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+For more complex volumes, we use lot's of tiny cuboids.
+ The faces of neighboring cuboids cancel each other, therefore only the
+ flux via the shell's surface is contributing.
+\end_layout
+
 \end_body
 \end_document
