@@ -2161,10 +2161,363 @@ Using Green's theorem:
 \end_layout
 
 \begin_layout Standard
-Alternative formulations (wikipedia):
+Alternative formulations:
 \begin_inset Formula 
 \[
 \frac{1}{2}\oint_{\partial S}(xdy-ydx)=\oint_{\partial S}xdy=-\oint_{\partial S}ydx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Shoelace formula
+\end_layout
+
+\begin_layout Standard
+Given a polygon 
+\begin_inset Formula $((x_{1},y_{1}),\ldots,(x_{k},y_{k}))$
+\end_inset
+
+ (counter-clockwise), compute it's area.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Phantom Phantom
+status open
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Notation: define 
+\begin_inset Formula $x_{k+1},y_{k+1}=x_{1},y_{1}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Using Green's theorem:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+\mbox{Area}(S) & = & \frac{1}{2}\oint_{\partial S}(xdy-ydx)\\
+ & = & \frac{1}{2}\sum_{i=1}^{k}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+TODO: complete this
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Green's theorem, flux form: 
+\begin_inset Formula $\oint_{\partial S}B\cdot dl=\iint_{S}\left(\nabla\cdot B\right)dxdy$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\oint_{\partial S}B\cdot dl$
+\end_inset
+
+ is the two-dimensional 
+\begin_inset Quotes eld
+\end_inset
+
+flux
+\begin_inset Quotes erd
+\end_inset
+
+ flowing out of 
+\begin_inset Formula $\partial S$
+\end_inset
+
+.
+ 
+\begin_inset Formula $dl=dr\times k$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $B$
+\end_inset
+
+ is living in the 
+\begin_inset Formula $XY$
+\end_inset
+
+ plane, 
+\begin_inset Formula $\nabla\cdot B=\frac{\partial B_{1}}{\partial x}+\frac{\partial B_{2}}{\partial y}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Phantom Phantom
+status open
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+TODO: complete this
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+How to compute flux on a manifold in parametric form
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+Not sure if this is ok, but i'm interpreting 
+\begin_inset Quotes eld
+\end_inset
+
+parametric
+\begin_inset Quotes erd
+\end_inset
+
+ differently here and in 
+\begin_inset Quotes eld
+\end_inset
+
+How to compute a path integral on a path in parametric form
+\begin_inset Quotes erd
+\end_inset
+
+ below
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Phantom Phantom
+status open
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Given a manifold as a list of constraints functions 
+\begin_inset Formula $g(x,y,z)=0$
+\end_inset
+
+, and a parametrization 
+\begin_inset Formula $x(u,v)$
+\end_inset
+
+, 
+\begin_inset Formula $y(u,v)$
+\end_inset
+
+, 
+\begin_inset Formula $z(u,v)$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\iintop_{S}A\cdot\mathbf{dS}=\iintop_{(U,V)}\begin{pmatrix}A_{1}(x(u,v),y(u,v),z(u,v))\\
+A_{2}(x(u,v),y(u,v),z(u,v))\\
+A_{3}(x(u,v),y(u,v),z(u,v))
+\end{pmatrix}\cdot\left(\mathbf{du}\times\mathbf{dv}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Where 
+\begin_inset Formula $\mathbf{du=\begin{pmatrix}\frac{\partial x}{\partial u}\\
+\frac{\partial y}{\partial u}\\
+\frac{\partial z}{\partial u}
+\end{pmatrix}}$
+\end_inset
+
+, 
+\begin_inset Formula $\mathbf{dv=\begin{pmatrix}\frac{\partial x}{\partial v}\\
+\frac{\partial y}{\partial v}\\
+\frac{\partial z}{\partial v}
+\end{pmatrix}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+How to compute flux on a manifold in graph form
+\end_layout
+
+\begin_layout Standard
+Given a manifold 
+\begin_inset Formula $z=f(x,y)$
+\end_inset
+
+, we use the 
+\begin_inset Quotes eld
+\end_inset
+
+parametrization
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset Formula $x(x,y)=x$
+\end_inset
+
+, 
+\begin_inset Formula $y(x,y)=y$
+\end_inset
+
+, 
+\begin_inset Formula $z(x,y)=f(x,y)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+\iintop_{S}A\cdot\mathbf{dS} & = & \iintop_{(U,V)}\begin{pmatrix}A_{1}(x,y,f(x,y))\\
+A_{2}(x,y,f(x,y))\\
+A_{3}(x,y,f(x,y))
+\end{pmatrix}\cdot\left(\begin{pmatrix}1\\
+0\\
+\frac{\partial f}{\partial x}
+\end{pmatrix}\times\begin{pmatrix}0\\
+1\\
+\frac{\partial f}{\partial y}
+\end{pmatrix}\right)\\
+ & = & \iintop_{(U,V)}\begin{pmatrix}A_{1}(x,y,f(x,y))\\
+A_{2}(x,y,f(x,y))\\
+A_{3}(x,y,f(x,y))
+\end{pmatrix}\cdot\begin{pmatrix}-\frac{\partial f}{\partial x}\\
+-\frac{\partial f}{\partial y}\\
+1
+\end{pmatrix}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+How to compute a path integral on a path in parametric form
+\end_layout
+
+\begin_layout Standard
+Given a path 
+\begin_inset Formula $\gamma(t)=\begin{pmatrix}\gamma_{1}(t)\\
+\gamma_{2}(t)\\
+\gamma_{3}(t)
+\end{pmatrix}$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\intop_{\gamma}A\cdot dr=\intop_{t}\left(A(\gamma_{1}(t),\gamma_{2}(t),\gamma_{3}(t))\right)\cdot\begin{pmatrix}\gamma_{1}^{\prime}(t)\\
+\gamma_{2}^{\prime}(t)\\
+\gamma_{3}^{\prime}(t)
+\end{pmatrix}dt
 \]
 
 \end_inset
