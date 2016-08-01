@@ -1669,5 +1669,302 @@ For more complex volumes, we use lot's of tiny cuboids.
  flux via the shell's surface is contributing.
 \end_layout
 
+\begin_layout Subsection
+Manifolds defined by regular values
+\end_layout
+
+\begin_layout Standard
+Prove that if 
+\begin_inset Formula $g:U\subseteq R^{n}\to R^{k}\;C^{\infty}$
+\end_inset
+
+ and 
+\begin_inset Formula $c\in R^{k}$
+\end_inset
+
+ is a regular value, then 
+\begin_inset Formula $M=\left\{ x\in R^{n}|g(x)=c\right\} $
+\end_inset
+
+ is a manifold with co-dimension 
+\begin_inset Formula $k$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Phantom Phantom
+status open
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Since 
+\begin_inset Formula $c$
+\end_inset
+
+ is a regular value, on every point in 
+\begin_inset Formula $M$
+\end_inset
+
+ we have that 
+\begin_inset Formula $dg$
+\end_inset
+
+ is full rank, and we can use the implicit function theorem and have a patch
+ with 
+\begin_inset Formula $k$
+\end_inset
+
+ constraints, that is co-dimension 
+\begin_inset Formula $k$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+The manifold of the orthogonal matrices
+\end_layout
+
+\begin_layout Standard
+Show that the orthogonal matrices are a manifold of dimension 
+\begin_inset Formula $\frac{n(n-1)}{2}$
+\end_inset
+
+ in the space of square matrices of order 
+\begin_inset Formula $n$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Phantom Phantom
+status open
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The constraints for being an orthogonal matrix are 
+\begin_inset Formula $A^{T}A=I$
+\end_inset
+
+.
+ That is, the constraints are 
+\begin_inset Formula $a_{i1}a_{j1}+\ldots+a_{in}a_{jn}=\delta_{ij}$
+\end_inset
+
+.
+ Since it's redundant to take twice the constraint for rows 
+\begin_inset Formula $i,j$
+\end_inset
+
+, we are left with 
+\begin_inset Formula $\frac{n(n+1)}{2}$
+\end_inset
+
+ constraints.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Phantom Phantom
+status open
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Define 
+\begin_inset Formula $g(A)=A^{T}A$
+\end_inset
+
+.
+ It is not exactly the constraints function, since in addition to the constraint
+s, it also has duplicate constraints.
+ To be more precise, the constraints are the lower (or upper, they are the
+ same) triangle of 
+\begin_inset Formula $g(A)=I$
+\end_inset
+
+, including the diagonal.
+\end_layout
+
+\begin_layout Standard
+We need to show that 
+\begin_inset Formula $d(\mbox{constraints function})$
+\end_inset
+
+ is surjective, i.e.
+ has full rank, which is what is needed to use the implicit function theorem
+ and prove that the orthogonal matrices are a manifold.
+ Instead we will show that 
+\begin_inset Formula $dg$
+\end_inset
+
+ is 
+\begin_inset Quotes eld
+\end_inset
+
+surjective
+\begin_inset Quotes erd
+\end_inset
+
+ onto all the symmetric matrices.
+ which is the same thing.
+ 
+\begin_inset Formula 
+\begin{eqnarray*}
+dg_{A}h & = & \lim_{t\to0}\frac{(A+th)^{T}(A+th)-A^{T}A}{t}\\
+ & = & A^{T}h+h^{T}A
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $B$
+\end_inset
+
+ be any symmetric matrix 
+\begin_inset Formula $n\times n$
+\end_inset
+
+, use 
+\begin_inset Formula $h=\frac{1}{2}AB$
+\end_inset
+
+
+\begin_inset Formula 
+\begin{eqnarray*}
+A^{T}h+h^{T}A & = & \frac{1}{2}A^{T}AB+\frac{1}{2}B^{T}A^{T}A\\
+ & = & \frac{1}{2}B+\frac{1}{2}B^{T}\\
+ & = & B
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Therefore completing the proof that the orthogonal matrices are a manifold.
+\end_layout
+
+\begin_layout Standard
+Since we have 
+\begin_inset Formula $\frac{n(n+1)}{2}$
+\end_inset
+
+ constraints, the dimension of the manifold is 
+\begin_inset Formula $n^{2}-\frac{n(n+1)}{2}=\frac{n(n-1)}{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+The tangent plane to the manifold of orthogonal matrices at the point of
+ the identity is the antisymmetric matrices
+\end_layout
+
+\begin_layout Standard
+The tangent plane at a point 
+\begin_inset Formula $A$
+\end_inset
+
+ (where 
+\begin_inset Formula $A$
+\end_inset
+
+ is a 
+\begin_inset Formula $n\times n$
+\end_inset
+
+ matrix), is the kernel of 
+\begin_inset Formula $d(\mbox{constraints function})$
+\end_inset
+
+, which is the same as the kernel of 
+\begin_inset Formula $dg$
+\end_inset
+
+ (
+\begin_inset Formula $g$
+\end_inset
+
+ as defined above).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+dg_{I}h & = & I^{T}h+h^{T}I\\
+ & = & h+h^{T}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Find the kernel,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+0=h+h^{T}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+h=-h^{T}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+And the kernel is the antisymmetric matrices.
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
 \end_body
 \end_document
