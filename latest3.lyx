@@ -1962,5 +1962,215 @@ For more complex volumes, we use lot's of tiny cuboids.
  flux via the shell's surface is contributing.
 \end_layout
 
+\begin_layout Subsection
+Green's theorem, circulation form: 
+\begin_inset Formula $\oint_{\partial S}(A_{1}dx+A_{2}dy)=\iint_{S}(\frac{\partial A_{2}}{\partial x}-\frac{\partial A_{1}}{\partial y})dxdy$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We will show this is true on small aligned rectangles.
+ since the flux on the edges of neighboring rectangles cancel each other,
+ only the flux on the delimiting contour will contribute to the integral.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Phantom Phantom
+status open
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Imagine a rectangle centered at 
+\begin_inset Formula $(x,y)$
+\end_inset
+
+, with edges that are parallel to the axes, and with lengths of 
+\begin_inset Formula $dx,\,dy$
+\end_inset
+
+.
+ Let's compute the flux on the edges:
+\end_layout
+
+\begin_layout Standard
+Left edge:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A(x+\frac{dx}{2},y)\begin{pmatrix}0\\
+1
+\end{pmatrix}dy
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Right edge:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A(x-\frac{dx}{2},y)\begin{pmatrix}0\\
+-1
+\end{pmatrix}dy
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Top edge:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A(x,y+\frac{dy}{2})\begin{pmatrix}1\\
+0
+\end{pmatrix}dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Bottom edge:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A(x,y-\frac{dy}{2})\begin{pmatrix}-1\\
+0
+\end{pmatrix}dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+TODO: missing a minus sign here..
+\end_layout
+
+\begin_layout Plain Layout
++the normals don't make sense
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+All in all:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{A_{2}(x+\frac{dx}{2},y)-A_{2}(x-\frac{dx}{2},y)}{dx}dxdy-\frac{A_{1}(x,y+\frac{dy}{2})-A_{1}(x,y-\frac{dy}{2})}{dy}dxdy
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=\left(\frac{\partial A_{2}(x,y)}{\partial x}-\frac{\partial A_{1}(x,y)}{\partial y}\right)dxdy
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Planimeter formula for calculating an area using circulation
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $A=\frac{1}{2}\begin{pmatrix}-y\\
+x
+\end{pmatrix}$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\iint_{S}(\frac{\partial A_{2}}{\partial x}-\frac{\partial A_{1}}{\partial y})dxdy=\iint_{S}(\frac{1}{2}+\frac{1}{2})dxdy=\mbox{Area}(S)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Using Green's theorem:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{1}{2}\oint_{\partial S}(xdy-ydx)=\mbox{Area}(S)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Alternative formulations (wikipedia):
+\begin_inset Formula 
+\[
+\frac{1}{2}\oint_{\partial S}(xdy-ydx)=\oint_{\partial S}xdy=-\oint_{\partial S}ydx
+\]
+
+\end_inset
+
+
+\end_layout
+
 \end_body
 \end_document
