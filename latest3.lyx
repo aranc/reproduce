@@ -1366,11 +1366,11 @@ Therefore
 \end_layout
 
 \begin_layout Subsection
-Exterior product
+Cross product
 \end_layout
 
 \begin_layout Standard
-Define the exterior product 
+Define the cross product 
 \begin_inset Formula $[a_{1},\ldots,a_{n-1}]$
 \end_inset
 
@@ -1399,7 +1399,7 @@ If the vectors
 \begin_inset Formula $a_{1},\ldots,a_{n-1}$
 \end_inset
 
- are dependent, than their exterior product is the 
+ are dependent, than their cross product is the 
 \begin_inset Formula $0$
 \end_inset
 
@@ -1411,8 +1411,8 @@ Otherwise,
 \begin_inset Formula $\forall k\in1..n-1\quad[a_{1},\ldots,a_{n-1}]a_{k}=\det(a_{1},\dots,a_{n-1},a_{k})=0$
 \end_inset
 
- and the exterior product is a vector in the orthogonal complement to the
- sub-space of rank 
+ and the cross product is a vector in the orthogonal complement to the sub-space
+ of rank 
 \begin_inset Formula $n-1$
 \end_inset
 
@@ -1619,7 +1619,7 @@ x_{k}=\frac{\det(a_{1},\dots,a_{k-1},b,a_{k+1},\ldots,a_{n})}{\det(A)}
 \end_layout
 
 \begin_layout Subsection
-Inverse of a matrix as an exterior product
+Inverse of a matrix as a cross product
 \end_layout
 
 \begin_layout Standard
@@ -1651,7 +1651,7 @@ So,
 \end_layout
 
 \begin_layout Standard
-And we can express the inverse using the exterior product:
+And we can express the inverse using the cross product:
 \begin_inset Formula 
 \[
 \delta^{j}A^{-1}=\frac{\left(-1\right)^{n-j}[a_{1},\ldots,\check{a_{j}},\ldots,a_{n}]}{\det A}
