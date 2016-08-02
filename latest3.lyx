@@ -6,6 +6,13 @@
 \begin_preamble
 \date{}
 \usepackage{tikz}
+\usepackage{xcolor}
+\hypersetup{
+    colorlinks,
+    linkcolor={black!50!black},
+    citecolor={blue!50!black},
+    urlcolor={blue!80!black}
+}
 \end_preamble
 \use_default_options true
 \maintain_unincluded_children false
@@ -30,7 +37,16 @@
 \index_command default
 \paperfontsize default
 \spacing single
-\use_hyperref false
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref section
+\pdf_pdfusetitle false
 \papersize default
 \use_geometry false
 \use_package amsmath 1
@@ -204,7 +220,8 @@ If
  & = & r!\,\begin{vmatrix}I_{r\times r} & 0\\
 0 & \left(\delta_{j_{1}},\dots,\delta_{j_{n-r}}\right)^{T}\left(\delta_{k_{1}},\dots,\delta_{k_{n-r}}\right)
 \end{vmatrix}\\
- & = & r!\mbox{\ det}\!\left(\left(\delta_{j_{1}},\dots,\delta_{j_{n-r}}\right)^{T}\left(\delta_{k_{1}},\dots,\delta_{k_{n-r}}\right)\right)
+ & = & r!\mbox{\ det}\!\left(\left(\delta_{j_{1}},\dots,\delta_{j_{n-r}}\right)^{T}\left(\delta_{k_{1}},\dots,\delta_{k_{n-r}}\right)\right)\\
+ & = & r!\sum_{\sigma\in S_{n-r}}\mbox{sgn}(\sigma)\delta_{k_{\sigma(1)}}^{j_{1}}\cdots\delta_{k_{\sigma(n-r)}}^{j_{n-r}}
 \end{eqnarray*}
 
 \end_inset
@@ -335,7 +352,6 @@ When
 \end_layout
 
 \begin_layout Standard
-k
 \begin_inset Formula 
 \begin{eqnarray*}
 \varepsilon_{ijk}\varepsilon_{irs} & = & 1!\ det\!\left((\delta_{j},\delta_{k})^{T}(\delta_{r},\delta_{s})\right)\\
@@ -369,7 +385,7 @@ When
 \end_inset
 
 : We are not given any indexes, we run on all the possible indexes.
- only indexes that are permutation survive, so we actually count the number
+ Only indexes that are permutation survive, so we actually count the number
  of permutations.
 \begin_inset Formula 
 \[
@@ -553,7 +569,39 @@ Multi-linear implies homogeneous in every variable.
 \end_layout
 
 \begin_layout Standard
-Shear invariant: 
+We will show that if 
+\begin_inset Formula $V$
+\end_inset
+
+ is alternating then 
+\begin_inset Formula $V(\dots,b,\ldots,b,\ldots)=0$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+V(\dots,b,\ldots,b,\ldots)=-V(\dots,b,\ldots,b,\ldots)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We are not using a field with characteristic two, and the result follows
+ .r
+\end_layout
+
+\begin_layout Standard
+We will show that 
+\begin_inset Formula $V$
+\end_inset
+
+ is shear invariant: 
 \begin_inset Formula 
 \begin{eqnarray*}
 V(a_{1},\ldots,a_{k}+\sum_{j\neq k}\alpha_{j}a_{j},\ldots,a_{n}) & = & V(a_{1},\ldots,a_{k},\ldots,a_{n})+\sum_{j\neq k}\alpha_{j}V(a_{1},\ldots,a_{j},\ldots,a_{n})\\
@@ -590,16 +638,112 @@ A
 \end_layout
 
 \begin_layout Standard
+\begin_inset Phantom Phantom
+status open
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Proof that if 
+\begin_inset Formula $a_{1},\ldots,a_{n}$
+\end_inset
+
+ are linearly dependent, then 
+\begin_inset Formula $V(a_{1},\ldots,a_{n})=0$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+If one of the vectors is 
+\begin_inset Formula $0$
+\end_inset
+
+, then from homogeneity 
+\begin_inset Formula $V(a_{1},\ldots,a_{n})=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If one of the vectors is a linear combination of the other vectors, the
+ from shear invariant and the proposition above 
+\begin_inset Formula $V(a_{1},\ldots,a_{n})=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Phantom Phantom
+status open
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We want to prove that 
+\begin_inset Formula $V(a_{1},\ldots,x+y,\ldots,a_{n})=V(a_{1},\ldots,x,\ldots,a_{n})+V(a_{1},\ldots,y,\ldots,a_{n})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If both 
+\begin_inset Formula $(a_{1},\ldots,x,\ldots a_{n})$
+\end_inset
+
+ and 
+\begin_inset Formula $(a_{1},\ldots,y,\ldots a_{n})$
+\end_inset
+
+ are linearly dependent, than so is 
+\begin_inset Formula $(a_{1},\ldots,x+y,\ldots a_{n})$
+\end_inset
+
+ and the equality follows.
+\end_layout
+
+\begin_layout Standard
+Otherwise, at least one of them is not linearly dependent, and can be used
+ as a base:
+\end_layout
+
+\begin_layout Standard
+Without loss of generality 
+\begin_inset Formula $(a_{1}\ldots,x,\ldots a_{n})$
+\end_inset
+
+ is a base.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Formula 
 \begin{eqnarray*}
-V(a_{1},\ldots,a_{k}+b,\ldots,a_{n}) & = & V(a_{1},\ldots,a_{k}+\sum_{j=1}^{n}\beta_{j}a_{j},\ldots,a_{n})\\
- & = & V(a_{1},\ldots,a_{k}+\beta_{k}a_{k},\ldots,a_{n})\\
- & = & V(a_{1},\ldots,(1+\beta_{k})a_{k},\ldots,a_{n})\\
- & = & (1+\beta_{k})V(a_{1},\ldots,a_{k},\ldots,a_{n})\\
- & = & V(a_{1},\ldots,a_{k},\ldots,a_{n})+\beta_{k}V(a_{1},\ldots,a_{k},\ldots,a_{n})\\
- & = & V(a_{1},\ldots,a_{k},\ldots,a_{n})+V(a_{1},\ldots,\beta_{k}a_{k},\ldots,a_{n})\\
- & = & V(a_{1},\ldots,a_{k},\ldots,a_{n})+V(a_{1},\ldots,\sum_{j=1}^{n}\beta_{j}a_{j},\ldots,a_{n})\\
- & = & V(a_{1},\ldots,a_{k},\ldots,a_{n})+V(a_{1},\ldots,b,\ldots,a_{n})
+V(a_{1},\ldots,x+y,\ldots,a_{n}) & = & V(a_{1},\ldots,x+\sum_{j\ne k}\beta_{j}a_{j}+\beta_{k}x,\ldots,a_{n})\\
+ & = & V(a_{1},\ldots,x+\beta_{k}x,\ldots,a_{n})\\
+ & = & V(a_{1},\ldots,(1+\beta_{k})x,\ldots,a_{n})\\
+ & = & (1+\beta_{k})V(a_{1},\ldots,x,\ldots,a_{n})\\
+ & = & V(a_{1},\ldots,x,\ldots,a_{n})+\beta_{k}V(a_{1},\ldots,x,\ldots,a_{n})\\
+ & = & V(a_{1},\ldots,x,\ldots,a_{n})+V(a_{1},\ldots,\beta_{k}x,\ldots,a_{n})\\
+ & = & V(a_{1},\ldots,x,\ldots,a_{n})+V(a_{1},\ldots,\sum_{j\ne k}\beta_{j}a_{j}+\beta_{k}x,\ldots,a_{n})\\
+ & = & V(a_{1},\ldots,x,\ldots,a_{n})+V(a_{1},\ldots,y,\ldots,a_{n})
 \end{eqnarray*}
 
 \end_inset
@@ -676,7 +820,7 @@ For every multi-linear alternating
 \end_inset
 
 : 
-\begin_inset Formula $\varphi(a_{1},\ldots,a_{n})=\mbox{det}(A)\ \varphi(\delta_{1},\ldots,\delta_{n})$
+\begin_inset Formula $\varphi(a_{1},\ldots,a_{n})=\textnormal{det}(A)\ \varphi(\delta_{1},\ldots,\delta_{n})$
 \end_inset
 
 
@@ -685,33 +829,11 @@ For every multi-linear alternating
 \begin_layout Standard
 \begin_inset Formula 
 \begin{eqnarray*}
-\varphi(a_{1},\ldots,a_{n}) & = & \varphi(\sum_{i_{1}}\delta^{i_{1}}a_{1}\delta_{1},\ldots,\sum_{i_{n}}\delta^{i_{n}}a_{n}\delta_{n})\\
- & = & \sum_{\sigma\in S_{n}}\varphi(\delta^{\sigma(1)}a_{1}\delta_{1},\ldots,\delta^{\sigma(n)}a_{n}\delta_{n})\\
- & = & \sum_{\sigma\in S_{n}}\prod_{k}\delta^{\sigma(k)}A\delta_{k}\varphi(\delta_{1},\ldots,\delta_{n})
+\varphi(a_{1},\ldots,a_{n}) & = & \varphi(\delta_{i_{1}}\delta^{i_{1}}a_{1},\ldots,\delta_{i_{n}}\delta^{i_{n}}a_{n})\\
+ & = & \delta^{i_{1}}a_{1}\dots\delta^{i_{n}}a_{n}\varphi(\delta_{i_{1}},\ldots,\delta_{i_{n}})\\
+ & = & \varepsilon_{i_{1}\dots\varepsilon_{n}}\delta^{i_{1}}a_{1}\dots\delta^{i_{n}}a_{n}\varphi(\delta_{1},\ldots,\delta_{n})\\
+ & = & \sum_{\sigma\in S_{n}}\mbox{sgn}(\sigma)\prod_{k}\delta^{\sigma(k)}A\delta_{k}\varphi(\delta_{1},\ldots,\delta_{n})
 \end{eqnarray*}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Box Boxed
-position "t"
-hor_pos "c"
-has_inner_box 1
-inner_pos "t"
-use_parbox 0
-use_makebox 0
-width "100col%"
-special "none"
-height "1in"
-height_special "totalheight"
-status open
-
-\begin_layout Plain Layout
-TODO: what about sgn?
-\end_layout
 
 \end_inset
 
@@ -806,7 +928,7 @@ Transpose:
  & = & \underset{\sigma\in S_{n}}{\sum}\mbox{sgn}(\sigma)\underset{k}{\prod}\delta^{k}A\delta_{\sigma(k)}\\
  & = & \underset{\sigma\in S_{n}}{\sum}\mbox{sgn}(\sigma^{-1})\underset{k}{\prod}\delta^{\sigma^{-1}(k)}A\delta_{k}\\
  & = & \underset{\tau\in S_{n}}{\sum}\mbox{sgn}(\tau)\underset{k}{\prod}\delta^{\tau(k)}A\delta_{k}\\
- & = & \mbox{det}(B)
+ & = & \mbox{det}(A)
 \end{eqnarray*}
 
 \end_inset
@@ -1009,7 +1131,7 @@ A
 \end_layout
 
 \begin_layout Standard
-Further more, define a matrix 
+Furthermore, define a matrix 
 \begin_inset Formula $C$
 \end_inset
 
