@@ -542,6 +542,7 @@ Stokes theorem
 \begin_layout Standard
 \begin_inset Graphics
 	filename pics/stokes.png
+	lyxscale 50
 	scale 30
 
 \end_inset
@@ -558,13 +559,41 @@ We will show Stokes theorem for small triangles, and we will build more
 Imagine a triangle, if the triangle is parallel to any axial plane, we are
  done.
  Otherwise, complete the triangle to a pyramid with faces parallel to the
- axial planes (Note: still not sure how to justify this is possible.)
+ axial planes.
 \end_layout
 
 \begin_layout Standard
-The circulations of the neighboring triangles cancel at the shared edges.
- Choose the direction of circulation in the original triangle to be compatible
+Choose the orientation of the circulation in the back triangles to be counterclo
+ckwise when viewed from the positive side of the axis perpendicular to it.
+ The circulations of the neighboring triangles cancel at shared edges.
+ Choose the orientation of circulation in the original triangle to be compatible
  with the other triangles.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\ointop_{\triangle}A\cdot d\mathbf{r} & =\ointop_{\triangle_{xy}}A\cdot d\mathbf{r}+\ointop_{\triangle_{yz}}A\cdot d\mathbf{r}+\ointop_{\triangle_{xz}}A\cdot d\mathbf{r} & \mbox{(Note: why not minus the sum?)}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{gather*}
+\ointop_{\triangle_{xy}}A\cdot d\mathbf{r}=\iintop_{\triangle_{xy}}\left(\nabla\times A\right)\cdot\mathbf{k}\,dx\,dy=\iintop_{\triangle_{xy}}\left(\nabla\times A\right)\cdot\mathbf{k}\,(\mathbf{k}\cdot\mathbf{\hat{n})}ds
+\end{gather*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Note: I don't understand the second equality.
 \end_layout
 
 \begin_layout Subsection
