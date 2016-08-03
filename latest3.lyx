@@ -2380,9 +2380,24 @@ Using Green's theorem:
 
 \begin_layout Standard
 \begin_inset Formula 
+\[
+\mbox{Area}(S)=\frac{1}{2}\left(\oint_{\partial S}(xdy)-\oint_{\partial S}ydx\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
 \begin{eqnarray*}
-\mbox{Area}(S) & = & \frac{1}{2}\oint_{\partial S}(xdy-ydx)\\
- & = & \frac{1}{2}\sum_{i=1}^{k}
+\oint_{\partial S}(xdy) & = & \sum_{k=1}^{k+1}\intop_{t=0}^{t=1}\left(x_{k}+\left(x_{k+1}-x_{k}\right)t\right)d\left(y_{k}+\left(y_{k+1}-y_{k}\right)t\right)\\
+ & = & \sum_{k=1}^{k+1}\intop_{t=0}^{t=1}\left(x_{k}+\left(x_{k+1}-x_{k}\right)t\right)\left(y_{k+1}-y_{k}\right)dt\\
+ & = & \sum_{k=1}^{k+1}\left(y_{k+1}-y_{k}\right)\left[x_{k}t+\left(x_{k+1}-x_{k}\right)\frac{t^{2}}{2}\right]_{t=0}^{1}\\
+ & = & \sum_{k=1}^{k+1}\left(y_{k+1}-y_{k}\right)\left(x_{k}+\frac{\left(x_{k+1}-x_{k}\right)}{2}\right)\\
+ & = & \frac{1}{2}\sum_{k=1}^{k+1}\left(y_{k+1}-y_{k}\right)\left(x_{k+1}+x_{k}\right)\\
+ & = & \frac{1}{2}\sum_{k=1}^{k+1}\left(x_{k}y_{k+1}-x_{k+1}y_{k}-x_{k}y_{k}+x_{k+1}y_{k+1}\right)
 \end{eqnarray*}
 
 \end_inset
@@ -2391,22 +2406,24 @@ Using Green's theorem:
 \end_layout
 
 \begin_layout Standard
-\begin_inset Box Boxed
-position "t"
-hor_pos "c"
-has_inner_box 1
-inner_pos "t"
-use_parbox 0
-use_makebox 0
-width "100col%"
-special "none"
-height "1in"
-height_special "totalheight"
-status open
+\begin_inset Formula 
+\[
+\oint_{\partial S}ydx=\frac{1}{2}\sum_{k=1}^{k+1}\left(y_{k}x_{k+1}-y_{k+1}x_{k}-y_{k}x_{k}+y_{k+1}x_{k+1}\right)
+\]
 
-\begin_layout Plain Layout
-TODO: complete this
+\end_inset
+
+
 \end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+\mbox{Area}(S) & = & \frac{1}{2}\sum_{k=1}^{k+1}\left(x_{k}y_{k+1}-x_{k+1}y_{k}\right)\\
+ & = & \frac{1}{2}\sum_{k=1}^{k+1}\begin{vmatrix}x_{k} & y_{k}\\
+x_{k+1} & y_{k+1}
+\end{vmatrix}
+\end{eqnarray*}
 
 \end_inset
 
@@ -2415,31 +2432,23 @@ TODO: complete this
 
 \begin_layout Subsection
 Green's theorem, flux form: 
-\begin_inset Formula $\oint_{\partial S}B\cdot dl=\iint_{S}\left(\nabla\cdot B\right)dxdy$
+\begin_inset Formula $\oint_{\partial S}B\cdot d\ell=\iint_{S}\left(\nabla\cdot B\right)dxdy$
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $\oint_{\partial S}B\cdot dl$
+\begin_inset Formula $\oint_{\partial S}B\cdot d\ell$
 \end_inset
 
- is the two-dimensional 
-\begin_inset Quotes eld
-\end_inset
-
-flux
-\begin_inset Quotes erd
-\end_inset
-
- flowing out of 
+ is the two-dimensional flux flowing out of 
 \begin_inset Formula $\partial S$
 \end_inset
 
 .
  
-\begin_inset Formula $dl=dr\times k$
+\begin_inset Formula $d\ell=dr\times k$
 \end_inset
 
 .
@@ -2474,22 +2483,14 @@ A
 \end_layout
 
 \begin_layout Standard
-\begin_inset Box Boxed
-position "t"
-hor_pos "c"
-has_inner_box 1
-inner_pos "t"
-use_parbox 0
-use_makebox 0
-width "100col%"
-special "none"
-height "1in"
-height_special "totalheight"
-status open
-
-\begin_layout Plain Layout
-TODO: complete this
-\end_layout
+\begin_inset Formula 
+\begin{eqnarray*}
+\ointop_{\partial S}B\cdot d\ell & = & \ointop_{\partial S}\left(k\times B\right)\cdot\left(k\times d\ell\right)\\
+ & = & \ointop_{\partial S}\left(k\times B\right)\cdot dr\\
+ & = & \iintop_{S}(\frac{\partial\left(k\times B\right)_{2}}{\partial x}-\frac{\partial\left(k\times B\right)_{1}}{\partial y})dxdy\\
+ & = & \iintop_{S}(\frac{\partial B_{1}}{\partial x}+\frac{\partial B_{2}}{\partial y})dxdy\\
+ & = & \iintop_{S}\left(\nabla\cdot B\right)dxdy
+\end{eqnarray*}
 
 \end_inset
 
