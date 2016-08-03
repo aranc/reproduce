@@ -540,74 +540,9 @@ Stokes theorem
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{tikzpicture}[y=0.80pt, x=0.80pt, yscale=-0.300000, xscale=0.300000, inner
- sep=0pt, outer sep=0pt, line cap=rect,miter limit=10.00]   
-\backslash
-path[fill=black,fill opacity=0.000,nonzero rule] (0.0000,0.0000) --     (430.2257,0.0
-000) -- (430.2257,453.8819) -- (0.0000,453.8819) -- cycle;   
-\backslash
-path[fill=black,fill opacity=0.000,nonzero rule] (186.5643,300.6483) --   
-  (186.5643,7.9239);   
-\backslash
-path[draw=black,line join=round,line cap=butt,even odd rule,line width=0.240pt]
-     (186.5643,300.6483) -- (186.5643,13.9239);   
-\backslash
-path[draw=black,fill=black,line cap=butt,even odd rule,line width=0.240pt]
-     (188.2160,13.9239) -- (186.5643,9.3858) -- (184.9126,13.9239) -- cycle; 
-  
-\backslash
-path[fill=black,fill opacity=0.000,nonzero rule] (186.3990,300.1024) --   
-  (10.6194,441.0787);   
-\backslash
-path[draw=black,line join=round,line cap=butt,even odd rule,line width=0.240pt]
-     (186.3990,300.1024) -- (15.3001,437.3248);   
-\backslash
-path[draw=black,fill=black,line cap=butt,even odd rule,line width=0.240pt]
-     (14.2666,436.0363) -- (11.7599,440.1641) -- (16.3335,438.6134) -- cycle;
-   
-\backslash
-path[fill=black,fill opacity=0.000,nonzero rule] (188.0420,300.6483) --   
-  (399.4436,384.9318);   
-\backslash
-path[draw=black,line join=round,line cap=butt,even odd rule,line width=0.240pt]
-     (188.0420,300.6483) -- (393.8702,382.7097);   
-\backslash
-path[draw=black,fill=black,line cap=butt,even odd rule,line width=0.240pt]
-     (393.2585,384.2440) -- (398.0856,384.3904) -- (394.4819,381.1754) -- cycle;
-   
-\backslash
-path[fill=black,fill opacity=0.000,nonzero rule] (188.0420,78.8819) --    
- (80.1050,386.4094);   
-\backslash
-path[draw=black,line join=round,line cap=butt,nonzero rule,line width=0.240pt]
-     (188.0420,78.8819) -- (80.1050,386.4094);   
-\backslash
-path[fill=black,fill opacity=0.000,nonzero rule] (84.5512,383.4409) --    
- (328.4882,358.3071);   
-\backslash
-path[draw=black,line join=round,line cap=butt,nonzero rule,line width=0.240pt]
-     (84.5512,383.4409) -- (328.4882,358.3071);   
-\backslash
-path[fill=black,fill opacity=0.000,nonzero rule] (328.4934,359.7874) --   
-  (186.5722,84.7953);   
-\backslash
-path[draw=black,line join=round,line cap=butt,nonzero rule,line width=0.240pt]
-     (328.4934,359.7874) -- (186.5722,84.7953);
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{tikzpicture}  
-\end_layout
+\begin_inset Graphics
+	filename pics/stokes.png
+	scale 30
 
 \end_inset
 
