@@ -145,20 +145,6 @@ Segment the image of
 
 \begin_layout Standard
 \begin_inset Formula 
-\begin{eqnarray*}
-EX & \approx & \frac{1}{n}\sum_{b\in bins}\left(\mbox{average value in }b\right)\cdot\left(\mbox{number of samples from \ensuremath{b}}\right)\\
- & \approx & \frac{1}{n}\sum\biggl(x\biggr)\cdot\left(n\cdot P(x<X\le x+\frac{1}{n})\right)\\
- & \approx & \sum x\cdot P(x<X\le x+\frac{1}{n})\\
- & \approx & \intop_{-\infty}^{\infty}xf_{X}(x)dx
-\end{eqnarray*}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
 \begin{align*}
 EX & \approx\frac{1}{n}\sum_{b\in bins}\left(\mbox{average value in }b\right)\cdot\left(\mbox{number of samples from \ensuremath{b}}\right)\\
  & \approx\frac{1}{n}\sum\biggl(x\biggr)\cdot\left(n\cdot P(x<X\le x+\frac{1}{n})\right)\\
@@ -222,25 +208,6 @@ We will show that if
 
 \begin_layout Standard
 \begin_inset Formula 
-\begin{eqnarray*}
-EX & = & \intop_{-\infty}^{\infty}xf_{X}(x)dx\\
- & = & \intop_{-\infty}^{0}xf_{X}(x)dx+\intop_{0}^{\infty}xf_{X}(x)dx\\
-\biggl[\begin{array}{c}
-y=-x\\
-dy=-dx
-\end{array}\biggr] & \mbox{}\\
- & = & \intop_{\infty}^{0}\left(-y\right)f_{X}(-y)\left(-dy\right)+\intop_{0}^{\infty}xf_{X}(x)dx\\
- & = & -\intop_{0}^{\infty}yf_{X}(y)dy+\intop_{0}^{\infty}xf_{X}(x)dx\\
- & = & 0
-\end{eqnarray*}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
 \begin{align*}
 EX & =\intop_{-\infty}^{\infty}xf_{X}(x)dx\\
  & =\intop_{-\infty}^{0}xf_{X}(x)dx+\intop_{0}^{\infty}xf_{X}(x)dx\\
@@ -291,6 +258,10 @@ dy=dx
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Standard
 
 \end_layout
 
