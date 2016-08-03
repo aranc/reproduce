@@ -1698,20 +1698,15 @@ By Gram-Schmidt, we know that the entries on the diagonal of
 \end_layout
 
 \begin_layout Standard
-(hint: 
-\begin_inset Formula $Q^{T}A=Q^{T}QR=R$
+(See latest #4 
+\begin_inset Quotes eld
 \end_inset
 
-, and we get 
-\begin_inset Formula $R_{ii}=q_{i}\cdot a_{i}=\frac{P^{\perp}(a_{i})}{\left|P^{\perp}(a_{i})\right|}\cdot\left(P^{\perp}(a_{i})+P^{\parallel}(a_{i})\right)=\frac{\left|P^{\perp}(a_{i})\right|^{2}}{\left|P^{\perp}(a_{i})\right|}=\left|P^{\perp}(a_{i})\right|$
+Inverting Gram-Schmidt
+\begin_inset Quotes erd
 \end_inset
 
-.
- Where the projection operator is on the space spanned by 
-\begin_inset Formula $sp(q_{1},\ldots,q_{n})=sp(a_{1},\ldots,a_{n})$
-\end_inset
-
-
+ for proof)
 \end_layout
 
 \begin_layout Subsection

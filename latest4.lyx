@@ -146,7 +146,7 @@ Segment the image of
 \begin_layout Standard
 \begin_inset Formula 
 \begin{align*}
-EX & \approx\frac{1}{n}\sum_{b\in bins}\left(\mbox{average value in }b\right)\cdot\left(\mbox{number of samples from \ensuremath{b}}\right)\\
+EX & \approx\frac{1}{n}\sum_{b\in bins}\left(\mbox{average value in }b\right)\cdot\left(\mbox{number of samples in \ensuremath{b}}\right)\\
  & \approx\frac{1}{n}\sum\biggl(x\biggr)\cdot\left(n\cdot P(x<X\le x+\frac{1}{n})\right)\\
  & \approx\sum x\cdot P(x<X\le x+\frac{1}{n})\\
  & \approx\intop_{-\infty}^{\infty}xf_{X}(x)dx
@@ -250,7 +250,7 @@ y=x-\mu\\
 dy=dx
 \end{array}\biggr]\\
  & =\intop_{-\infty}^{\infty}(y+\mu)f_{X}(y+\mu)dy\\
-\intertext{\mbox{Define \ensuremath{Y=X-\mu}, \ensuremath{Y} is symmetric around \ensuremath{0}}}\\
+\intertext{\mbox{Define \ensuremath{Y=X-\mu}, \ensuremath{Y} is symmetric around \ensuremath{0}},}\\
  & =\intop_{-\infty}^{\infty}(y+\mu)f_{Y}(y)dy\\
  & =\intop_{-\infty}^{\infty}yf_{Y}(y)dy+\mu\intop_{-\infty}^{\infty}f_{Y}(y)dy\\
  & =0+\mu=\mu
@@ -261,8 +261,456 @@ dy=dx
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subsection
+Cosines principle
+\end_layout
 
+\begin_layout Standard
+Given a rectangular area 
+\begin_inset Formula $ds$
+\end_inset
+
+, a parallel projection of it 
+\begin_inset Formula $d\tilde{s}$
+\end_inset
+
+, and corresponding normal vectors 
+\begin_inset Formula $\hat{n}$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{\tilde{n}}$
+\end_inset
+
+, prove that 
+\begin_inset Formula $d\tilde{s}=ds\left(\hat{n}\cdot\hat{\tilde{n}}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Phantom Phantom
+status open
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Without loss of generality, 
+\begin_inset Formula $d\tilde{s}$
+\end_inset
+
+ is formed by the vectors 
+\begin_inset Formula $d\mathbf{x}$
+\end_inset
+
+ and 
+\begin_inset Formula $d\mathbf{y}$
+\end_inset
+
+ (i.e.
+ on the 
+\begin_inset Formula $xy$
+\end_inset
+
+ plane, with one vertex on the origin).
+\end_layout
+
+\begin_layout Standard
+The normal is:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\hat{\tilde{n}}=\frac{d\mathbf{x}\times d\mathbf{y}}{\left|d\mathbf{x}\times d\mathbf{y}\right|}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+And the area of 
+\begin_inset Formula $d\tilde{s}$
+\end_inset
+
+ is:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+d\tilde{s}=\left|d\mathbf{x}\times d\mathbf{y}\right|=dx\,dy
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Translate 
+\begin_inset Formula $ds$
+\end_inset
+
+ so it's matching vertex will also be at the origin.
+ Now both areas have a vertex in the origin, and 
+\begin_inset Formula $ds$
+\end_inset
+
+ is formed by some two vectors 
+\begin_inset Formula $e_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $e_{2}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+ds=\left|e_{1}\times e_{2}\right|
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Define the angles between the vectors 
+\begin_inset Formula $\alpha=(d\mathbf{x},e_{1})$
+\end_inset
+
+, 
+\begin_inset Formula $\beta=(d\mathbf{y},e_{2})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+We have,
+\begin_inset Formula 
+\begin{align*}
+e_{1} & =dx\:\mathbf{i}+0\mathbf{\,j}+dx\,\tan\alpha\,\mathbf{k}\\
+e_{2} & =0\mathbf{\,i}+dy\mathbf{\,j}+dy\,\tan\beta\,\mathbf{k}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+And so,
+\begin_inset Formula 
+\begin{align*}
+ds & =\left|e_{1}\times e_{2}\right|\\
+ & =\left|-\tan\alpha\,\mathbf{i}-\tan\beta\,\mathbf{j}+1\right|dx\,dy\\
+ & =\sqrt{1+\left(\tan\alpha\right)^{2}+\left(\tan\beta\right)^{2}}\ dx\,dy\\
+ & =\sqrt{1+\left(\tan\alpha\right)^{2}+\left(\tan\beta\right)^{2}}d\hat{\tilde{s}}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Let's find 
+\begin_inset Formula $\hat{n}\cdot\hat{\tilde{n}}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\hat{n}\cdot\hat{\tilde{n}} & =\frac{\left(d\mathbf{x}\times d\mathbf{y}\right)}{\left|d\mathbf{x}\times d\mathbf{y}\right|}\cdot\frac{\left(e_{1}\times e_{2}\right)}{\left|e_{1}\times e_{2}\right|}\\
+ & =\begin{pmatrix}0\\
+0\\
+1
+\end{pmatrix}\cdot\frac{\left(e_{1}\times e_{2}\right)}{\left|e_{1}\times e_{2}\right|}\\
+ & =\begin{pmatrix}0\\
+0\\
+1
+\end{pmatrix}\cdot\begin{pmatrix}-\tan\alpha\\
+-\tan\beta\\
+1
+\end{pmatrix}\frac{1}{\sqrt{1+\left(\tan\alpha\right)^{2}+\left(\tan\beta\right)^{2}}}\\
+ & =\frac{1}{\sqrt{1+\left(\tan\alpha\right)^{2}+\left(\tan\beta\right)^{2}}}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+And therefore, 
+\begin_inset Formula $d\tilde{s}=ds\left(\hat{n}\cdot\hat{\tilde{n}}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Flux through an inclined area
+\end_layout
+
+\begin_layout Standard
+Prove that the flux of a vector field 
+\begin_inset Formula $A$
+\end_inset
+
+ through an area that is perpendicular to 
+\begin_inset Formula $A$
+\end_inset
+
+, is equal to the flux through an inclined area which it's parallel projection
+ in a direction parallel to 
+\begin_inset Formula $A$
+\end_inset
+
+ is the former perpendicular area.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Phantom Phantom
+status open
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Using the notation from the previous subsection,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\iint A\cdot d\tilde{\mathbf{S}} & =\iint A\cdot\hat{\tilde{n}}\,d\tilde{s}\\
+ & =\iint\left\Vert A\right\Vert \,d\tilde{s}\\
+ & =\iint\left\Vert A\right\Vert \,\left(\hat{n}\cdot\hat{\tilde{n}}\right)ds\\
+ & =\iint\left(\left\Vert A\right\Vert \hat{\tilde{n}}\right)\cdot\left(\hat{n}ds\right)\\
+ & =\iint\left(\left\Vert A\right\Vert \hat{\tilde{n}}\right)\cdot\left(d\mathbf{s}\right)\\
+ & =\iint A\cdot d\mathbf{s}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Green's theorem, circulation form and flux form
+\end_layout
+
+\begin_layout Standard
+Updated in latest #3
+\end_layout
+
+\begin_layout Subsection
+Stokes theorem 
+\begin_inset Formula $\oint_{\partial s}A\cdot d\mathbf{r}=\iint_{s}\left(\nabla\times A\right)\cdot d\mathbf{s}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[y=0.80pt, x=0.80pt, yscale=-0.300000, xscale=0.300000, inner
+ sep=0pt, outer sep=0pt, line cap=rect,miter limit=10.00]   
+\backslash
+path[fill=black,fill opacity=0.000,nonzero rule] (0.0000,0.0000) --     (430.2257,0.0
+000) -- (430.2257,453.8819) -- (0.0000,453.8819) -- cycle;   
+\backslash
+path[fill=black,fill opacity=0.000,nonzero rule] (186.5643,300.6483) --   
+  (186.5643,7.9239);   
+\backslash
+path[draw=black,line join=round,line cap=butt,even odd rule,line width=0.240pt]
+     (186.5643,300.6483) -- (186.5643,13.9239);   
+\backslash
+path[draw=black,fill=black,line cap=butt,even odd rule,line width=0.240pt]
+     (188.2160,13.9239) -- (186.5643,9.3858) -- (184.9126,13.9239) -- cycle; 
+  
+\backslash
+path[fill=black,fill opacity=0.000,nonzero rule] (186.3990,300.1024) --   
+  (10.6194,441.0787);   
+\backslash
+path[draw=black,line join=round,line cap=butt,even odd rule,line width=0.240pt]
+     (186.3990,300.1024) -- (15.3001,437.3248);   
+\backslash
+path[draw=black,fill=black,line cap=butt,even odd rule,line width=0.240pt]
+     (14.2666,436.0363) -- (11.7599,440.1641) -- (16.3335,438.6134) -- cycle;
+   
+\backslash
+path[fill=black,fill opacity=0.000,nonzero rule] (188.0420,300.6483) --   
+  (399.4436,384.9318);   
+\backslash
+path[draw=black,line join=round,line cap=butt,even odd rule,line width=0.240pt]
+     (188.0420,300.6483) -- (393.8702,382.7097);   
+\backslash
+path[draw=black,fill=black,line cap=butt,even odd rule,line width=0.240pt]
+     (393.2585,384.2440) -- (398.0856,384.3904) -- (394.4819,381.1754) -- cycle;
+   
+\backslash
+path[fill=black,fill opacity=0.000,nonzero rule] (188.0420,78.8819) --    
+ (80.1050,386.4094);   
+\backslash
+path[draw=black,line join=round,line cap=butt,nonzero rule,line width=0.240pt]
+     (188.0420,78.8819) -- (80.1050,386.4094);   
+\backslash
+path[fill=black,fill opacity=0.000,nonzero rule] (84.5512,383.4409) --    
+ (328.4882,358.3071);   
+\backslash
+path[draw=black,line join=round,line cap=butt,nonzero rule,line width=0.240pt]
+     (84.5512,383.4409) -- (328.4882,358.3071);   
+\backslash
+path[fill=black,fill opacity=0.000,nonzero rule] (328.4934,359.7874) --   
+  (186.5722,84.7953);   
+\backslash
+path[draw=black,line join=round,line cap=butt,nonzero rule,line width=0.240pt]
+     (328.4934,359.7874) -- (186.5722,84.7953);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}  
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We will show Stokes theorem for small triangles, and we will build more
+ complex surfaces by adding up many tiny triangles.
+\end_layout
+
+\begin_layout Standard
+Imagine a triangle, if the triangle is parallel to any axial plane, we are
+ done.
+ Otherwise, complete the triangle to a pyramid with faces parallel to the
+ axial planes (Note: still not sure how to justify this is possible.)
+\end_layout
+
+\begin_layout Standard
+The circulations of the neighboring triangles cancel at the shared edges.
+ Choose the direction of circulation in the original triangle to be compatible
+ with the other triangles.
+\end_layout
+
+\begin_layout Subsection
+Inverting Gram-Schmidt
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $A=QR$
+\end_inset
+
+ be a QR decomposition of 
+\begin_inset Formula $A$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Q^{T}A=Q^{T}QR=R
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\delta^{i}R\delta_{j} & =q_{i}\cdot a_{j}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In particular, the diagonal element of 
+\begin_inset Formula $R$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\delta^{i}R\delta_{i} & =q_{i}\cdot a_{i}\\
+ & =\frac{P^{\perp}(a_{i})}{\left|P^{\perp}(a_{i})\right|}\cdot\left(P^{\perp}(a_{i})+P^{\parallel}(a_{i})\right)\\
+ & =\frac{\left|P^{\perp}(a_{i})\right|^{2}}{\left|P^{\perp}(a_{i})\right|}\\
+ & =\left|P^{\perp}(a_{i})\right|
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Where the projection operators are defined on the space spanned by 
+\begin_inset Formula $sp(q_{1},\ldots,q_{i-1})=sp(a_{1},\ldots,a_{i-1})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Therefore, the elements on the diagonal of 
+\begin_inset Formula $R$
+\end_inset
+
+, are the lengths of the heights in the parallelepiped 
+\begin_inset Formula $a_{1},\ldots,a_{n}$
+\end_inset
+
+.
+ 
 \end_layout
 
 \end_body
