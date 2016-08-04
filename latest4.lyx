@@ -573,7 +573,7 @@ ckwise when viewed from the positive side of the axis perpendicular to it.
 \begin_layout Standard
 \begin_inset Formula 
 \begin{align*}
-\ointop_{\triangle}A\cdot d\mathbf{r} & =\ointop_{\triangle_{xy}}A\cdot d\mathbf{r}+\ointop_{\triangle_{yz}}A\cdot d\mathbf{r}+\ointop_{\triangle_{xz}}A\cdot d\mathbf{r} & \mbox{(Note: why not minus the sum?)}
+\ointop_{\triangle}A\cdot d\mathbf{r} & =\ointop_{\triangle_{xy}}A\cdot d\mathbf{r}+\ointop_{\triangle_{yz}}A\cdot d\mathbf{r}+\ointop_{\triangle_{xz}}A\cdot d\mathbf{r}
 \end{align*}
 
 \end_inset
@@ -584,7 +584,9 @@ ckwise when viewed from the positive side of the axis perpendicular to it.
 \begin_layout Standard
 \begin_inset Formula 
 \begin{gather*}
-\ointop_{\triangle_{xy}}A\cdot d\mathbf{r}=\iintop_{\triangle_{xy}}\left(\nabla\times A\right)\cdot\mathbf{k}\,dx\,dy=\iintop_{\triangle_{xy}}\left(\nabla\times A\right)\cdot\mathbf{k}\,(\mathbf{k}\cdot\mathbf{\hat{n})}ds
+\ointop_{\triangle_{xy}}A\cdot d\mathbf{r}=\iintop_{\triangle_{xy}}\left(\nabla\times A\right)\cdot\mathbf{k}\,dx\,dy=\iintop_{\triangle_{xy}}\left(\nabla\times A\right)\cdot\mathbf{k}\,(\mathbf{k}\cdot\mathbf{\hat{n})}ds\\
+\ointop_{\triangle_{yz}}A\cdot d\mathbf{r}=\iintop_{\triangle_{yz}}\left(\nabla\times A\right)\cdot\mathbf{i}\,dy\,dz=\iintop_{\triangle_{yz}}\left(\nabla\times A\right)\cdot\mathbf{i}\,(\mathbf{i}\cdot\mathbf{\hat{n})}ds\\
+\ointop_{\triangle_{xz}}A\cdot d\mathbf{r}=\iintop_{\triangle_{xz}}\left(\nabla\times A\right)\cdot\mathbf{j}\,dx\,dz=\iintop_{\triangle_{xz}}\left(\nabla\times A\right)\cdot\mathbf{j}\,(\mathbf{j}\cdot\mathbf{\hat{n})}ds
 \end{gather*}
 
 \end_inset
@@ -593,7 +595,21 @@ ckwise when viewed from the positive side of the axis perpendicular to it.
 \end_layout
 
 \begin_layout Standard
-Note: I don't understand the second equality.
+(The second equalities are due to the original triangle being a parallel
+ projection of the other triangles and the cosines principle proved above)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\ointop_{\triangle}A\cdot d\mathbf{r} & =\iintop_{\triangle_{xy}}\left(\nabla\times A\right)\left((\mathbf{i}\cdot\mathbf{\hat{n})}\mathbf{i}+(\mathbf{j}\cdot\mathbf{\hat{n})}\mathbf{j}+(\mathbf{k}\cdot\mathbf{\hat{n})}\mathbf{k}\right)ds\\
+ & =\iintop_{\triangle_{xy}}\left(\nabla\times A\right)\mathbf{\hat{n}}ds\\
+ & =\iintop_{\triangle_{xy}}\left(\nabla\times A\right)d\mathbf{s}
+\end{align*}
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
