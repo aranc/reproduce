@@ -147,8 +147,8 @@ Segment the image of
 \begin_inset Formula 
 \begin{align*}
 EX & \approx\frac{1}{n}\sum_{b\in bins}\left(\mbox{average value in }b\right)\cdot\left(\mbox{number of samples in \ensuremath{b}}\right)\\
- & \approx\frac{1}{n}\sum\biggl(x\biggr)\cdot\left(n\cdot P(x<X\le x+\frac{1}{n})\right)\\
- & \approx\sum x\cdot P(x<X\le x+\frac{1}{n})\\
+ & \approx\frac{1}{n}\sum\biggl(x\biggr)\cdot\left(n\cdot P(x<X\le x+dx)\right)\\
+ & \approx\sum x\cdot P(x<X\le x+dx)\\
  & \approx\intop_{-\infty}^{\infty}xf_{X}(x)dx
 \end{align*}
 
@@ -250,7 +250,7 @@ y=x-\mu\\
 dy=dx
 \end{array}\biggr]\\
  & =\intop_{-\infty}^{\infty}(y+\mu)f_{X}(y+\mu)dy\\
-\intertext{\mbox{Define \ensuremath{Y=X-\mu}, \ensuremath{Y} is symmetric around \ensuremath{0}},}\\
+\intertext{\mbox{Define \ensuremath{Y=X-\mu}, \ensuremath{f_{Y}} is symmetric around \ensuremath{0}},}\\
  & =\intop_{-\infty}^{\infty}(y+\mu)f_{Y}(y)dy\\
  & =\intop_{-\infty}^{\infty}yf_{Y}(y)dy+\mu\intop_{-\infty}^{\infty}f_{Y}(y)dy\\
  & =0+\mu=\mu
@@ -315,12 +315,7 @@ Without loss of generality,
 \begin_inset Formula $d\mathbf{y}$
 \end_inset
 
- (i.e.
- on the 
-\begin_inset Formula $xy$
-\end_inset
-
- plane, with one vertex on the origin).
+.
 \end_layout
 
 \begin_layout Standard
@@ -358,16 +353,10 @@ d\tilde{s}=\left|d\mathbf{x}\times d\mathbf{y}\right|=dx\,dy
 \end_layout
 
 \begin_layout Standard
-Translate 
 \begin_inset Formula $ds$
 \end_inset
 
- so it's matching vertex will also be at the origin.
- Now both areas have a vertex in the origin, and 
-\begin_inset Formula $ds$
-\end_inset
-
- is formed by some two vectors 
+ is formed by two vectors 
 \begin_inset Formula $e_{1}$
 \end_inset
 
@@ -556,10 +545,10 @@ We will show Stokes theorem for small triangles, and we will build more
 \end_layout
 
 \begin_layout Standard
-Imagine a triangle, if the triangle is parallel to any axial plane, we are
- done.
+Imagine a triangle, if the triangle is parallel to any of the coordinate
+ planes, we are done.
  Otherwise, complete the triangle to a pyramid with faces parallel to the
- axial planes.
+ coordinate planes.
 \end_layout
 
 \begin_layout Standard
@@ -584,9 +573,9 @@ ckwise when viewed from the positive side of the axis perpendicular to it.
 \begin_layout Standard
 \begin_inset Formula 
 \begin{gather*}
-\ointop_{\triangle_{xy}}A\cdot d\mathbf{r}=\iintop_{\triangle_{xy}}\left(\nabla\times A\right)\cdot\mathbf{k}\,dx\,dy=\iintop_{\triangle_{xy}}\left(\nabla\times A\right)\cdot\mathbf{k}\,(\mathbf{k}\cdot\mathbf{\hat{n})}ds\\
-\ointop_{\triangle_{yz}}A\cdot d\mathbf{r}=\iintop_{\triangle_{yz}}\left(\nabla\times A\right)\cdot\mathbf{i}\,dy\,dz=\iintop_{\triangle_{yz}}\left(\nabla\times A\right)\cdot\mathbf{i}\,(\mathbf{i}\cdot\mathbf{\hat{n})}ds\\
-\ointop_{\triangle_{xz}}A\cdot d\mathbf{r}=\iintop_{\triangle_{xz}}\left(\nabla\times A\right)\cdot\mathbf{j}\,dx\,dz=\iintop_{\triangle_{xz}}\left(\nabla\times A\right)\cdot\mathbf{j}\,(\mathbf{j}\cdot\mathbf{\hat{n})}ds
+\ointop_{\triangle_{xy}}A\cdot d\mathbf{r}=\iintop_{\triangle_{xy}}\left(\nabla\times A\right)\cdot\mathbf{k}\,dx\,dy=\iintop_{\triangle}\left(\nabla\times A\right)\cdot\mathbf{k}\,(\mathbf{k}\cdot\mathbf{\hat{n})}ds\\
+\ointop_{\triangle_{yz}}A\cdot d\mathbf{r}=\iintop_{\triangle_{yz}}\left(\nabla\times A\right)\cdot\mathbf{i}\,dy\,dz=\iintop_{\triangle}\left(\nabla\times A\right)\cdot\mathbf{i}\,(\mathbf{i}\cdot\mathbf{\hat{n})}ds\\
+\ointop_{\triangle_{xz}}A\cdot d\mathbf{r}=\iintop_{\triangle_{xz}}\left(\nabla\times A\right)\cdot\mathbf{j}\,dx\,dz=\iintop_{\triangle}\left(\nabla\times A\right)\cdot\mathbf{j}\,(\mathbf{j}\cdot\mathbf{\hat{n})}ds
 \end{gather*}
 
 \end_inset
@@ -602,9 +591,9 @@ ckwise when viewed from the positive side of the axis perpendicular to it.
 \begin_layout Standard
 \begin_inset Formula 
 \begin{align*}
-\ointop_{\triangle}A\cdot d\mathbf{r} & =\iintop_{\triangle_{xy}}\left(\nabla\times A\right)\left((\mathbf{i}\cdot\mathbf{\hat{n})}\mathbf{i}+(\mathbf{j}\cdot\mathbf{\hat{n})}\mathbf{j}+(\mathbf{k}\cdot\mathbf{\hat{n})}\mathbf{k}\right)ds\\
- & =\iintop_{\triangle_{xy}}\left(\nabla\times A\right)\mathbf{\hat{n}}ds\\
- & =\iintop_{\triangle_{xy}}\left(\nabla\times A\right)d\mathbf{s}
+\ointop_{\triangle}A\cdot d\mathbf{r} & =\iintop_{\triangle}\left(\nabla\times A\right)\left((\mathbf{i}\cdot\mathbf{\hat{n})}\mathbf{i}+(\mathbf{j}\cdot\mathbf{\hat{n})}\mathbf{j}+(\mathbf{k}\cdot\mathbf{\hat{n})}\mathbf{k}\right)ds\\
+ & =\iintop_{\triangle}\left(\nabla\times A\right)\mathbf{\hat{n}}ds\\
+ & =\iintop_{\triangle}\left(\nabla\times A\right)d\mathbf{s}
 \end{align*}
 
 \end_inset
@@ -674,7 +663,7 @@ In particular, the diagonal element of
 
 \begin_layout Standard
 Where the projection operators are defined on the space spanned by 
-\begin_inset Formula $sp(q_{1},\ldots,q_{i-1})=sp(a_{1},\ldots,a_{i-1})$
+\begin_inset Formula $\mbox{sp}(q_{1},\ldots,q_{i-1})=\mbox{sp}(a_{1},\ldots,a_{i-1})$
 \end_inset
 
 .
