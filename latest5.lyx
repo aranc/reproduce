@@ -1,0 +1,698 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+\date{}
+\usepackage{tikz}
+\usepackage{xcolor}
+\hypersetup{
+    colorlinks,
+    linkcolor={black!50!black},
+    citecolor={blue!50!black},
+    urlcolor={blue!80!black}
+}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref section
+\pdf_pdfusetitle false
+\papersize default
+\use_geometry false
+\use_package amsmath 2
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip smallskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Latest #5
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Newton's second law for center of mass
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $\mathbf{r}_{i}$
+\end_inset
+
+ be 
+\begin_inset Formula $N$
+\end_inset
+
+ particles with mass 
+\begin_inset Formula $m_{i}$
+\end_inset
+
+ each.
+\end_layout
+
+\begin_layout Standard
+By Newton's second law, for each particle,
+\begin_inset Formula 
+\[
+m_{i}\frac{d^{2}r_{i}}{dt^{2}}=F_{i}^{(ext)}+\sum_{j\neq i}F_{ij}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Where 
+\begin_inset Formula $F_{ij}$
+\end_inset
+
+ is the force particle 
+\begin_inset Formula $j$
+\end_inset
+
+ is causing to particle 
+\begin_inset Formula $i$
+\end_inset
+
+, and 
+\begin_inset Formula $F_{i}^{(ext)}$
+\end_inset
+
+ is the sum of external forces operating on particle 
+\begin_inset Formula $i$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Sum these 
+\begin_inset Formula $N$
+\end_inset
+
+ equations.
+ Using the third law, 
+\begin_inset Formula $F_{ij}=-F_{ji}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\sum m_{i}\frac{d^{2}r_{i}}{dt^{2}} & =\sum_{i=1}^{N}F_{i}^{(ext)}+\sum_{i=1}^{N}\sum_{j\neq i}F_{ij}\\
+ & =\sum_{i=1}^{N}F_{i}^{(ext)}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Define 
+\begin_inset Formula $m=\sum m_{i}$
+\end_inset
+
+ and 
+\begin_inset Formula $F^{(ext)}=\sum_{i=1}^{N}F_{i}^{(ext)}$
+\end_inset
+
+.
+ We want to rewrite the above using center of mass 
+\begin_inset Formula $r=\frac{\sum m_{i}r_{i}}{\sum m_{i}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sum m_{i}\frac{d^{2}r_{i}}{dt^{2}}=m\frac{d^{2}\frac{\sum m_{i}r_{i}}{\sum m_{i}}}{dt^{2}}=m\frac{d^{2}r}{dt^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Therefore,
+\begin_inset Formula 
+\[
+m\frac{d^{2}r}{dt^{2}}=F^{(ext)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Momentum preservation when 
+\begin_inset Formula $F^{(ext)}=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Let's look at a system of particles which the sum of the external forces
+ operating on it equals to zero.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+0 & =F^{(ext)}\\
+ & =m\frac{d^{2}r}{dt^{2}}\\
+ & =\frac{d^{2}\sum m_{i}r_{i}}{dt^{2}}\\
+ & =\frac{d\sum m_{i}v_{i}}{dt}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Therefore, 
+\begin_inset Formula 
+\[
+\sum m_{i}v_{i}=\mbox{const}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+That is, while the external forces sum to zero, the sum of the momentums
+ always stays the same.
+\end_layout
+
+\begin_layout Subsection
+Work-energy equation
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $r$
+\end_inset
+
+ be a particle, and let 
+\begin_inset Formula $F$
+\end_inset
+
+ be a force that is causing the particle to move at a path 
+\begin_inset Formula $\gamma$
+\end_inset
+
+.
+ Define the work 
+\begin_inset Formula $W$
+\end_inset
+
+ to be the force operating along the path 
+\begin_inset Formula $W=\intop_{\gamma}F\cdot d\mathbf{r}$
+\end_inset
+
+.
+ We will show that this integral only depends on the velocity of the particle
+ at the starting and ending points of the path, regardless of what happened
+ in between.
+\end_layout
+
+\begin_layout Standard
+Mark the starting and ending points of 
+\begin_inset Formula $\gamma$
+\end_inset
+
+ with 
+\begin_inset Formula $A$
+\end_inset
+
+ and 
+\begin_inset Formula $B$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+W & =\intop_{\gamma}F\cdot d\mathbf{r}\\
+ & =\intop_{\gamma}\frac{dmv}{dt}\cdot d\mathbf{r}\\
+ & =\intop_{\gamma}dmv\cdot\frac{d\mathbf{r}}{dt}\\
+ & =\intop_{\gamma}dmv\cdot d\mathbf{v}\\
+ & =\left.\frac{mv^{2}}{2}\right|_{v=v_{A}}^{v=v_{B}}\\
+ & =\frac{1}{2}mv_{B}^{2}-\frac{1}{2}mv_{A}^{2}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We call theses quantities kinetic energy.
+ and the above an also be written as
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+W=\intop_{\gamma}F\cdot d\mathbf{r}=E_{kB}-E_{kA}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+Todo: fix notation of 
+\begin_inset Formula $E_{kA}$
+\end_inset
+
+.
+ also, I didn't used Riemann sums for this, but it seems ok.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Phantom Phantom
+status open
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If 
+\begin_inset Formula $F=-\nabla\varphi$
+\end_inset
+
+ (that is, F is a 
+\begin_inset Quotes eld
+\end_inset
+
+preserving field
+\begin_inset Quotes erd
+\end_inset
+
+), then
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\intop_{\gamma}F\cdot d\mathbf{r} & =\intop_{\gamma}-\nabla\varphi\cdot d\mathbf{r}\\
+ & =\varphi_{A}-\varphi_{B}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We call these quantities potential energy.
+ And we can derive the following preservation of energy:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+E_{kB}-E_{kA}=\varphi_{A}-\varphi_{B}\Longrightarrow\varphi_{A}+E_{kA}=\varphi_{B}+E_{kB}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The sum of potential energy and kinetic energy is constant and does not
+ change with time.
+\end_layout
+
+\begin_layout Subsection
+Zero on closed paths 
+\begin_inset Formula $\iff$
+\end_inset
+
+Independent of the path
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $A\subseteq R^{n}\to R^{n}$
+\end_inset
+
+ be a vector field.
+ We will show that 
+\begin_inset Formula $\intop_{\gamma}A\cdot d\mathbf{r}$
+\end_inset
+
+ is independent of the path if and only if 
+\begin_inset Formula $\ointop_{c}A\cdot d\mathbf{r}=0$
+\end_inset
+
+ on any closed path 
+\begin_inset Formula $c$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Phantom Phantom
+status open
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $A$
+\end_inset
+
+ be independent of path, since the integral is only dependent on the difference
+ between the starting and ending points, and since they are both the same
+ point, 
+\begin_inset Formula $\ointop_{c}A\cdot d\mathbf{r}=0$
+\end_inset
+
+ on any closed path.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Phantom Phantom
+status open
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $\ointop_{c}A\cdot d\mathbf{r}=0$
+\end_inset
+
+ and let 
+\begin_inset Formula $\gamma_{1}$
+\end_inset
+
+, 
+\begin_inset Formula $\gamma_{2}$
+\end_inset
+
+ be two paths with the same starting and ending points.
+ 
+\begin_inset Formula $\gamma_{1}+(-\gamma_{2})$
+\end_inset
+
+ is a closed path.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{gather*}
+\intop_{\gamma_{1}+(-\gamma_{2})}A\cdot d\mathbf{r}=0\\
+\intop_{\gamma_{1}}A\cdot d\mathbf{r}-\intop_{\gamma_{2}}A\cdot d\mathbf{r}=0\\
+\intop_{\gamma_{1}}A\cdot d\mathbf{r}=\intop_{\gamma_{2}}A\cdot d\mathbf{r}
+\end{gather*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Independent of the path 
+\begin_inset Formula $\iff$
+\end_inset
+
+Exists a scalar field 
+\begin_inset Formula $A=\nabla\varphi$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $A\subseteq R^{n}\to R^{n}$
+\end_inset
+
+ be a vector field.
+ We will show that 
+\begin_inset Formula $\intop_{\gamma}A\cdot d\mathbf{r}$
+\end_inset
+
+ is independent of the path if and only if there exists a scalar field 
+\begin_inset Formula $\varphi:\ U\subseteq R^{n}\to R$
+\end_inset
+
+ such that 
+\begin_inset Formula $F=\nabla\varphi$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Phantom Phantom
+status open
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $A=\nabla\varphi$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\intop_{\gamma}A\cdot dr & =\intop_{\gamma}\nabla\varphi\cdot dr\\
+ & =\intop_{t=0}^{1}\nabla\varphi(r(t))\cdot\dot{r}(t)\,dt\\
+ & =\left(\intop_{t=0}^{1}\dot{\varphi}_{1}(r(t))\cdot\dot{r_{1}}(t)\,dt\right)\mathbf{i}+\left(\intop_{t=0}^{1}\dot{\varphi}_{2}(r(t))\cdot\dot{r_{2}}(t)\,dt\right)\mathbf{j}+\left(\intop_{t=0}^{1}\dot{\varphi}_{3}(r(t))\cdot\dot{r_{3}}(t)\,dt\right)\mathbf{k}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Where 
+\begin_inset Formula $r(t)$
+\end_inset
+
+ is some parameterization of 
+\begin_inset Formula $\gamma$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+All three integrals above are simple integrals on 
+\begin_inset Formula $R$
+\end_inset
+
+, and therefore depend only on the starting and ending points.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Phantom Phantom
+status open
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $A$
+\end_inset
+
+ be independent of the path.
+ Let 
+\begin_inset Formula $p$
+\end_inset
+
+ be some arbitrary point, define 
+\begin_inset Formula $\varphi(x)=\intop_{\gamma}A\cdot dr$
+\end_inset
+
+, where 
+\begin_inset Formula $\gamma$
+\end_inset
+
+ is some path from 
+\begin_inset Formula $p$
+\end_inset
+
+ to 
+\begin_inset Formula $x$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\varphi(x+\Delta x)-\varphi(x) & =\intop_{r=p}^{x+\Delta x}A\cdot dr-\intop_{r=p}^{x}A\cdot dr\\
+ & =\intop_{r=x}^{x+\Delta x}A\cdot dr
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Therefore, 
+\begin_inset Formula 
+\[
+\frac{d\phi}{dx}=\frac{\intop_{r=x}^{x+\Delta x}A\cdot dr}{dx}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
