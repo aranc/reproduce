@@ -333,7 +333,7 @@ W & =\intop_{\gamma}F\cdot d\mathbf{r}\\
 
 \begin_layout Standard
 We call theses quantities kinetic energy.
- and the above an also be written as
+ and the above can also be written as
 \end_layout
 
 \begin_layout Standard
@@ -648,7 +648,7 @@ Let
 
  be independent of the path.
  Let 
-\begin_inset Formula $p$
+\begin_inset Formula $p_{0}$
 \end_inset
 
  be some arbitrary point, define 
@@ -660,7 +660,7 @@ Let
 \end_inset
 
  is some path from 
-\begin_inset Formula $p$
+\begin_inset Formula $p_{0}$
 \end_inset
 
  to 
@@ -673,7 +673,7 @@ Let
 \begin_layout Standard
 \begin_inset Formula 
 \begin{align*}
-\varphi(x+\Delta x)-\varphi(x) & =\intop_{r=p}^{x+\Delta x}A\cdot dr-\intop_{r=p}^{x}A\cdot dr\\
+\varphi(x+\Delta x)-\varphi(x) & =\intop_{r=p_{0}}^{x+\Delta x}A\cdot dr-\intop_{r=p_{0}}^{x}A\cdot dr\\
  & =\intop_{r=x}^{x+\Delta x}A\cdot dr
 \end{align*}
 
@@ -685,10 +685,47 @@ Let
 \begin_layout Standard
 Therefore, 
 \begin_inset Formula 
-\[
-\frac{d\phi}{dx}=\frac{\intop_{r=x}^{x+\Delta x}A\cdot dr}{dx}
-\]
+\begin{align*}
+\frac{d\phi}{dx}(p) & =\lim_{\Delta x\to0}\frac{\intop_{r=p}^{p+\Delta x}A\cdot dr}{\Delta x}\\
+ & =\lim_{\Delta x\to0}\frac{\intop_{r=p}^{p+\Delta x}A\cdot\begin{pmatrix}1\\
+0\\
+0
+\end{pmatrix}dx}{\Delta x}\\
+ & =\lim_{\Delta x\to0}\frac{\intop_{x=p_{1}}^{p_{1}+\Delta x}A_{1}(x,y,z)dx}{\Delta x}\\
+\intertext{\mbox{Using mean point value theorem, there exist a \ensuremath{\xi\in R,\ x\le\xi\le x+\Delta x} such that}}\\
+ & =\lim_{\Delta x\to0}\frac{A_{1}(\xi)\Delta x}{\Delta x}\\
+ & =A_{1}(p)
+\end{align*}
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Phantom Phantom
+status open
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In a similar fashion, 
+\begin_inset Formula $\frac{d\phi}{dy}(p)=A_{2}(p)$
+\end_inset
+
+, and 
+\begin_inset Formula $\frac{d\phi}{dz}(p)=A_{3}(p)$
+\end_inset
+
+, therefore 
+\begin_inset Formula $A=\nabla\varphi$
 \end_inset
 
 
