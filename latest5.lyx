@@ -289,7 +289,7 @@ Let
 \begin_inset Formula $W$
 \end_inset
 
- to be the force operating along the path 
+ of the force operating along the path to be 
 \begin_inset Formula $W=\intop_{\gamma}F\cdot d\mathbf{r}$
 \end_inset
 
@@ -339,36 +339,8 @@ We call theses quantities kinetic energy.
 \begin_layout Standard
 \begin_inset Formula 
 \[
-W=\intop_{\gamma}F\cdot d\mathbf{r}=E_{kB}-E_{kA}
+W(A\to B)=\intop_{\gamma}F\cdot d\mathbf{r}=E_{k}(B)-E_{k}(A)
 \]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Box Boxed
-position "t"
-hor_pos "c"
-has_inner_box 1
-inner_pos "t"
-use_parbox 0
-use_makebox 0
-width "100col%"
-special "none"
-height "1in"
-height_special "totalheight"
-status open
-
-\begin_layout Plain Layout
-Todo: fix notation of 
-\begin_inset Formula $E_{kA}$
-\end_inset
-
-.
- also, I didn't used Riemann sums for this, but it seems ok.
-\end_layout
 
 \end_inset
 
@@ -393,15 +365,11 @@ If
 \begin_inset Formula $F=-\nabla\varphi$
 \end_inset
 
- (that is, F is a 
-\begin_inset Quotes eld
+ (that is, if the field 
+\begin_inset Formula $F$
 \end_inset
 
-preserving field
-\begin_inset Quotes erd
-\end_inset
-
-), then
+ is conservative), then
 \end_layout
 
 \begin_layout Standard
@@ -418,13 +386,13 @@ preserving field
 
 \begin_layout Standard
 We call these quantities potential energy.
- And we can derive the following preservation of energy:
+ And we can derive the following conservation of energy:
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \[
-E_{kB}-E_{kA}=\varphi_{A}-\varphi_{B}\Longrightarrow\varphi_{A}+E_{kA}=\varphi_{B}+E_{kB}
+E_{k}(B)-E_{k}(A)=\varphi_{A}-\varphi_{B}\Longrightarrow\varphi_{A}+E_{k}(A)=\varphi_{B}+E_{k}(B)
 \]
 
 \end_inset
@@ -447,7 +415,7 @@ Independent of the path
 
 \begin_layout Standard
 Let 
-\begin_inset Formula $A\subseteq R^{n}\to R^{n}$
+\begin_inset Formula $A:\ U\subseteq R^{n}\to R^{n}$
 \end_inset
 
  be a vector field.
@@ -456,11 +424,11 @@ Let
 \end_inset
 
  is independent of the path if and only if 
-\begin_inset Formula $\ointop_{c}A\cdot d\mathbf{r}=0$
+\begin_inset Formula $\ointop_{C}A\cdot d\mathbf{r}=0$
 \end_inset
 
  on any closed path 
-\begin_inset Formula $c$
+\begin_inset Formula $C$
 \end_inset
 
 .
