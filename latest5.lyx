@@ -568,51 +568,10 @@ Let
 \begin{align*}
 \intop_{\gamma}A\cdot dr & =\intop_{\gamma}\nabla\varphi\cdot dr\\
  & =\intop_{t=0}^{1}\nabla\varphi(r(t))\cdot\dot{r}(t)\,dt\\
- & =\left(\intop_{t=0}^{1}\dot{\varphi}_{1}(r(t))\cdot\dot{r_{1}}(t)\,dt\right)\mathbf{i}+\left(\intop_{t=0}^{1}\dot{\varphi}_{2}(r(t))\cdot\dot{r_{2}}(t)\,dt\right)\mathbf{j}+\left(\intop_{t=0}^{1}\dot{\varphi}_{3}(r(t))\cdot\dot{r_{3}}(t)\,dt\right)\mathbf{k}
+ & =\intop_{0}^{1}\sum_{i}\frac{\partial\varphi}{\partial x_{i}}(r(t))\cdot\frac{dr_{i}(t)}{dt}\,dt\\
+ & =\intop_{0}^{1}\frac{d\varphi(r(t))}{dt}dt\\
+ & =\left.\varphi(r(t))\right|_{t=0}^{t=1}
 \end{align*}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Where 
-\begin_inset Formula $r(t)$
-\end_inset
-
- is some parameterization of 
-\begin_inset Formula $\gamma$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-All three integrals above are simple integrals on 
-\begin_inset Formula $R$
-\end_inset
-
-, and therefore depend only on the starting and ending points.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Box Boxed
-position "t"
-hor_pos "c"
-has_inner_box 1
-inner_pos "t"
-use_parbox 0
-use_makebox 0
-width "100col%"
-special "none"
-height "1in"
-height_special "totalheight"
-status open
-
-\begin_layout Plain Layout
-Warning: The above line of reasoning is incorrect, we will see why later
-\end_layout
 
 \end_inset
 
