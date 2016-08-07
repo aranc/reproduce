@@ -180,13 +180,19 @@ A
 \frac{\partial\varphi}{\partial x_{k}}(\mathbf{p}) & =\frac{\partial}{\partial x_{k}}\intop_{\gamma}A\cdot d\mathbf{r}\\
  & =\frac{\partial}{\partial x_{k}}\intop_{t=0}^{1}A(r(t))\cdot\frac{d\mathbf{r}}{dt}\,dt\\
  & =\frac{\partial}{\partial x_{k}}\intop_{t=0}^{1}A(t\mathbf{p})\cdot\mathbf{p}\,dt\\
- & =\frac{\partial}{\partial x_{k}}\intop_{t=0}^{1}\sum A_{i}(t\mathbf{p})\cdot p_{i}\,dt\\
+ & =\frac{\partial}{\partial x_{k}}\intop_{t=0}^{1}\sum_{i=1}^{n}A_{i}(t\mathbf{p})\cdot p_{i}\,dt\\
  & =\sum_{i=1}^{n}\intop_{t=0}^{1}\frac{\partial}{\partial x_{k}}\left(A_{i}(t\mathbf{p})\cdot p_{i}\right)\,dt\\
  & =\sum_{i=1}^{n}\intop_{t=0}^{1}\left(\left(\frac{\partial}{\partial x_{k}}A_{i}(t\mathbf{p})\right)\cdot p_{i}+A_{i}(t\mathbf{p})\cdot\left(\frac{\partial}{\partial x_{k}}p_{i}\right)\right)\,dt\\
  & =\sum_{i=1}^{n}\intop_{t=0}^{1}t\left(\frac{\partial}{\partial x_{k}}A_{i}\right)(t\mathbf{p})\cdot p_{i}\,dt+\intop_{t=0}^{1}A_{k}(t\mathbf{p})\,dt\\
  & =\sum_{i=1}^{n}\intop_{t=0}^{1}t\left(\frac{\partial A_{k}}{\partial x_{i}}\right)(t\mathbf{p})\cdot p_{i}\,dt+\intop_{t=0}^{1}A_{k}(t\mathbf{p})\,dt\\
- & =\sum_{i=1}^{n}\intop_{t=0}^{1}t\left(\frac{\partial A_{k}}{\partial x_{i}}\right)(t\mathbf{p})\cdot\frac{\partial(tp_{i})}{\partial t}\,dt+\intop_{t=0}^{1}A_{k}(t\mathbf{p})\,dt\\
- & =\intop_{t=0}^{1}t\frac{\partial A(t\mathbf{p})}{\partial t}\\
+ & =\sum_{i=1}^{n}\intop_{t=0}^{1}t\left(\frac{\partial A_{k}}{\partial x_{i}}\right)(t\mathbf{p})\cdot\frac{d(tp_{i})}{dt}\,dt+\intop_{t=0}^{1}A_{k}(t\mathbf{p})\,dt\\
+ & =\intop_{t=0}^{1}t\frac{dA_{k}(t\mathbf{p})}{dt}\,dt+\intop_{t=0}^{1}A_{k}(t\mathbf{p})\,dt\\
+\begin{bmatrix}u=t & dv=\frac{dA_{k}(t\mathbf{p})}{dt}dt\\
+du=dt & v=A_{k}(t\mathbf{p})
+\end{bmatrix}\\
+ & =\left.tA_{k}(t\mathbf{p})\right|_{t=0}^{t=1}-\intop_{t=0}^{1}A_{k}(t\mathbf{p})dt+\intop_{t=0}^{1}A_{k}(t\mathbf{p})\,dt\\
+ & =\left.tA_{k}(t\mathbf{p})\right|_{t=0}^{t=1}\\
+ & =A_{k}(\mathbf{p})
 \end{align*}
 
 \end_inset
