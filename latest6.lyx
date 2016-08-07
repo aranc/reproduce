@@ -103,7 +103,545 @@ LatexCommand tableofcontents
 \end_layout
 
 \begin_layout Subsection
-TBD
+\begin_inset Formula $A=\nabla\varphi$
+\end_inset
+
+ 
+\begin_inset Formula $\iff$
+\end_inset
+
+ 
+\begin_inset Formula $\frac{\partial A_{i}}{\partial x_{j}}=\frac{\partial A_{j}}{\partial x_{i}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\left(\Rightarrow\right)$
+\end_inset
+
+ If 
+\begin_inset Formula $A=\nabla\varphi$
+\end_inset
+
+, then it follows from 
+\begin_inset Formula $\frac{\partial^{2}\varphi}{\partial x_{j}\partial x_{i}}=\frac{\partial^{2}\varphi}{\partial x_{i}\partial x_{j}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Phantom Phantom
+status open
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\left(\Leftarrow\right)$
+\end_inset
+
+ Let 
+\begin_inset Formula $\frac{\partial A_{i}}{\partial x_{j}}=\frac{\partial A_{j}}{\partial x_{i}}$
+\end_inset
+
+.
+ Define 
+\begin_inset Formula $\varphi(p):\ R^{n}\to R$
+\end_inset
+
+ as the path integral on the straight line from the origin to 
+\begin_inset Formula $p$
+\end_inset
+
+: 
+\begin_inset Formula $\intop_{\gamma}A\cdot d\mathbf{r}$
+\end_inset
+
+.
+ We will show that 
+\begin_inset Formula $\nabla\varphi=A$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\frac{\partial\varphi}{\partial x_{k}}(\mathbf{p}) & =\frac{\partial}{\partial x_{k}}\intop_{\gamma}A\cdot d\mathbf{r}\\
+ & =\frac{\partial}{\partial x_{k}}\intop_{t=0}^{1}A(r(t))\cdot\frac{d\mathbf{r}}{dt}\,dt\\
+ & =\frac{\partial}{\partial x_{k}}\intop_{t=0}^{1}A(t\mathbf{p})\cdot\mathbf{p}\,dt\\
+ & =\frac{\partial}{\partial x_{k}}\intop_{t=0}^{1}\sum A_{i}(t\mathbf{p})\cdot p_{i}\,dt\\
+ & =\sum_{i=1}^{n}\intop_{t=0}^{1}\frac{\partial}{\partial x_{k}}\left(A_{i}(t\mathbf{p})\cdot p_{i}\right)\,dt\\
+ & =\sum_{i=1}^{n}\intop_{t=0}^{1}\left(\left(\frac{\partial}{\partial x_{k}}A_{i}(t\mathbf{p})\right)\cdot p_{i}+A_{i}(t\mathbf{p})\cdot\left(\frac{\partial}{\partial x_{k}}p_{i}\right)\right)\,dt\\
+ & =\sum_{i=1}^{n}\intop_{t=0}^{1}t\left(\frac{\partial}{\partial x_{k}}A_{i}\right)(t\mathbf{p})\cdot p_{i}\,dt+\intop_{t=0}^{1}A_{k}(t\mathbf{p})\,dt\\
+ & =\sum_{i=1}^{n}\intop_{t=0}^{1}t\left(\frac{\partial A_{k}}{\partial x_{i}}\right)(t\mathbf{p})\cdot p_{i}\,dt+\intop_{t=0}^{1}A_{k}(t\mathbf{p})\,dt\\
+ & =\sum_{i=1}^{n}\intop_{t=0}^{1}t\left(\frac{\partial A_{k}}{\partial x_{i}}\right)(t\mathbf{p})\cdot\frac{\partial(tp_{i})}{\partial t}\,dt+\intop_{t=0}^{1}A_{k}(t\mathbf{p})\,dt\\
+ & =\intop_{t=0}^{1}t\frac{\partial A(t\mathbf{p})}{\partial t}\\
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Frenet-Serret
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $r(s)$
+\end_inset
+
+ be a path parametrization according to path length 
+\begin_inset Formula $s$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $T(s)$
+\end_inset
+
+ be the tangent unit vector.
+ Let 
+\begin_inset Formula $N(s)$
+\end_inset
+
+ be the normal unit vector with direction 
+\begin_inset Formula $\frac{dT}{ds}$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $B(s)$
+\end_inset
+
+ be the bi-normal vector 
+\begin_inset Formula $B=T\times N$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Phantom Phantom
+status open
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Show that 
+\begin_inset Formula $\frac{dT}{ds}=\kappa N=\frac{1}{\rho}N$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $C(s)$
+\end_inset
+
+ be some vector field where 
+\begin_inset Formula $\left|C(s)\right|=const$
+\end_inset
+
+, 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{dC}{ds}\cdot C=\frac{1}{2}\frac{dC^{2}}{ds}=\frac{1}{2}\frac{d\left\Vert C\right\Vert }{ds}=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Since 
+\begin_inset Formula $T$
+\end_inset
+
+ has a constant length, 
+\begin_inset Formula $\frac{dT}{ds}$
+\end_inset
+
+ is orthogonal to 
+\begin_inset Formula $T$
+\end_inset
+
+.
+ That is we can define the normal 
+\begin_inset Formula $N$
+\end_inset
+
+ in the direction of 
+\begin_inset Formula $\frac{dT}{ds}$
+\end_inset
+
+.
+ We call the scaling factor 
+\begin_inset Formula $\kappa$
+\end_inset
+
+ the curvature.
+\end_layout
+
+\begin_layout Standard
+If 
+\begin_inset Formula $r(s)$
+\end_inset
+
+ is a circle on the 
+\begin_inset Formula $xy$
+\end_inset
+
+ plane with radius 
+\begin_inset Formula $R$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\frac{dT}{ds} & =\frac{d^{2}r}{ds^{2}}\\
+ & =\frac{d^{2}}{ds^{2}}\begin{pmatrix}R\cos\frac{s}{R}\\
+R\sin\frac{s}{R}\\
+0
+\end{pmatrix}\\
+ & =\begin{pmatrix}-\frac{1}{R}\cos\frac{s}{R}\\
+-\frac{1}{R}\sin\frac{s}{R}\\
+0
+\end{pmatrix}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+And 
+\begin_inset Formula $\kappa=\frac{1}{R}$
+\end_inset
+
+.
+ Since circles are second-order approximations of arbitrary curves, we define
+ 
+\begin_inset Formula $\frac{1}{\kappa}=\rho$
+\end_inset
+
+, and call 
+\begin_inset Formula $\rho$
+\end_inset
+
+ the radius of curvature.
+\end_layout
+
+\begin_layout Standard
+Since locally the angle is 
+\begin_inset Formula $\frac{s}{\rho}$
+\end_inset
+
+, the radius of curvature is also the rate of change of the angle, in radians
+ per meter.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Phantom Phantom
+status open
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Show that 
+\begin_inset Formula $\frac{dB}{ds}=-\tau N$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\frac{dB}{ds} & =\frac{dT\times N}{ds}\\
+ & =\frac{dT}{ds}\times N+T\times\frac{dN}{ds}\\
+ & =T\times\frac{dN}{ds}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Since 
+\begin_inset Formula $N$
+\end_inset
+
+ is a unit vector, it is orthogonal to 
+\begin_inset Formula $\frac{dN}{ds}$
+\end_inset
+
+ .
+ It is also by definition orthogonal to 
+\begin_inset Formula $T$
+\end_inset
+
+.
+ Therefore 
+\begin_inset Formula $\frac{dB}{ds}$
+\end_inset
+
+ is in the direction of 
+\begin_inset Formula $N$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+We call the scaling factor 
+\begin_inset Formula $\tau$
+\end_inset
+
+ the torsion.
+ If 
+\begin_inset Formula $r(s)$
+\end_inset
+
+ is contained in the 
+\begin_inset Formula $xy$
+\end_inset
+
+ plane, 
+\begin_inset Formula $T$
+\end_inset
+
+ and 
+\begin_inset Formula $N$
+\end_inset
+
+ are contained in the 
+\begin_inset Formula $xy$
+\end_inset
+
+ plane, and 
+\begin_inset Formula $B$
+\end_inset
+
+ is either 
+\begin_inset Formula $\begin{pmatrix}0\\
+0\\
+1
+\end{pmatrix}$
+\end_inset
+
+ or 
+\begin_inset Formula $\begin{pmatrix}0\\
+0\\
+-1
+\end{pmatrix}$
+\end_inset
+
+ and 
+\begin_inset Formula $\tau=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Phantom Phantom
+status open
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Show that 
+\begin_inset Formula $\frac{dN}{ds}=\tau B-\kappa T$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+\frac{dN}{ds} & =\frac{dB\times T}{ds}\\
+ & =\frac{dB}{ds}\times T+B\times\frac{dT}{ds}\\
+ & =-\tau N\times T+B\times\kappa N\\
+ & =\tau B-\kappa T
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Tangent and normal accelerations
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $r(t)$
+\end_inset
+
+ be a trajectory, we will show that it's acceleration can be decomposed
+ to a component in the tangent direction (affecting only the speed) and
+ a component in the normal direction (affecting only the velocity's direction).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Phantom Phantom
+status open
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Notation: 
+\begin_inset Formula $u(t)=\left|v(t)\right|$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+a(t) & =\frac{d^{2}r}{dt^{2}}=\frac{d}{dt}\frac{dr}{dt}=\frac{d}{dt}\left(\frac{dr}{ds}\cdot\frac{ds}{dt}\right)\\
+ & =\left(\frac{d}{dt}\frac{ds}{dt}\right)\frac{dr}{ds}+\frac{ds}{dt}\cdot\frac{d}{dt}\left(\frac{dr}{ds}\right)\\
+ & =\frac{du}{dt}T+\frac{ds}{dt}\cdot\frac{dT}{dt}\\
+ & =\frac{du}{dt}T+\frac{ds}{dt}\cdot\frac{dT}{ds}\cdot\frac{ds}{dt}\\
+ & =\frac{du}{dt}T+\frac{u^{2}}{\rho}N
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Work is the change in total energy by non-conserving forces
+\end_layout
+
+\begin_layout Standard
+Show that if 
+\begin_inset Formula $F=-\nabla\varphi$
+\end_inset
+
+ is a conservative field, then the work that needs to be done with an additional
+ force 
+\begin_inset Formula $\tilde{F}$
+\end_inset
+
+ (not necessarily conservative), in order to move an object from point 
+\begin_inset Formula $\gamma=A$
+\end_inset
+
+ to point 
+\begin_inset Formula $\gamma=B$
+\end_inset
+
+, is 
+\begin_inset Formula $\intop_{\gamma}\tilde{F}\cdot dr=\frac{1}{2}mv_{B}^{2}+\varphi(B)-\left(\frac{1}{2}mv_{A}^{2}+\varphi(A)\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Phantom Phantom
+status open
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Proof: The force that caused the object to move along the path 
+\begin_inset Formula $\gamma$
+\end_inset
+
+ is 
+\begin_inset Formula $\tilde{F}-\nabla\varphi$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Therefore,
+\begin_inset Formula 
+\[
+\intop_{\gamma}\left(\tilde{F}-\nabla\varphi\right)\cdot dr=\frac{1}{2}mv_{B}^{2}-\frac{1}{2}mv_{A}^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+And the above follows from
+\begin_inset Formula 
+\begin{align*}
+\intop_{\gamma}\left(\tilde{F}-\nabla\varphi\right)\cdot dr & =\intop_{\gamma}\tilde{F}\cdot dr-\intop_{\gamma}\nabla\varphi\cdot dr\\
+ & =\intop_{\gamma}\tilde{F}\cdot dr-\left(\varphi(B)-\varphi(A)\right)
+\end{align*}
+
+\end_inset
+
+
 \end_layout
 
 \end_body
