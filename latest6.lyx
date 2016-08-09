@@ -177,22 +177,23 @@ A
 \begin_layout Standard
 \begin_inset Formula 
 \begin{align*}
-\frac{\partial\varphi}{\partial x_{k}}(\mathbf{p}) & =\frac{\partial}{\partial x_{k}}\intop_{\gamma}A\cdot d\mathbf{r}\\
+\frac{\partial\varphi}{\partial x_{k}}(\mathbf{x}) & =\frac{\partial}{\partial x_{k}}\intop_{\gamma}A\cdot d\mathbf{r}\\
  & =\frac{\partial}{\partial x_{k}}\intop_{t=0}^{1}A(r(t))\cdot\frac{d\mathbf{r}}{dt}\,dt\\
- & =\frac{\partial}{\partial x_{k}}\intop_{t=0}^{1}A(t\mathbf{p})\cdot\mathbf{p}\,dt\\
- & =\frac{\partial}{\partial x_{k}}\intop_{t=0}^{1}\sum_{i=1}^{n}A_{i}(t\mathbf{p})\cdot p_{i}\,dt\\
- & =\sum_{i=1}^{n}\intop_{t=0}^{1}\frac{\partial}{\partial x_{k}}\left(A_{i}(t\mathbf{p})\cdot p_{i}\right)\,dt\\
- & =\sum_{i=1}^{n}\intop_{t=0}^{1}\left(\left(\frac{\partial}{\partial x_{k}}A_{i}(t\mathbf{p})\right)\cdot p_{i}+A_{i}(t\mathbf{p})\cdot\left(\frac{\partial}{\partial x_{k}}p_{i}\right)\right)\,dt\\
- & =\sum_{i=1}^{n}\intop_{t=0}^{1}t\left(\frac{\partial}{\partial x_{k}}A_{i}\right)(t\mathbf{p})\cdot p_{i}\,dt+\intop_{t=0}^{1}A_{k}(t\mathbf{p})\,dt\\
- & =\sum_{i=1}^{n}\intop_{t=0}^{1}t\left(\frac{\partial A_{k}}{\partial x_{i}}\right)(t\mathbf{p})\cdot p_{i}\,dt+\intop_{t=0}^{1}A_{k}(t\mathbf{p})\,dt\\
- & =\sum_{i=1}^{n}\intop_{t=0}^{1}t\left(\frac{\partial A_{k}}{\partial x_{i}}\right)(t\mathbf{p})\cdot\frac{d(tp_{i})}{dt}\,dt+\intop_{t=0}^{1}A_{k}(t\mathbf{p})\,dt\\
- & =\intop_{t=0}^{1}t\frac{dA_{k}(t\mathbf{p})}{dt}\,dt+\intop_{t=0}^{1}A_{k}(t\mathbf{p})\,dt\\
-\begin{bmatrix}u=t & dv=\frac{dA_{k}(t\mathbf{p})}{dt}dt\\
-du=dt & v=A_{k}(t\mathbf{p})
+ & =\frac{\partial}{\partial x_{k}}\intop_{t=0}^{1}A(t\mathbf{x})\cdot\mathbf{x}\,dt\\
+ & =\frac{\partial}{\partial x_{k}}\intop_{t=0}^{1}\sum_{i=1}^{n}A_{i}(t\mathbf{x})\cdot x_{i}\,dt\\
+ & =\sum_{i=1}^{n}\intop_{t=0}^{1}\frac{\partial}{\partial x_{k}}\left(A_{i}(t\mathbf{x})\cdot x_{i}\right)\,dt\\
+ & =\sum_{i=1}^{n}\intop_{t=0}^{1}\left(\left(\frac{\partial}{\partial x_{k}}\left(A_{i}(t\mathbf{x})\right)\right)\cdot x_{i}+A_{i}(t\mathbf{x})\cdot\left(\frac{\partial x_{i}}{\partial x_{k}}\right)\right)\,dt\\
+ & =\sum_{i=1}^{n}\intop_{t=0}^{1}\left(\frac{\partial}{\partial x_{k}}\left(A_{i}(t\mathbf{x})\right)\right)\cdot x_{i}\,dt+\sum_{i=1}^{n}\intop_{t=0}^{1}A_{i}(t\mathbf{x})\cdot\left(\frac{\partial x_{i}}{\partial x_{k}}\right)\,dt\\
+ & =\sum_{i=1}^{n}\intop_{t=0}^{1}t\left(\frac{\partial A_{i}}{\partial x_{k}}\right)(t\mathbf{x})\cdot x_{i}\,dt+\intop_{t=0}^{1}A_{k}(t\mathbf{x})\,dt\\
+ & =\sum_{i=1}^{n}\intop_{t=0}^{1}t\left(\frac{\partial A_{k}}{\partial x_{i}}\right)(t\mathbf{x})\cdot x_{i}\,dt+\intop_{t=0}^{1}A_{k}(t\mathbf{x})\,dt\\
+ & =\sum_{i=1}^{n}\intop_{t=0}^{1}t\left(\frac{\partial A_{k}}{\partial x_{i}}\right)(t\mathbf{x})\cdot\frac{d(tx_{i})}{dt}\,dt+\intop_{t=0}^{1}A_{k}(t\mathbf{x})\,dt\\
+ & =\intop_{t=0}^{1}t\frac{dA_{k}(t\mathbf{x})}{dt}\,dt+\intop_{t=0}^{1}A_{k}(t\mathbf{x})\,dt\\
+\begin{bmatrix}u=t & dv=\frac{dA_{k}(t\mathbf{x})}{dt}dt\\
+du=dt & v=A_{k}(t\mathbf{x})
 \end{bmatrix}\\
- & =\left.tA_{k}(t\mathbf{p})\right|_{t=0}^{t=1}-\intop_{t=0}^{1}A_{k}(t\mathbf{p})dt+\intop_{t=0}^{1}A_{k}(t\mathbf{p})\,dt\\
- & =\left.tA_{k}(t\mathbf{p})\right|_{t=0}^{t=1}\\
- & =A_{k}(\mathbf{p})
+ & =\left.tA_{k}(t\mathbf{x})\right|_{t=0}^{t=1}-\intop_{t=0}^{1}A_{k}(t\mathbf{x})dt+\intop_{t=0}^{1}A_{k}(t\mathbf{x})\,dt\\
+ & =\left.tA_{k}(t\mathbf{x})\right|_{t=0}^{t=1}\\
+ & =A_{k}(\mathbf{x})
 \end{align*}
 
 \end_inset
@@ -232,7 +233,7 @@ Let
 \begin_inset Formula $B(s)$
 \end_inset
 
- be the bi-normal vector 
+ be the binormal vector 
 \begin_inset Formula $B=T\times N$
 \end_inset
 
@@ -266,7 +267,7 @@ Let
 \end_inset
 
  be some vector field where 
-\begin_inset Formula $\left|C(s)\right|=const$
+\begin_inset Formula $\left\Vert C(s)\right\Vert =const$
 \end_inset
 
 , 
@@ -275,7 +276,7 @@ Let
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\frac{dC}{ds}\cdot C=\frac{1}{2}\frac{dC^{2}}{ds}=\frac{1}{2}\frac{d\left\Vert C\right\Vert }{ds}=0
+\frac{dC}{ds}\cdot C=\frac{1}{2}\frac{d\left(C\cdot C\right)}{ds}=\frac{1}{2}\frac{d\left\Vert C\right\Vert ^{2}}{ds}=0
 \]
 
 \end_inset
@@ -371,8 +372,8 @@ Since locally the angle is
 \begin_inset Formula $\frac{s}{\rho}$
 \end_inset
 
-, the radius of curvature is also the rate of change of the angle, in radians
- per meter.
+, the curvature is also the rate of change of the angle, in radians per
+ meter.
  
 \end_layout
 
@@ -400,7 +401,7 @@ Show that
 \begin_layout Standard
 \begin_inset Formula 
 \begin{align*}
-\frac{dB}{ds} & =\frac{dT\times N}{ds}\\
+\frac{dB}{ds} & =\frac{d\left(T\times N\right)}{ds}\\
  & =\frac{dT}{ds}\times N+T\times\frac{dN}{ds}\\
  & =T\times\frac{dN}{ds}
 \end{align*}
@@ -508,7 +509,7 @@ Show that
 :
 \begin_inset Formula 
 \begin{align*}
-\frac{dN}{ds} & =\frac{dB\times T}{ds}\\
+\frac{dN}{ds} & =\frac{d\left(B\times T\right)}{ds}\\
  & =\frac{dB}{ds}\times T+B\times\frac{dT}{ds}\\
  & =-\tau N\times T+B\times\kappa N\\
  & =\tau B-\kappa T
@@ -580,8 +581,8 @@ Show that if
 \begin_inset Formula $F=-\nabla\varphi$
 \end_inset
 
- is a conservative field, then the work that needs to be done with an additional
- force 
+ is a conservative field, then the work that is needed to be done with an
+ additional force 
 \begin_inset Formula $\tilde{F}$
 \end_inset
 
