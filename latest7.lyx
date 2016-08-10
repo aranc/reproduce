@@ -103,7 +103,1372 @@ LatexCommand tableofcontents
 \end_layout
 
 \begin_layout Subsection
-TBD
+Contravariant and covariant components
+\end_layout
+
+\begin_layout Standard
+Given a basis 
+\begin_inset Formula $E$
+\end_inset
+
+, we define the inverse basis 
+\begin_inset Formula $\overset{*}{E}$
+\end_inset
+
+ such that 
+\begin_inset Formula $\underset{e_{i}\vphantom{\overset{*}{e}_{j}}}{\underbrace{\left(E\delta_{i}\vphantom{\overset{*}{E}\delta_{j}}\right)}}\cdot\underset{\overset{*}{e}_{j}}{\underbrace{\left(\overset{*}{E}\delta_{j}\right)}}=\delta_{ij}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The components of 
+\begin_inset Formula $x$
+\end_inset
+
+ on basis 
+\begin_inset Formula $E$
+\end_inset
+
+ are called the contravariant components of 
+\begin_inset Formula $x$
+\end_inset
+
+ on 
+\begin_inset Formula $E$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The components of 
+\begin_inset Formula $x$
+\end_inset
+
+ on basis 
+\begin_inset Formula $\overset{*}{E}$
+\end_inset
+
+ are called the covariant components of 
+\begin_inset Formula $x$
+\end_inset
+
+ on 
+\begin_inset Formula $E$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Phantom Phantom
+status open
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We will show that 
+\series bold
+
+\begin_inset Formula $\overset{*}{E}=E^{-T}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{gather*}
+E\delta_{i}\cdot\overset{*}{E}\delta_{j}=\delta_{ij}\\
+E^{T}\delta^{i}\,\overset{*}{E}\delta_{j}=\delta_{ij}\\
+E^{T}\,\overset{*}{E}=I\\
+\overset{*}{E}=\left(E^{T}\right)^{-1}=E^{-T}
+\end{gather*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Phantom Phantom
+status open
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The contravariant components of 
+\begin_inset Formula $x$
+\end_inset
+
+ are the components of 
+\begin_inset Formula $x$
+\end_inset
+
+ on basis 
+\begin_inset Formula $E$
+\end_inset
+
+, therefore they are 
+\begin_inset Formula $E^{-1}x$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The covariant components of 
+\begin_inset Formula $x$
+\end_inset
+
+ are the components of 
+\begin_inset Formula $x$
+\end_inset
+
+ on basis 
+\begin_inset Formula $\overset{*}{E}$
+\end_inset
+
+, therefore they are: 
+\begin_inset Formula $\overset{*}{E}^{-1}x=\left(E^{-T}\right)^{-1}x=E^{T}x$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Phantom Phantom
+status open
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If 
+\begin_inset Formula $E$
+\end_inset
+
+ is orthonormal, than 
+\begin_inset Formula $E=E^{-T}=\overset{*}{E}$
+\end_inset
+
+, therefore 
+\begin_inset Formula $x_{i}=x^{i}$
+\end_inset
+
+ for every 
+\begin_inset Formula $x$
+\end_inset
+
+.
+ The reverse direction is also true, use 
+\begin_inset Formula $x=\delta_{i}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Phantom Phantom
+status open
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We will show how to express 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+ using all 
+\begin_inset Formula $x^{j}$
+\end_inset
+
+ and the Gramian of 
+\begin_inset Formula $E$
+\end_inset
+
+, 
+\begin_inset Formula $G=E^{T}E$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x_{i}=\delta^{i}E^{T}x=\delta^{i}E^{T}E\delta_{j}\delta^{j}E^{-1}x=G_{ij}x^{j}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Therefore, 
+\begin_inset Formula $x_{i}=G_{ij}x^{j}$
+\end_inset
+
+, using Einstein's summation, and where 
+\begin_inset Formula $G_{ij}=\delta^{i}G\delta_{j}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Also,
+\begin_inset Formula 
+\[
+x^{i}=\delta^{i}E^{-1}x=\delta^{i}E^{-1}E^{-T}\delta_{j}\delta^{j}E^{T}x
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+And,
+\begin_inset Formula 
+\[
+E^{-1}E^{-T}=\left(E^{T}E\right)^{-1}=G^{-1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Therefore, 
+\begin_inset Formula $x^{i}=G^{ij}x_{j}$
+\end_inset
+
+, using Einstein's summation, and where 
+\begin_inset Formula $G_{ij}=\delta^{i}G^{-1}\delta_{j}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Phantom Phantom
+status open
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We will show various ways to express the dot product 
+\begin_inset Formula $x\cdot y$
+\end_inset
+
+ using contravariant and covariant components:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+x\cdot y & =x^{T}y\\
+ & =x^{T}EE^{-1}y\\
+ & =\left(E^{T}x\right)^{T}\cdot E^{-1}y\\
+ & =x_{i}y^{i}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Therefore, for any basis 
+\begin_inset Formula $E$
+\end_inset
+
+, 
+\begin_inset Formula $x\cdot y=x_{i}y^{i}=x^{i}y_{i}$
+\end_inset
+
+.
+ Moreover, if 
+\begin_inset Formula $E$
+\end_inset
+
+ is orthonormal, than 
+\begin_inset Formula $x\cdot y=x_{i}y_{i}=x^{i}y^{i}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+And for any basis 
+\begin_inset Formula $E$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+x\cdot y=x^{i}y_{i}=g_{ij}x^{i}y^{j}=g^{ij}x_{i}y_{j}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Rodrigues' rotation formula
+\end_layout
+
+\begin_layout Standard
+We will show how to write the rotation 
+\begin_inset Formula $\mbox{Rot}(\hat{\omega},\theta)$
+\end_inset
+
+ as an operator:
+\end_layout
+
+\begin_layout Standard
+Consider a vector 
+\begin_inset Formula $x$
+\end_inset
+
+, when rotating 
+\begin_inset Formula $x$
+\end_inset
+
+ around the rotation axis 
+\begin_inset Formula $\hat{\omega}$
+\end_inset
+
+, only the perpendicular part of 
+\begin_inset Formula $x$
+\end_inset
+
+ is rotated.
+ If we rotated 
+\begin_inset Formula $x$
+\end_inset
+
+ by 
+\begin_inset Formula $\frac{\pi}{2}$
+\end_inset
+
+ degrees, we would get 
+\begin_inset Formula $x^{\parallel}+\hat{\omega}\times x^{\perp}$
+\end_inset
+
+.
+ Since we are rotating by 
+\begin_inset Formula $\theta$
+\end_inset
+
+ degrees, we get 
+\begin_inset Formula $x^{\parallel}+x^{\perp}\cos\theta+\left(\hat{\omega}\times x^{\perp}\right)\sin\theta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pics/rodrigues.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Phantom Phantom
+status open
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Lemma, show that 
+\begin_inset Formula $\left[a\right]_{x}^{3}=-\left|a\right|^{2}\left[a\right]_{x}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left[a\right]_{x}^{3}b=a\times\left(a\times\left(a\times b\right)\right)=(a\cdot a\times b)a-\left(a\cdot a\right)\left(a\times b\right)=-\left|a\right|^{2}\left[a\right]_{x}b
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Phantom Phantom
+status open
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Back to Rodrigues,
+\begin_inset Formula 
+\begin{align*}
+\mbox{Rot}(\hat{\omega},\theta)(x) & =x^{\parallel}+x^{\perp}\cos\theta+\left(\hat{\omega}\times x^{\perp}\right)\sin\theta\\
+ & =x^{\parallel}+x^{\perp}-x^{\perp}+x^{\perp}\cos\theta+\left(\hat{\omega}\times x^{\perp}\right)\sin\theta\\
+ & =x+(\cos\theta-1)x^{\perp}+\left(\hat{\omega}\times x^{\perp}\right)\\
+ & =Ix+\left(1-\cos\theta\right)\left[\hat{w}\right]_{x}^{2}x^{\perp}+\sin\theta\left[\hat{w}\right]_{x}x^{\perp}\\
+ & =Ix+\left(1-\cos\theta\right)\left[\hat{w}\right]_{x}^{2}x+\sin\theta\left[\hat{w}\right]_{x}x
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Therefore, we get Rodrigues' rotation formula: 
+\begin_inset Formula 
+\[
+\mbox{Rot}(\hat{\omega},\theta)=I+\sin\theta\left[\hat{w}\right]_{x}+\left(1-\cos\theta\right)\left[\hat{w}\right]_{x}^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Phantom Phantom
+status open
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This can also be written in exponential form:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mbox{Rot}(\hat{\omega},\theta)=e^{\theta\left[\hat{w}\right]_{x}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Since,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+e^{\theta\left[\hat{w}\right]_{x}} & =\sum_{k=0}^{\infty}\frac{\theta^{k}\left[\hat{w}\right]_{x}^{k}}{k!}\\
+ & =1+\sum_{k=0}^{\infty}\frac{\theta^{\left(2k+1\right)}\left[\hat{w}\right]_{x}^{\left(2k+1\right)}}{\left(2k+1\right)!}+\sum_{k=1}^{\infty}\frac{\theta^{2k}\left[\hat{w}\right]_{x}^{2k}}{2k!}\\
+ & =1+\left[\hat{w}\right]_{x}\sum_{k=0}^{\infty}\left(-1\right)^{k}\frac{\theta^{\left(2k+1\right)}}{\left(2k+1\right)!}-\left[\hat{w}\right]_{x}^{2}\sum_{k=1}^{\infty}\left(-1\right)^{k}\frac{\theta^{2k}}{2k!}\\
+ & =1+\sin\theta\left[\hat{w}\right]_{x}+\left(1-\cos\theta\right)\left[\hat{w}\right]_{x}^{2}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Axis of rotation as the differentiation operator
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $E(t)$
+\end_inset
+
+ be an orthonormal basis in motion, i.e.
+ 
+\begin_inset Formula $e_{i}\cdot e_{j}=\delta_{ij}$
+\end_inset
+
+.
+ Show that the vector 
+\begin_inset Formula $\omega=\frac{1}{2}\sum_{i}e_{i}\times\dot{e}_{i}$
+\end_inset
+
+ is satisfying 
+\begin_inset Formula $\omega\times e_{i}=\dot{e}_{i}$
+\end_inset
+
+, and therefore, for every constant vector 
+\begin_inset Formula $r$
+\end_inset
+
+, 
+\begin_inset Formula $\omega\times r=\dot{r}$
+\end_inset
+
+.
+\begin_inset Formula 
+\begin{align*}
+\omega\times e_{k} & =\left(\frac{1}{2}\sum_{i}e_{i}\times\dot{e}_{i}\right)\times e_{k}\\
+ & =\frac{1}{2}\sum_{i}\left(\left(e_{i}\times\dot{e}_{i}\right)\times e_{k}\right)\\
+ & =\frac{1}{2}\sum_{i}\left(\left(e_{i}\cdot e_{k}\right)\dot{e}_{i}-\left(\dot{e}_{i}\cdot e_{k}\right)e_{i}\right)\\
+ & =\frac{1}{2}\dot{e}_{k}-\frac{1}{2}\sum_{i}\left(\dot{e}_{i}\cdot e_{k}\right)e_{i}\\
+ & =\frac{1}{2}\dot{e}_{k}-\frac{1}{2}E\dot{E}^{-1}e_{k}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+TODO: complete this
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Axis of rotation as the angular velocity
+\end_layout
+
+\begin_layout Standard
+Show that if a rigid body is moving around a constant axis 
+\begin_inset Formula $\hat{n}$
+\end_inset
+
+ and the angle is 
+\begin_inset Formula $\alpha(t)$
+\end_inset
+
+, then for every 
+\begin_inset Formula $t$
+\end_inset
+
+, 
+\begin_inset Formula $\dot{r}=\left(\dot{\alpha}\hat{n}\right)\times r$
+\end_inset
+
+.
+ Therefore 
+\begin_inset Formula $\omega=\dot{\alpha}\hat{n}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\omega$
+\end_inset
+
+ is called the 
+\series bold
+angular velocity
+\series default
+.
+ It's direction is right oriented, and it's size at every moment 
+\begin_inset Formula $t$
+\end_inset
+
+ is 
+\begin_inset Formula $\dot{\alpha}(t)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Phantom Phantom
+status open
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We already saw that 
+\begin_inset Formula $\omega\times r=\dot{r}$
+\end_inset
+
+.
+ We need to prove that 
+\begin_inset Formula $\left|\omega(t)\right|=\dot{\alpha}(t)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+and also, that we 
+\begin_inset Formula $\omega$
+\end_inset
+
+ is the axis we rotate around..
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Phantom Phantom
+status open
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+And therefore in the general case, for a constant 
+\begin_inset Formula $r$
+\end_inset
+
+ in the system 
+\begin_inset Formula $E$
+\end_inset
+
+, we have 
+\begin_inset Formula $v=\dot{r}=\omega\times r$
+\end_inset
+
+.
+ Where 
+\begin_inset Formula $\omega(t)$
+\end_inset
+
+ is the instantaneous axis, and it's size, 
+\begin_inset Formula $\left|\omega(t)\right|$
+\end_inset
+
+, is the instantaneous angular speed.
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Quotes eld
+\end_inset
+
+De-horsing
+\begin_inset Quotes erd
+\end_inset
+
+ the axis of rotation
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left[\omega\right]_{x}=\begin{bmatrix}0 & -\omega_{3} & \omega_{2}\\
+\omega_{3} & 0 & -\omega_{1}\\
+-\omega_{2} & \omega_{1} & 0
+\end{bmatrix}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Quotes eld
+\end_inset
+
+Horse
+\begin_inset Quotes erd
+\end_inset
+
+ formula:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\delta^{i}\left[\omega\right]_{x}\delta_{j}=\delta^{i}\left(\omega\times\delta_{j}\right)=\varepsilon_{irj}\omega_{r}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Quotes eld
+\end_inset
+
+De-horse
+\begin_inset Quotes erd
+\end_inset
+
+ formula:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\omega_{k}=\frac{1}{2}\varepsilon_{ikj}\delta^{i}\left[\omega\right]_{x}\delta_{j}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Phantom Phantom
+status open
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $E(t)$
+\end_inset
+
+ be a system of a rotating rigid body, then 
+\begin_inset Formula $EE^{T}=E^{T}E=I$
+\end_inset
+
+, and therefore 
+\begin_inset Formula $\dot{E}E^{T}+\left(\dot{E}E^{T}\right)^{T}=0$
+\end_inset
+
+, i.e.
+ 
+\begin_inset Formula $\dot{E}E^{T}$
+\end_inset
+
+ is antisymmetric.
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $r(t)$
+\end_inset
+
+ be a point on the rotating rigid body, then 
+\begin_inset Formula $r(t)=E(t)\,r_{0}$
+\end_inset
+
+, therefore, 
+\begin_inset Formula 
+\[
+\dot{r}=\dot{(Er_{0})}=\dot{E}r_{o}=\dot{E}E^{T}r
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Define 
+\begin_inset Formula $[\omega]_{x}$
+\end_inset
+
+ to be 
+\begin_inset Formula $\dot{E}E^{T}$
+\end_inset
+
+, and we get 
+\begin_inset Formula $\dot{r}=[\omega]_{x}r$
+\end_inset
+
+, note that 
+\begin_inset Formula $[\omega]_{x}=\dot{E}E^{T}$
+\end_inset
+
+ is antisymmetric.
+ We will 
+\begin_inset Quotes eld
+\end_inset
+
+De-horse
+\begin_inset Quotes erd
+\end_inset
+
+ it to find 
+\begin_inset Formula $\omega$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\omega_{k} & =\frac{1}{2}\varepsilon_{ikj}\delta^{i}\left(\dot{E}E^{T}\right)\delta_{j}\\
+ & =\frac{1}{2}\varepsilon_{ikj}\delta^{i}\dot{E}\delta_{r}\delta^{r}E^{T}\delta_{j}\\
+ & =\frac{1}{2}\varepsilon_{kji}\,\delta^{j}E\delta_{r}\,\delta^{i}\dot{E}\delta_{r}\\
+ & =\frac{1}{2}\sum_{r}e_{r}\times\dot{e}_{r}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+Obviously wrong, since 
+\begin_inset Formula $\omega_{k}$
+\end_inset
+
+ is a scalar, and 
+\begin_inset Formula $\frac{1}{2}\sum_{r}e_{r}\times\dot{e}_{r}$
+\end_inset
+
+ is a vector
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Instantaneous axis of rotation for Frenet-Serret
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\omega & =\frac{1}{2}\left(T\times\dot{T}+N\times\dot{N}+B\times\dot{B}\right)\\
+ & =\frac{1}{2}\left(T\times\kappa N+N\times\tau B-N\times\kappa T-B\times\tau N\right)\\
+ & =\frac{1}{2}\left(\kappa B+\tau T+\kappa B+\tau T\right)\\
+ & =\tau T+\kappa B
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Quotes eld
+\end_inset
+
+Horse
+\begin_inset Quotes erd
+\end_inset
+
+ identities
+\end_layout
+
+\begin_layout Standard
+Show that 
+\begin_inset Formula $\left[a\right]_{x}\left[b\right]_{x}=ba^{T}-\left(a^{T}b\right)I$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\left[a\right]_{x}\left[b\right]_{x}c & =a\times\left(b\times c\right)\\
+ & =\left(a\cdot c\right)b-\left(a\cdot b\right)c\\
+ & =b\,a^{T}c-\left(a^{T}b\right)c
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Show that 
+\begin_inset Formula $\left[a\times b\right]_{x}=ba^{T}-ab^{T}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\left[a\times b\right]_{x}c & =\left(a\times b\right)\times c\\
+ & =\left(a\cdot c\right)b-\left(b\cdot c\right)a\\
+ & =b\,a^{T}c-a\,b^{T}c
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Express 
+\begin_inset Formula $\left[a\right]_{x}^{2}$
+\end_inset
+
+ using 
+\begin_inset Formula $aa^{T}$
+\end_inset
+
+ and 
+\begin_inset Formula $a^{T}a$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left[a\right]_{x}^{2}=\left[a\right]_{x}\left[a\right]_{x}^{2}=aa^{T}-\left(a^{T}a\right)I
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Area of an infinitesimal triangle
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Polar way:
+\end_layout
+
+\begin_layout Standard
+Using 
+\begin_inset Formula $\mbox{area}(\triangle)=\frac{1}{2}ab\sin((a,b))$
+\end_inset
+
+, we get that the area of the triangle is 
+\begin_inset Formula 
+\begin{align*}
+\frac{1}{2}r(r+\Delta r)\sin\left(d\theta\right) & \approx\frac{1}{2}r(r+\Delta r)d\theta\approx\frac{1}{2}r^{2}d\theta
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Cartesian way:
+\end_layout
+
+\begin_layout Standard
+Area is 
+\begin_inset Formula $\frac{1}{2}$
+\end_inset
+
+ the area of a parallelogram sharing two vertices with the triangle:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{1}{2}\begin{vmatrix}x & x+\Delta x\\
+y & y+\Delta y
+\end{vmatrix}=\frac{1}{2}\begin{vmatrix}x & \Delta x\\
+y & \Delta y
+\end{vmatrix}=\frac{1}{2}\left(xdy-ydx\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This gives us an alternative proof for the planimeter formula
+\begin_inset Formula 
+\[
+\mbox{Area}(S)=\frac{1}{2}\ointop_{\partial S}\left(xdy-ydx\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Phantom Phantom
+status open
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We will see two ways to derive 
+\begin_inset Formula $d\theta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+By differentiating 
+\begin_inset Formula $\theta=\arctan\frac{y}{x}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+d\theta & =\frac{1}{x}\cdot\frac{1}{1+\left(\frac{y}{x}\right)^{2}}\,dy-\frac{y}{x^{2}}\,\frac{1}{1+\left(\frac{y}{x}\right)^{2}}\,dx\\
+ & =\frac{xdy-ydx}{x^{2}+y^{2}}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+By using the area of an infinitesimal triangle:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $ds=\frac{1}{2}r^{2}d\theta$
+\end_inset
+
+, therefore, 
+\begin_inset Formula $d\theta=\frac{2ds}{r^{2}}=\frac{2\cdot\frac{1}{2}\left(xdy-ydx\right)}{x^{2}+y^{2}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Phantom Phantom
+status open
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Either way, 
+\begin_inset Formula $d\theta=\frac{xdy-ydx}{x^{2}+y^{2}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Phantom Phantom
+status open
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Since a full circle is made every 
+\begin_inset Formula $2\pi$
+\end_inset
+
+ degrees, we get winding formula, i.e.
+ the number of full circles around the origin:
+\begin_inset Formula 
+\[
+w(\gamma,0)=\frac{1}{2\pi}\intop_{\gamma}\frac{xdy-ydx}{x^{2}+y^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Catenary
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pics/catenary1.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Phantom Phantom
+status open
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Find the shape of a rope hanging freely from two points.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Phantom Phantom
+status open
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pics/catenary2.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Phantom Phantom
+status open
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Let's look at the forces operating on an arc 
+\begin_inset Formula $s$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Horizontal forces: 
+\begin_inset Formula $T_{0}=T\cos\varphi$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Vertical forces: 
+\begin_inset Formula $\rho sg=T\sin\varphi$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Where 
+\begin_inset Formula $\rho$
+\end_inset
+
+ is the mass density.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Phantom Phantom
+status open
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Divide the equations and get: 
+\begin_inset Formula $\tan\varphi=\frac{\rho sg}{T_{0}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Define 
+\begin_inset Formula $a=\frac{T_{0}}{\rho g}$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $\tan\varphi=\frac{s}{a}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Phantom Phantom
+status open
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
 \end_layout
 
 \end_body
