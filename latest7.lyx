@@ -669,14 +669,15 @@ Let
 \end_inset
 
 .
-\begin_inset Formula 
-\begin{align*}
-\omega\times e_{k} & =\left(\frac{1}{2}\sum_{i}e_{i}\times\dot{e}_{i}\right)\times e_{k}\\
- & =\frac{1}{2}\sum_{i}\left(\left(e_{i}\times\dot{e}_{i}\right)\times e_{k}\right)\\
- & =\frac{1}{2}\sum_{i}\left(\left(e_{i}\cdot e_{k}\right)\dot{e}_{i}-\left(\dot{e}_{i}\cdot e_{k}\right)e_{i}\right)\\
- & =\frac{1}{2}\dot{e}_{k}-\frac{1}{2}\sum_{i}\left(\dot{e}_{i}\cdot e_{k}\right)e_{i}\\
- & =\frac{1}{2}\dot{e}_{k}-\frac{1}{2}E\dot{E}^{-1}e_{k}
-\end{align*}
+\end_layout
+
+\begin_layout Standard
+\begin_inset Phantom Phantom
+status open
+
+\begin_layout Plain Layout
+A
+\end_layout
 
 \end_inset
 
@@ -684,22 +685,16 @@ Let
 \end_layout
 
 \begin_layout Standard
-\begin_inset Box Boxed
-position "t"
-hor_pos "c"
-has_inner_box 1
-inner_pos "t"
-use_parbox 0
-use_makebox 0
-width "100col%"
-special "none"
-height "1in"
-height_special "totalheight"
-status open
-
-\begin_layout Plain Layout
-TODO: complete this
-\end_layout
+\begin_inset Formula 
+\begin{align*}
+\omega\times e_{k} & =\left(\frac{1}{2}\sum_{i}e_{i}\times\dot{e}_{i}\right)\times e_{k}\\
+ & =\frac{1}{2}\sum_{i}\left(\left(e_{i}\times\dot{e}_{i}\right)\times e_{k}\right)\\
+ & =\frac{1}{2}\sum_{i}\left(\left(e_{i}\cdot e_{k}\right)\dot{e}_{i}-\left(\dot{e}_{i}\cdot e_{k}\right)e_{i}\right)\\
+ & =\frac{1}{2}\dot{e}_{k}-\frac{1}{2}\sum_{i}\left(\dot{e}_{i}\cdot e_{k}\right)e_{i}\\
+\intertext{\mbox{Differentiate e_{i}\cdot e_{j}=\delta_{ij} to get \dot{e}_{i}\cdot e_{j}=-e_{i}\dot{e}_{j} }}\\
+ & =\frac{1}{2}\dot{e}_{k}+\frac{1}{2}\sum_{i}\left(\dot{e}_{k}\cdot e_{i}\right)e_{i}\\
+ & =\frac{1}{2}\dot{e}_{k}+\frac{1}{2}\dot{e}_{k}=e_{k}
+\end{align*}
 
 \end_inset
 
@@ -767,39 +762,46 @@ A
 \end_layout
 
 \begin_layout Standard
-We already saw that 
-\begin_inset Formula $\omega\times r=\dot{r}$
+\begin_inset Formula 
+\begin{gather*}
+r(t)=r^{\parallel}+r^{\perp}\cos\alpha(t)+\left(\hat{n}\times r^{\perp}\right)\sin\alpha(t)
+\end{gather*}
+
 \end_inset
 
-.
- We need to prove that 
-\begin_inset Formula $\left|\omega(t)\right|=\dot{\alpha}(t)$
-\end_inset
 
-.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Box Boxed
-position "t"
-hor_pos "c"
-has_inner_box 1
-inner_pos "t"
-use_parbox 0
-use_makebox 0
-width "100col%"
-special "none"
-height "1in"
-height_special "totalheight"
-status open
+\begin_inset Formula 
+\begin{align*}
+\dot{r}(t) & =-\dot{\alpha}(t)r^{\perp}\sin\alpha(t)+\dot{\alpha}(t)\left(\hat{n}\times r^{\perp}\right)\cos\alpha(t)\\
+ & =\dot{\alpha}(t)\left(-r^{\perp}\sin\alpha(t)+\left(\hat{n}\times r^{\perp}\right)\cos\alpha(t)\right)
+\end{align*}
 
-\begin_layout Plain Layout
-and also, that we 
-\begin_inset Formula $\omega$
 \end_inset
 
- is the axis we rotate around..
+
 \end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\hat{n}\times r & =\hat{n}\times r^{\parallel}+\hat{n}\times r^{\perp}\cos\alpha(t)+\hat{n}\times\left(\hat{n}\times r^{\perp}\right)\sin\alpha(t)\\
+ & =0+\hat{n}\times r^{\perp}\cos\alpha(t)-r^{\perp}\sin\alpha(t)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Therefore,
+\begin_inset Formula 
+\[
+\dot{r}=\left(\dot{\alpha}\hat{n}\right)\times r
+\]
 
 \end_inset
 
@@ -820,7 +822,7 @@ A
 \end_layout
 
 \begin_layout Standard
-And therefore in the general case, for a constant 
+In the general case, for a constant 
 \begin_inset Formula $r$
 \end_inset
 
@@ -1015,30 +1017,12 @@ De-horse
 \end_layout
 
 \begin_layout Standard
-\begin_inset Box Boxed
-position "t"
-hor_pos "c"
-has_inner_box 1
-inner_pos "t"
-use_parbox 0
-use_makebox 0
-width "100col%"
-special "none"
-height "1in"
-height_special "totalheight"
-status open
-
-\begin_layout Plain Layout
-Obviously wrong, since 
-\begin_inset Formula $\omega_{k}$
-\end_inset
-
- is a scalar, and 
-\begin_inset Formula $\frac{1}{2}\sum_{r}e_{r}\times\dot{e}_{r}$
-\end_inset
-
- is a vector
-\end_layout
+Therefore, 
+\begin_inset Formula 
+\begin{align*}
+\omega & =\frac{1}{2}\delta_{k}\varepsilon_{kji}\,\delta^{j}e_{r}\,\delta^{i}\dot{e}_{r}\\
+ & =\frac{1}{2}\sum_{r}e_{r}\times\dot{e}_{r}
+\end{align*}
 
 \end_inset
 
@@ -1452,6 +1436,81 @@ Define
 \end_inset
 
 .
+ Using 
+\begin_inset Formula $\tan\varphi=\frac{dy}{dx}$
+\end_inset
+
+ and 
+\begin_inset Formula $ds=\sqrt{1+\left(\frac{dy}{dx}\right)^{2}}dx$
+\end_inset
+
+, we get:
+\begin_inset Formula 
+\begin{gather*}
+dx=\frac{ds}{\sqrt{1+\left(\frac{s}{a}\right)^{2}}}\\
+\int dx=a\int\frac{d\left(\frac{s}{a}\right)}{\sqrt{1+\left(\frac{s}{a}\right)^{2}}}\\
+x=a\,\mbox{arcsinh}(\frac{s}{a})+c_{1}
+\end{gather*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Since we want the catenary to have arc length 
+\begin_inset Formula $0$
+\end_inset
+
+ at 
+\begin_inset Formula $x=0$
+\end_inset
+
+, we get 
+\begin_inset Formula $c_{1}=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+s=a\,\sinh\left(\frac{x}{a}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{gather*}
+\frac{dy}{dx}=\frac{s}{a}=\sinh\left(\frac{x}{a}\right)\\
+y=a\,\cosh\left(\frac{x}{a}\right)+c_{2}
+\end{gather*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We prefer to express the lowest point in the catenary using 
+\begin_inset Formula $a$
+\end_inset
+
+.
+ If we choose 
+\begin_inset Formula $c_{2}=0$
+\end_inset
+
+, we get the lowest point is 
+\begin_inset Formula $y=a$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -1468,6 +1527,231 @@ A
 \end_layout
 
 \begin_layout Standard
+We will find 
+\begin_inset Formula $a$
+\end_inset
+
+ using 
+\begin_inset Formula $h$
+\end_inset
+
+ the catenary's depth and 
+\begin_inset Formula $\ell$
+\end_inset
+
+ the catenary's length.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left(\frac{y}{a}\right)^{2}-\left(\frac{s}{a}\right)^{2}=1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+At the furthest point right, 
+\begin_inset Formula $y=a+h$
+\end_inset
+
+, 
+\begin_inset Formula $s=\frac{\ell}{2}$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{gather*}
+\left(\frac{a+h}{a}\right)^{2}-\left(\frac{\nicefrac{\ell}{2}}{a}\right)^{2}=1\\
+a^{2}+2ah+h^{2}-\frac{1}{4}\ell^{2}=a^{2}\\
+a=\frac{\frac{1}{4}\ell^{2}-h^{2}}{2h}
+\end{gather*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Newton-Raphson
+\end_layout
+
+\begin_layout Standard
+Given a function 
+\begin_inset Formula $F:\,R^{n}\to R^{n}$
+\end_inset
+
+ we want to find 
+\begin_inset Formula $\vec{x}$
+\end_inset
+
+ such that 
+\begin_inset Formula $F(\vec{x})=0$
+\end_inset
+
+ (Alternatively, if we want to find 
+\begin_inset Formula $\vec{x}$
+\end_inset
+
+ such that 
+\begin_inset Formula $F(\vec{x})=\vec{y}$
+\end_inset
+
+, define a new function 
+\begin_inset Formula $\tilde{F}(\vec{x})=F(\vec{x})-\vec{y}$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Phantom Phantom
+status open
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+ be a root of 
+\begin_inset Formula $F$
+\end_inset
+
+ and let 
+\begin_inset Formula $x_{1}$
+\end_inset
+
+ be a nearby guess.
+\end_layout
+
+\begin_layout Standard
+Using Taylor series expansion,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{gather*}
+F(x_{1})=F(x_{0}+(x_{1}-x_{0})=F(x_{0})+Df\,(x_{1}-x_{0})+o(\left|x_{1}-x_{0}\right|)\\
+F(x_{1})\approx Df\,x_{1}-Df\,x_{0}\\
+Df\,x_{0}\approx Df\,x_{1}-F(x_{1})\\
+x_{0}\approx x_{1}-\left(Df\right)^{-1}F(x_{1})
+\end{gather*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We can use this approximation to iteratively correct our initial guess:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x_{i+1}=x_{i}-\left(Df_{x_{i}}\right)^{-1}F(x_{i})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In the univariate case:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x_{i+1}=x_{i}-\frac{F(x_{i})}{F'(x_{i})}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Potential of a central force
+\end_layout
+
+\begin_layout Standard
+Prove that a central force always has a potential, and it is given by
+\begin_inset Formula 
+\[
+\varphi(r)=g(\left|r\right|)\iff F(r)=-\nabla\varphi=-g'(r)\hat{r}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Phantom Phantom
+status open
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $F$
+\end_inset
+
+ be a central force,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+F(r)=f(\left|r\right|)\hat{r}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+TODO: complete this
+\end_layout
+
+\end_inset
+
 
 \end_layout
 
