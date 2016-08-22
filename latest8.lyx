@@ -103,7 +103,398 @@ LatexCommand tableofcontents
 \end_layout
 
 \begin_layout Subsection
+Compute 
+\begin_inset Formula $d\alpha$
+\end_inset
 
+
+\end_layout
+
+\begin_layout Standard
+Compute 
+\begin_inset Formula $d\alpha$
+\end_inset
+
+ using two ways:
+\end_layout
+
+\begin_layout Standard
+1.
+ Area of the triangle that is swiped by the radius vector:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S(\triangle)=\frac{1}{2}\left|r\right|\left|r+dr\right|\sin d\alpha
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+2.
+ Differential of 
+\begin_inset Formula $\alpha(x,y)=\mbox{arctan}\frac{y}{x}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Spring
+\end_layout
+
+\begin_layout Standard
+Find the energy equation of a spring:
+\end_layout
+
+\begin_layout Standard
+Since 
+\begin_inset Formula $F=-kx$
+\end_inset
+
+ is a central force, it has a potential:
+\begin_inset Formula 
+\[
+\varphi=-\intop_{0}^{x}\left(-kx\right)\,dx=\frac{kx^{2}}{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+And at every moment
+\begin_inset Formula 
+\[
+\frac{1}{2}mv^{2}+\frac{1}{2}kx^{2}=\mbox{const}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Phantom Phantom
+status open
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Find the motion equation of a spring:
+\end_layout
+
+\begin_layout Subsection
+Homogeneous and linear first order equations
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $y'=F(x,y)$
+\end_inset
+
+ be a homogeneous first order equation.
+ i.e.
+ 
+\begin_inset Formula $F(tx,ty)=F(x,y)$
+\end_inset
+
+.
+ So for every values 
+\begin_inset Formula $x,\,y(x)$
+\end_inset
+
+ we have 
+\begin_inset Formula $y'=F(x,y(x))=F(1,\frac{y(x)}{x})$
+\end_inset
+
+.
+ Substitute 
+\begin_inset Formula $u=\frac{y}{x}$
+\end_inset
+
+, 
+\begin_inset Formula $y'=u'x+u$
+\end_inset
+
+.
+ All in all we get a separable equation:
+\begin_inset Formula 
+\[
+\frac{x}{dx}=\frac{F(1,u)-u}{du}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{1}{x}\,dx=\frac{1}{F(1,u)-u}\,du
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Phantom Phantom
+status open
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $y'+p(x)y+q(x)=0$
+\end_inset
+
+ be a linear first order equation.
+\end_layout
+
+\begin_layout Standard
+Multiply with the integrating factor 
+\begin_inset Formula $Ae^{\int p(x)dx}$
+\end_inset
+
+ (
+\begin_inset Formula $A$
+\end_inset
+
+ is the integration constant from 
+\begin_inset Formula $\int p(x)dx$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Ae^{\int p(x)dx}y'+Ae^{\int p(x)dx}p(x)y+q(x)Ae^{\int p(x)dx}=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left(Ae^{\int p(x)dx}y\right)'=-q(x)Ae^{\int p(x)dx}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Ae^{\int p(x)dx}y=-A\int q(x)e^{\int p(x)dx}dx+C
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Where 
+\begin_inset Formula $C$
+\end_inset
+
+ is the integration constant from 
+\begin_inset Formula $\int q(x)e^{\int p(x)dx}dx$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y=-e^{-\int p(x)dx}\int q(x)e^{\int p(x)dx}dx+Ce^{-\int p(x)dx}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Second-order linear homogeneous equations with constant coefficients
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $y''+ay'+by=0$
+\end_inset
+
+ be a Second-order linear homogeneous equations with constant coefficient.
+\end_layout
+
+\begin_layout Standard
+Assume that a solution is of the form 
+\begin_inset Formula $Ae^{rx}$
+\end_inset
+
+.
+\begin_inset Formula 
+\[
+r^{2}Ae^{rx}+arAe^{rx}+bAe^{rx}=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+And 
+\begin_inset Formula $r$
+\end_inset
+
+ is a root of
+\begin_inset Formula 
+\[
+r^{2}+ar+b=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Phantom Phantom
+status open
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If this equation has a positive discriminant, then it has two real solutions
+ 
+\begin_inset Formula $r_{1},r_{2}$
+\end_inset
+
+ and the solution to the differential equation is 
+\begin_inset Formula $c_{1}e^{r_{1}x}+c_{2}e^{r_{2}x}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Phantom Phantom
+status open
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If the discriminant is negative, then it has two complex solutions that
+ are also conjugate.
+ 
+\begin_inset Formula $r_{1}+ir_{2},\,r_{1}-ir_{2}.$
+\end_inset
+
+ and the solution to the differential equation is 
+\begin_inset Formula 
+\[
+c_{1}e^{r_{1}x}e^{ir_{2}x}+c_{2}e^{r_{1}x}e^{ir_{2}x}=c_{1}e^{r_{1}x}(\cos(r_{2}x)+i\sin(r_{2}x))+c_{2}e^{r_{1}x}(\cos(r_{2}x)+i\sin(r_{2}x))
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We can take linear combination of the two factors, and write the solution
+ as
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+c_{1}e^{r_{1}x}\cos(r_{2}x)+c_{2}e^{r_{1}x}\sin(r_{2}x)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Phantom Phantom
+status open
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If the discriminant is 
+\begin_inset Formula $0$
+\end_inset
+
+, then the quadric equation has only a single and real solution.
+ And the the differential equation has the solution 
+\begin_inset Formula $Ae^{rx}$
+\end_inset
+
+.
+ We can show that 
+\begin_inset Formula $Axe^{rx}$
+\end_inset
+
+ is also a solution, and that 
+\begin_inset Formula $w(Ae^{rx},Axe^{rx})\neq0$
+\end_inset
+
+.
 \end_layout
 
 \end_body
