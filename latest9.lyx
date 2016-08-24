@@ -103,7 +103,843 @@ LatexCommand tableofcontents
 \end_layout
 
 \begin_layout Subsection
+Homogeneous 
+\begin_inset Formula $\to$
+\end_inset
 
+ Separable
+\end_layout
+
+\begin_layout Standard
+Input: 
+\begin_inset Formula $y'=F(y,x)$
+\end_inset
+
+, where 
+\begin_inset Formula $F(ty,tx)=F(y,x)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Example: 
+\begin_inset Formula $y'=\frac{x+y}{x-y}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+How to solve: Substitute 
+\begin_inset Formula $u=\frac{y}{x}$
+\end_inset
+
+, 
+\begin_inset Formula $y'=u'x+u$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{du}{dx}x+u=F(\frac{x}{x},\frac{y}{x})=F(1,u)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{1}{x}dx=\frac{1}{F(1,u)-u}du
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Integrating factor leading to an exact equation
+\end_layout
+
+\begin_layout Standard
+Input: 
+\begin_inset Formula $M(x,y)dx+N(x,y)dy=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If 
+\begin_inset Formula $M_{y}=N_{x}$
+\end_inset
+
+, then this is called an exact equation and there exists 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ such that 
+\begin_inset Formula $d\varphi=Mdx+Ndy$
+\end_inset
+
+, therefore 
+\begin_inset Formula $\varphi(x,y)=\mbox{const}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Otherwise, we will try to find an integrating factor 
+\begin_inset Formula $u$
+\end_inset
+
+, such that 
+\begin_inset Formula $uMdx+uNdy=0$
+\end_inset
+
+ is an exact equation, i.e.
+ 
+\begin_inset Formula $\left(uM\right)_{y}=\left(uN\right)_{x}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+In the general case, this is difficult.
+ However, it is simple if 
+\begin_inset Formula $u$
+\end_inset
+
+ is a function of only 
+\begin_inset Formula $x$
+\end_inset
+
+ or 
+\begin_inset Formula $y$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\left(uM\right)_{y} & =\left(uN\right)_{x}\\
+u_{y}M+uM_{y} & =u_{x}N+uN_{X}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If 
+\begin_inset Formula $u=u(x)$
+\end_inset
+
+, then 
+\begin_inset Formula $u_{y}=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{u_{x}}{u}=\frac{M_{y}-N_{x}}{N}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+u=e^{\int\frac{M_{y}-N_{x}}{N}dx}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This only works if the 
+\begin_inset Formula $u$
+\end_inset
+
+ we get is indeed a function of only 
+\begin_inset Formula $x$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Similarly, if 
+\begin_inset Formula $u=u(y)$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{u_{y}}{u}=\frac{N_{x}-M_{y}}{M}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+u=e^{\int\frac{N_{x}-M_{y}}{M}dy}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Linear first order: 
+\begin_inset Formula $y'+p(x)y+q(x)=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Input: 
+\begin_inset Formula $y'+p(x)y+q(x)=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Rearrange as 
+\begin_inset Formula $\left(p(x)y+q(x)\right)dx+dy=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Find an integrating factor to make this an exact equation:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+M_{y} & =p(x)\\
+N_{x} & =0\\
+\frac{u_{x}}{u} & =\frac{p(x)}{1}\\
+u & =e^{\int p(x)dx}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We can multiply the original equation directly:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+e^{\int p(x)dx}y'+p(x)e^{\int p(x)dx}y & =-q(x)e^{\int p(x)dx}\\
+\left(e^{\int p(x)dx}y\right)' & =-q(x)e^{\int p(x)dx}\\
+e^{\int p(x)dx}y & =-\int q(x)e^{\int p(x)dx}\,dx+C\\
+y & =-e^{\int p(x)dx}\int q(x)e^{\int p(x)dx}\,dx+Ce^{\int p(x)dx}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Second order equations that don't depend on the time or place
+\end_layout
+
+\begin_layout Standard
+Input: 
+\begin_inset Formula $y''=F(y',y,x)$
+\end_inset
+
+, or alternatively 
+\begin_inset Formula $\ddot{x}=F(\dot{x},x,t)$
+\end_inset
+
+ where 
+\begin_inset Formula $F(\dot{x},x,t)=F(\dot{x},t)$
+\end_inset
+
+ or 
+\begin_inset Formula $F(\dot{x},x,t)=F(\dot{x},x)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If 
+\begin_inset Formula $F(y',y',x)=F(y',x)$
+\end_inset
+
+, then we Substitute 
+\begin_inset Formula $u(x)=y'(x)$
+\end_inset
+
+ and solve a first order equation 
+\begin_inset Formula $u'=F(u,x)$
+\end_inset
+
+ to get 
+\begin_inset Formula $u$
+\end_inset
+
+ and 
+\begin_inset Formula $y=\int u\,dx$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Phantom Phantom
+status open
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If 
+\begin_inset Formula $F(\dot{x},x,t)=F(\dot{x},x)$
+\end_inset
+
+, We substitute 
+\begin_inset Formula $v=\dot{x}$
+\end_inset
+
+, 
+\begin_inset Formula 
+\[
+\ddot{x}=\frac{d\dot{x}}{dt}=\frac{dv}{dt}=\frac{dv}{dx}\frac{dx}{dt}=v\frac{dv}{dx}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+v\frac{dv}{dx}=F(v,x)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We solve for 
+\begin_inset Formula $v$
+\end_inset
+
+, e.g.
+ 
+\begin_inset Formula $v=g(x)$
+\end_inset
+
+.
+ And we get the separable equation
+\begin_inset Formula $\frac{1}{g(x)}dx=dt$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Phantom Phantom
+status open
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Example: Vertical spring
+\end_layout
+
+\begin_layout Standard
+Solve the equation 
+\begin_inset Formula $\ddot{x}+\frac{k}{m}x+g=0$
+\end_inset
+
+, with the initial values 
+\begin_inset Formula $t=0$
+\end_inset
+
+, 
+\begin_inset Formula $v=0$
+\end_inset
+
+, 
+\begin_inset Formula $x=A$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+v\frac{dv}{dx} & =-\frac{k}{m}x-g\\
+\frac{1}{2}v^{2} & =-\frac{1}{2}\frac{k}{m}x^{2}-gx+C\\
+v & =\sqrt{C^{2}-\left(\sqrt{\frac{k}{m}}x+g\sqrt{\frac{m}{k}}\right)^{2}}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+And we get,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+dt & =\frac{dx}{\sqrt{C^{2}-\left(\sqrt{\frac{k}{m}}x+g\sqrt{\frac{m}{k}}\right)^{2}}}\\
+t & =\int\frac{dx}{\sqrt{C^{2}-\left(\sqrt{\frac{k}{m}}x+g\sqrt{\frac{m}{k}}\right)^{2}}}\\
+t & =\sqrt{\frac{m}{k}}\mbox{arcsin}\left(\frac{\sqrt{\frac{k}{m}}x+g\sqrt{\frac{m}{k}}}{C_{1}}\right)+C_{2}\\
+\frac{\sqrt{\frac{k}{m}}x+g\sqrt{\frac{m}{k}}}{C_{1}} & =\sin\left(\sqrt{\frac{k}{m}}t+C_{2}\right)\\
+x & =C_{1}\sin\left(\sqrt{\frac{k}{m}}t+C_{2}\right)-\frac{gm}{k}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Treating 
+\begin_inset Formula $0$
+\end_inset
+
+ as the resting point of the spring, and using the boundary values, we get:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x=A\cos\left(\sqrt{\frac{k}{m}}t\right)-\frac{gm}{k}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Phantom Phantom
+status open
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Example: Movement on a straight line caused by potential
+\end_layout
+
+\begin_layout Standard
+Solve the equation 
+\begin_inset Formula $\ddot{x}+\frac{d\varphi}{dx}=0$
+\end_inset
+
+ (i.e.
+ motion caused by 
+\begin_inset Formula $F=-\frac{d\varphi}{dx}$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+v\frac{dv}{dx} & =-\frac{d\varphi}{dx}\\
+\frac{1}{2}v^{2} & =-\varphi+C\\
+v & =\pm\sqrt{C-2\varphi}\\
+dt & =\frac{\pm1}{\sqrt{C-2\varphi}}\,dx\\
+t & =\int\frac{\pm1}{\sqrt{C-2\varphi(x)}}\,dx+C_{2}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Abel's identity (Wronskian)
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $y''+a(x)y'+b(x)y=0$
+\end_inset
+
+, and 
+\begin_inset Formula $y_{1},y_{2}$
+\end_inset
+
+ be two solutions for that equation.
+ Compute 
+\begin_inset Formula $W(y_{1},y_{2})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+W(y_{1},y_{2}) & =\begin{vmatrix}y_{1} & y_{1}^{\prime}\\
+y_{2} & y_{2}^{\prime}
+\end{vmatrix}=y_{1}y_{2}^{\prime}-y_{2}y_{1}^{\prime}\\
+\frac{dW(y_{1},y_{2})}{dx} & =y_{1}^{\prime}y_{2}^{\prime}+y_{1}y_{2}^{\prime\prime}-y_{2}^{\prime}y_{1}^{\prime}-y_{2}y_{1}^{\prime\prime}\\
+ & =y_{1}y_{2}^{\prime\prime}-y_{2}y_{1}^{\prime\prime}\\
+ & =\begin{vmatrix}y_{1} & y_{1}^{\prime\prime}\\
+y_{2} & y_{2}^{\prime\prime}
+\end{vmatrix}\\
+ & =\begin{vmatrix}y_{1} & -ay_{1}^{\prime}-by_{1}\\
+y_{2} & -ay_{2}^{\prime}-by_{2}
+\end{vmatrix}\\
+ & =-a\begin{vmatrix}y_{1} & y_{1}^{\prime}\\
+y_{2} & y_{2}^{\prime}
+\end{vmatrix}\\
+ & =-aW(y_{1},y_{2})
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Integrate to find 
+\begin_inset Formula $W$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\frac{dW}{dx} & =-a(x)W\\
+\frac{dW}{W} & =-a(x)\,dx\\
+W & =Ce^{-\int a(x)\,dx}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This provides two important results:
+\end_layout
+
+\begin_layout Standard
+1.
+ 
+\begin_inset Formula $W(y_{1},y_{2})$
+\end_inset
+
+ is either never zero, or always zero for every 
+\begin_inset Formula $x$
+\end_inset
+
+.
+ So it's enough to test at a single point.
+\end_layout
+
+\begin_layout Standard
+2.
+ If we know one solution of the equation, we can extract the other solution
+ using the Wronskian.
+\end_layout
+
+\begin_layout Subsection
+Solving homogeneous linear second-order with constant coefficients
+\end_layout
+
+\begin_layout Standard
+Solve 
+\begin_inset Formula $y''+ay'+by=0$
+\end_inset
+
+.
+ Where 
+\begin_inset Formula $a,b$
+\end_inset
+
+ are constants.
+\end_layout
+
+\begin_layout Standard
+We start by guessing a solution 
+\begin_inset Formula $e^{rx}$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+r^{2}e^{rx}+are^{rx}+be^{rx}=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+r^{2}+ar+b=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So for every 
+\begin_inset Formula $r$
+\end_inset
+
+ that satisfies 
+\begin_inset Formula $r^{2}+ar+b=0$
+\end_inset
+
+, 
+\begin_inset Formula $e^{rx}$
+\end_inset
+
+ is a solution of the equation.
+\end_layout
+
+\begin_layout Standard
+If the discriminant is positive, we get two different real solutions 
+\begin_inset Formula $r_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $r_{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+W(e^{r_{1}x},e^{r_{2}x})=\begin{vmatrix}e^{r_{1}x} & r_{1}e^{r_{1}x}\\
+e^{r_{2}x} & r_{2}e^{r_{2}x}
+\end{vmatrix}=e^{(r_{1}+r_{2})x}\begin{vmatrix}1 & r_{1}\\
+1 & r_{2}
+\end{vmatrix}=e^{(r_{1}+r_{2})x}\left(r_{2}-r_{1}\right)\ne0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If the discriminant is negative, we get two complex conjugated solutions
+ 
+\begin_inset Formula $r_{1}+ir_{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $r_{1}-ir_{2}$
+\end_inset
+
+, (
+\begin_inset Formula $r_{2}\ne0$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+We substitute the solutions to 
+\begin_inset Formula $e^{rx}$
+\end_inset
+
+ and get 
+\begin_inset Formula $e^{\left(r_{1}+ir_{2}\right)x}=e^{r_{1}x}\left(\cos(r_{2}x)+i\sin(r_{2}x)\right)$
+\end_inset
+
+ and 
+\begin_inset Formula $e^{\left(r_{1}-ir_{2}\right)x}=e^{r_{1}x}\left(\cos(r_{2}x)-i\sin(r_{2}x)\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+A linear combination of these solutions gives the following two real solutions:
+ 
+\begin_inset Formula $e^{r_{1}x}\cos(r_{2}x)$
+\end_inset
+
+ and 
+\begin_inset Formula $e^{r_{1}x}\sin(r_{2}x)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+W(e^{r_{1}x}\cos(r_{2}x),e^{r_{1}x}\sin(r_{2}x)) & =\begin{vmatrix}e^{r_{1}x}\cos(r_{2}x) & r_{1}e^{r_{1}x}\cos(r_{2}x)-r_{2}e^{r_{1}x}\sin(r_{2}x)\\
+e^{r_{1}x}\sin(r_{2}x) & r_{1}e^{r_{1}x}\sin(r_{2}x)+r_{2}e^{r_{1}x}\cos(r_{2}x)
+\end{vmatrix}\\
+ & =\begin{vmatrix}e^{r_{1}x}\cos(r_{2}x) & -r_{2}e^{r_{1}x}\sin(r_{2}x)\\
+e^{r_{1}x}\sin(r_{2}x) & r_{2}e^{r_{1}x}\cos(r_{2}x)
+\end{vmatrix}\\
+ & =e^{2r_{1}x}\begin{vmatrix}\cos(r_{2}x) & -r_{2}\sin(r_{2}x)\\
+\sin(r_{2}x) & r_{2}\cos(r_{2}x)
+\end{vmatrix}\\
+ & =e^{2r_{1}x}\left(r_{2}\cos^{2}(r_{2}x)+r_{2}\sin^{2}(r_{2}x)\right)\\
+ & =r_{2}e^{2r_{1}x}\ne0
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If the discriminant is zero, then we only get one solution 
+\begin_inset Formula $y_{1}=e^{rx}$
+\end_inset
+
+, 
+\begin_inset Formula $r=-\frac{a}{2}$
+\end_inset
+
+.
+ We will extract the other solution from the Wronskian.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+W(e^{-\frac{a}{2}x},y_{2})=Ce^{-ax}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+Ce^{-ax} & =e^{-\frac{a}{2}x}y_{2}^{\prime}+\frac{a}{2}e^{-\frac{a}{2}x}y_{2}\\
+e^{\frac{a}{2}x}y_{2}^{\prime}+\frac{a}{2}e^{\frac{a}{2}x}y_{2} & =C\\
+\left(e^{\frac{a}{2}x}y_{2}\right)^{\prime} & =C\\
+e^{\frac{a}{2}x}y_{2} & =Cx
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+And we get a second solution 
+\begin_inset Formula $y_{2}=xe^{rx}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Phantom Phantom
+status open
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Reminder: the general solution for the homogeneous equations above is 
+\begin_inset Formula $c_{1}y_{1}+c_{2}y_{2}$
+\end_inset
+
+, where 
+\begin_inset Formula $c_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $c_{2}$
+\end_inset
+
+ are determined according to the initial or boundary values.
+ 
 \end_layout
 
 \end_body
