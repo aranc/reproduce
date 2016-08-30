@@ -431,6 +431,24 @@ Example:
 \end_layout
 
 \begin_layout Standard
+We get the kernel 
+\begin_inset Formula $\frac{g\sqrt{A}}{v^{2}},\,\frac{\rho}{M}\sqrt{A^{3}}$
+\end_inset
+
+.
+ We combine them to 
+\begin_inset Formula $\frac{v^{2}\rho A}{gM}$
+\end_inset
+
+.
+ From Wikipedia, the connection is 
+\begin_inset Formula $v=\sqrt{\frac{2mg}{\rho AC_{d}}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 
 \end_layout
 
