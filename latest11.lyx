@@ -373,7 +373,51 @@ A basis is an independent and spanning set of vectors.
 , therefore all bases in the same vector space have the same number of elements.
 \end_layout
 
+\begin_layout Subsection
+LTI response to a signal
+\end_layout
+
 \begin_layout Standard
+We want to show that the LTI response to a signal is a convolution of the
+ signal with the system response to shock.
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $x[n]$
+\end_inset
+
+ be the system, and let 
+\begin_inset Formula $h[n]$
+\end_inset
+
+ be the system response to shock.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S\{x(n)\}=\sum_{k=-\infty}^{\infty}x(k)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+TODO: complete this
+\end_layout
+
+\begin_layout Subsection
+LTI response to a sinusoid
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $x[n]=Ae^{i\omega n}$
+\end_inset
+
 
 \end_layout
 
