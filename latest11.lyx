@@ -103,6 +103,277 @@ LatexCommand tableofcontents
 \end_layout
 
 \begin_layout Subsection
+Gauss-Jordan form
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $M$
+\end_inset
+
+ be a matrix, and let 
+\begin_inset Formula $EM$
+\end_inset
+
+ be the matrix in row reduced echelon form.
+\end_layout
+
+\begin_layout Standard
+Since 
+\begin_inset Formula $E$
+\end_inset
+
+ is invertible, any linear connection between the rows in 
+\begin_inset Formula $EM$
+\end_inset
+
+ is valid in 
+\begin_inset Formula $M$
+\end_inset
+
+ and vice versa.
+\end_layout
+
+\begin_layout Standard
+I.e.
+ 
+\begin_inset Formula $\sum\alpha_{i}M\delta_{i}=0$
+\end_inset
+
+ 
+\begin_inset Formula $\iff$
+\end_inset
+
+ 
+\begin_inset Formula $\sum\alpha_{i}\left(EM\right)\delta_{i}=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Since non-basic columns contain only non-zero rows that match to the basic
+ columns before it, a non-basic forms explicitly encodes the linear combination
+ of basic columns that creates it.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Phantom Phantom
+status open
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Example: Let 
+\begin_inset Formula $M$
+\end_inset
+
+ be a matrix with columns 2,4,6 independent, and the other columns a linear
+ combination of theses columns:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $M_{2}=(1,2,3)$
+\end_inset
+
+, 
+\begin_inset Formula $M_{4}=(2,3,4)$
+\end_inset
+
+, 
+\begin_inset Formula $M_{6}=(4,5,7)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $M_{1}=0$
+\end_inset
+
+, 
+\begin_inset Formula $M_{3}=2*M_{2}$
+\end_inset
+
+, 
+\begin_inset Formula $M_{5}=7*M_{2}+8*M_{4}$
+\end_inset
+
+, 
+\begin_inset Formula $M_{7}=-10*M_{2}+M_{4}+10*M_{6}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $M=\begin{bmatrix}0 & 1 & 2 & 2 & 23 & 4 & 32\\
+0 & 2 & 4 & 3 & 38 & 5 & 33\\
+0 & 3 & 6 & 4 & 53 & 7 & 44
+\end{bmatrix}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $EM=\begin{bmatrix}0 & 1 & 2 & 0 & 7 & 0 & -10\\
+0 & 0 & 0 & 1 & 8 & 0 & 1\\
+0 & 0 & 0 & 0 & 0 & 1 & 10
+\end{bmatrix}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Steinitz exchange lemma
+\end_layout
+
+\begin_layout Standard
+let 
+\begin_inset Formula $A$
+\end_inset
+
+ be a list of independent vectors, and let 
+\begin_inset Formula $B$
+\end_inset
+
+ be a list of spanning vectors.
+\end_layout
+
+\begin_layout Standard
+Take one vector out of 
+\begin_inset Formula $A$
+\end_inset
+
+ and insert it at the beginning if 
+\begin_inset Formula $B$
+\end_inset
+
+.
+ Since 
+\begin_inset Formula $B$
+\end_inset
+
+ were spanning before the arrival of the new vector, they are now dependent.
+ We can remove one of them and still span the space.
+ We will remove the first vector that is dependent of the previous vectors.
+ It is not the new vector, since it came from 
+\begin_inset Formula $A$
+\end_inset
+
+ which are independent.
+\end_layout
+
+\begin_layout Standard
+We can continue moving vectors from 
+\begin_inset Formula $A$
+\end_inset
+
+ to 
+\begin_inset Formula $B$
+\end_inset
+
+, removing one vector from 
+\begin_inset Formula $B$
+\end_inset
+
+ every time and still have 
+\begin_inset Formula $B$
+\end_inset
+
+ spanning.
+ Since the vectors in 
+\begin_inset Formula $A$
+\end_inset
+
+ are independent, the vectors we throw away from 
+\begin_inset Formula $B$
+\end_inset
+
+ are always vectors that were originally in 
+\begin_inset Formula $B$
+\end_inset
+
+ and not the vectors we brought from 
+\begin_inset Formula $A$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Eventually 
+\begin_inset Formula $A$
+\end_inset
+
+ is exhausted, 
+\begin_inset Formula $B$
+\end_inset
+
+ contains all the vectors from 
+\begin_inset Formula $A$
+\end_inset
+
+ and maybe some more vectors, and it is spanning.
+ The number of elements in 
+\begin_inset Formula $B$
+\end_inset
+
+ did not change from the beginning, therefore the number of elements in
+ any spanning set of vectors is larger or equal to the number of vectors
+ in any independent set.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Phantom Phantom
+status open
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A basis is an independent and spanning set of vectors.
+ For any two bases, 
+\begin_inset Formula $A,B$
+\end_inset
+
+ we have 
+\begin_inset Formula $A$
+\end_inset
+
+ is independent and 
+\begin_inset Formula $B$
+\end_inset
+
+ is spanning.
+ therefore 
+\begin_inset Formula $\mbox{numOfElements(}A\mbox{)}\le\mbox{numOfElements(}B\mbox{)}$
+\end_inset
+
+.
+ Similarly 
+\begin_inset Formula $\mbox{numOfElements(}B\mbox{)}\le\mbox{numOfElements(}A\mbox{)}$
+\end_inset
+
+, therefore all bases in the same vector space have the same number of elements.
+\end_layout
+
+\begin_layout Standard
 
 \end_layout
 
