@@ -1,0 +1,563 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+\date{}
+\usepackage{tikz}
+\usepackage{xcolor}
+\hypersetup{
+    colorlinks,
+    linkcolor={black!50!black},
+    citecolor={blue!50!black},
+    urlcolor={blue!80!black}
+}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref section
+\pdf_pdfusetitle false
+\papersize default
+\use_geometry false
+\use_package amsmath 2
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip smallskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Latest #12
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\f}{\mathcal{F}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\c}{\mathcal{C}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\s}{\mathcal{S}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Duality: 
+\begin_inset Formula $\f^{2}=2\pi\rho$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Show that 
+\begin_inset Formula $\f$
+\end_inset
+
+ and 
+\begin_inset Formula $\rho$
+\end_inset
+
+ are commutative:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\lambda\omega.\f\rho\left\{ \lambda t.x(t)\right\} (\omega) & =\lambda\omega.\f\left\{ \lambda t.x(\mbox{-}t)\right\} (\omega)\\
+ & =\intop_{t=\mbox{-}\infty}^{\infty}x(\mbox{-}t)e^{\mbox{-}i\omega t}dt\\
+\begin{bmatrix}\tau=\mbox{-}t\\
+d\tau=\mbox{-}dt
+\end{bmatrix} & =-\intop_{\tau=\infty}^{\mbox{-}\infty}x(\tau)e^{i\omega\tau}d\tau\\
+ & =\intop_{\tau=\mbox{-}\infty}^{\infty}x(\tau)e^{i\omega\tau}d\tau\\
+ & =\intop_{\tau=\mbox{-}\infty}^{\infty}x(\tau)e^{\mbox{-}i\left(\mbox{-}\omega\right)\tau}d\tau\\
+ & =\lambda\omega.\f\left\{ \lambda t.x(t)\right\} (\mbox{-}\omega)=\lambda\omega.\rho\f\left\{ \lambda t.x(t)\right\} (\omega)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Show that 
+\begin_inset Formula $\f^{-1}=\frac{1}{2\pi}\rho\f$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\f^{-1}\left\{ x(t_{1})\right\} (t_{2}) & =\frac{1}{2\pi}\intop_{t_{1}=\mbox{-}\infty}^{\infty}x(t_{1})e^{it_{1}t_{2}}dt_{1}\\
+ & =\frac{1}{2\pi}\intop_{t_{1}=\mbox{-}\infty}^{\infty}x(t_{1})e^{\mbox{-}it_{1}\left(\mbox{-}t_{2}\right)}dt_{1}\\
+ & =\frac{1}{2\pi}\f\left\{ x(t_{1})\right\} (\mbox{-}t_{2})\\
+ & =\frac{1}{2\pi}\rho\f\left\{ x(t_{1})\right\} (t_{2})
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Symmetry (Ev/Od/Re/Im decomposition)
+\end_layout
+
+\begin_layout Standard
+Define the Sine Transform and the Cosine Transform:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\c\left\{ x(t)\right\} =\intop_{\mbox{-}\infty}^{\infty}x(t)\mbox{cos}(t\omega)dt
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\s\left\{ x(t)\right\} =\intop_{\mbox{-}\infty}^{\infty}x(t)\mbox{sin}(t\omega)dt
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Note that 
+\begin_inset Formula $\c\left\{ x(t)\right\} $
+\end_inset
+
+ is an even function of 
+\begin_inset Formula $\omega$
+\end_inset
+
+, and 
+\begin_inset Formula $\s\left\{ x(t)\right\} $
+\end_inset
+
+ is an odd function of 
+\begin_inset Formula $\omega$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Phantom Phantom
+status open
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Show that 
+\begin_inset Formula $\f=\c-i\s$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\f\left\{ x(t)\right\} =\intop_{\mbox{-}\infty}^{\infty}x(t)e^{\mbox{-}i\omega t}dt=\intop_{\mbox{-}\infty}^{\infty}x(t)\left(\mbox{cos}(\omega t)-i\mbox{sin}(\omega t)\right)dt=\c\left\{ x(t)\right\} -i\s\left\{ x(t)\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Note that each signal 
+\begin_inset Formula $x(t)$
+\end_inset
+
+ can be decomposed according to real / imaginary parts and even / odd parts.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\f\left\{ x(t)\right\}  & =\f\left\{ \mbox{Ev}(x)+\mbox{Od}(x)\right\} \\
+ & =\c\left\{ \mbox{Ev}(x)\right\} +\c\left\{ \mbox{Od}(x)\right\} -i\s\left\{ \mbox{Ev}(x)\right\} -i\s\left\{ \mbox{Od}(x)\right\} \\
+ & =\c\left\{ \mbox{Ev}(x)\right\} -i\s\left\{ \mbox{Od}(x)\right\} 
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(The cancellation above is due to 
+\begin_inset Formula $\intop_{\mbox{-}\infty}^{\infty}\mbox{(odd function)}=0)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Therefore, If 
+\begin_inset Formula $x$
+\end_inset
+
+ is a real and even signal, 
+\begin_inset Formula $X$
+\end_inset
+
+ is real and even.
+ And if 
+\begin_inset Formula $x$
+\end_inset
+
+ is real and odd, 
+\begin_inset Formula $X$
+\end_inset
+
+ is purely imaginary and odd.
+\end_layout
+
+\begin_layout Section
+Shifting
+\end_layout
+
+\begin_layout Standard
+Find the FT of 
+\begin_inset Formula $x(t-\alpha)$
+\end_inset
+
+, and the IFT of 
+\begin_inset Formula $X(\omega-\alpha)$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\f\left\{ x(t-\alpha)\right\}  & =\intop_{t=\mbox{-}\infty}^{\infty}x(t-\alpha)e^{-i\omega t}dt\\
+ & =e^{-i\alpha\omega}\intop_{t=\mbox{-}\infty}^{\infty}x(t-\alpha)e^{-i\omega(t-\alpha)}dt\\
+\left[\tau=t-\alpha\right]\ \ \ \  & =e^{-i\alpha\omega}\intop_{\tau=\mbox{-}\infty}^{\infty}x(\tau)e^{-i\omega\tau}d\tau\\
+ & =e^{-i\alpha\omega}\f\left\{ x(t)\right\} 
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Similarly, 
+\begin_inset Formula $\f^{-1}\left\{ X(\omega-\alpha)\right\} =e^{i\alpha t}\f^{-1}\left\{ X(\omega)\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Scaling
+\end_layout
+
+\begin_layout Standard
+Find the FT of 
+\begin_inset Formula $x(\alpha t)$
+\end_inset
+
+, and the IFT of 
+\begin_inset Formula $X(\alpha\omega)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If 
+\begin_inset Formula $\alpha=0,$
+\end_inset
+
+ 
+\begin_inset Formula 
+\[
+\intop_{t=\mbox{-}\infty}^{\infty}f(0)e^{-i\omega t}dt=\intop_{\omega=\mbox{-}\infty}^{\infty}f(0)e^{i\omega t}d\omega=f(0)\delta_{0}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If 
+\begin_inset Formula $\alpha>0$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\f\left\{ x(\alpha t)\right\}  & =\intop_{t=\mbox{-}\infty}^{\infty}x(\alpha t)e^{-i\omega t}dt\\
+ & =\frac{1}{\alpha}\intop_{t=\mbox{-}\infty}^{\infty}x(\alpha t)e^{-i\frac{\omega}{\alpha}\alpha t}\alpha dt\\
+ & =\frac{1}{\alpha}\intop_{\tau=\mbox{-}\infty}^{\infty}x(\tau)e^{-i\frac{\omega}{\alpha}\tau}d\tau\\
+ & =\frac{1}{\alpha}X(\frac{\omega}{\alpha})
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If 
+\begin_inset Formula $\alpha<0$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\f\left\{ x(\alpha t)\right\}  & =\intop_{t=\mbox{-}\infty}^{\infty}x(\alpha t)e^{-i\omega t}dt\\
+ & =\frac{-1}{\left|\alpha\right|}\intop_{t=\mbox{-}\infty}^{\infty}x(\alpha t)e^{-i\frac{\omega}{\alpha}\alpha t}\alpha dt\\
+ & =\frac{-1}{\left|\alpha\right|}\intop_{\tau=\infty}^{\mbox{-}\infty}x(\tau)e^{-i\frac{\omega}{\alpha}\tau}d\tau\\
+ & =\frac{1}{\left|\alpha\right|}\intop_{\tau=\mbox{-}\infty}^{\infty}x(\tau)e^{-i\frac{\omega}{\alpha}\tau}d\tau\\
+ & =\frac{1}{\left|\alpha\right|}X(\frac{\omega}{\alpha})
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Combining the above, for 
+\begin_inset Formula $\alpha\ne0$
+\end_inset
+
+, 
+\begin_inset Formula $\f\left\{ x(\alpha t)\right\} =\frac{1}{\left|\alpha\right|}X(\frac{\omega}{\alpha})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Using duality, 
+\begin_inset Formula 
+\begin{align*}
+\lambda t.\f^{-1}\left\{ \lambda\omega.X(\alpha\omega)\right\} (t) & =\lambda\omega.\frac{1}{2\pi}\rho\f\left\{ \lambda t.X(\alpha t)\right\} (\omega)\\
+ & =\lambda\omega.\frac{1}{2\pi}\rho\frac{1}{\left|\alpha\right|}\f\left\{ \lambda t.X(t)\right\} (\frac{\omega}{\alpha})\\
+ & =\frac{1}{\left|\alpha\right|}\lambda t.\f^{-1}\left\{ \lambda\omega.X(\omega)\right\} (\frac{t}{\alpha})
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So also, for 
+\begin_inset Formula $\alpha\ne0$
+\end_inset
+
+, 
+\begin_inset Formula $\f^{-1}\left\{ X(\alpha\omega)\right\} =\frac{1}{\left|\alpha\right|}x(\frac{t}{\alpha})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Differentiation
+\end_layout
+
+\begin_layout Standard
+Find the FT of 
+\begin_inset Formula $\frac{d}{dt}x(t)$
+\end_inset
+
+, and the IFT of 
+\begin_inset Formula $\frac{d}{d\omega}X(\omega)$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\frac{d}{dt}x(t) & =\frac{d}{dt}\intop_{\mbox{-}\infty}^{\infty}X(\omega)e^{\mbox{-}i\omega t}dt\\
+ & =\intop_{\mbox{-}\infty}^{\infty}\frac{d}{dt}\left(X(\omega)e^{\mbox{-}i\omega t}\right)dt\\
+ & =\mbox{-}i\intop_{\mbox{-}\infty}^{\infty}\omega X(\omega)e^{\mbox{-}i\omega t}dt
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Therefore,
+\begin_inset Formula 
+\begin{align*}
+\frac{d^{n}}{dt^{n}}x(t) & \iff\left(\mbox{-}i\right)^{n}\omega^{n}X(\omega)\\
+i^{n}t^{n}x(t) & \iff\frac{d^{n}}{d\omega^{n}}X(\omega)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Moments / Taylor
+\end_layout
+
+\begin_layout Standard
+Find the Taylor expansion of 
+\begin_inset Formula $F(\omega)=\intop_{\mbox{-}\infty}^{\infty}f(t)e^{\mbox{-}i\omega t}dt$
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+F(\omega) & =\intop_{\mbox{-}\infty}^{\infty}f(t)e^{\mbox{-}i\omega t}dt\\
+ & =\intop_{\mbox{-}\infty}^{\infty}f(t)\sum_{k=0}^{\infty}\frac{(\mbox{-}i\omega)^{n}t^{n}}{n!}dt\\
+ & =\sum_{k=0}^{\infty}\frac{(\mbox{-}i)^{n}\intop_{\mbox{-}\infty}^{\infty}t^{n}f(t)dt}{n!}\omega^{n}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Gaussian
+\end_layout
+
+\begin_layout Standard
+Find 
+\begin_inset Formula $\f\left\{ e^{\mbox{-}\alpha t^{2}}\right\} $
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\f\left\{ e^{\mbox{-}\alpha t^{2}}\right\}  & =\sum_{k=0}^{\infty}\frac{(\mbox{-}i)^{n}\intop_{\mbox{-}\infty}^{\infty}t^{n}e^{\mbox{-}\alpha t^{2}}dt}{n!}\omega^{n}\\
+ & =\sum_{k=0}^{\infty}\frac{(\mbox{-}i)^{n}\intop_{\mbox{-}\infty}^{\infty}t^{n}e^{\mbox{-}\alpha t^{2}}dt}{n!}\omega^{n}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
