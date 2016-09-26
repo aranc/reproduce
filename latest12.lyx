@@ -118,6 +118,14 @@ Latest #12
 \end_layout
 
 \begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\intinf}[2][\mbox{-}\infty][\infty]{\mathcal{\intop_{#1}^{#2}}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset CommandInset toc
 LatexCommand tableofcontents
 
@@ -526,8 +534,8 @@ Find the Taylor expansion of
 \begin_inset Formula 
 \begin{align*}
 F(\omega) & =\intop_{\mbox{-}\infty}^{\infty}f(t)e^{\mbox{-}i\omega t}dt\\
- & =\intop_{\mbox{-}\infty}^{\infty}f(t)\sum_{k=0}^{\infty}\frac{(\mbox{-}i\omega)^{n}t^{n}}{n!}dt\\
- & =\sum_{k=0}^{\infty}\frac{(\mbox{-}i)^{n}\intop_{\mbox{-}\infty}^{\infty}t^{n}f(t)dt}{n!}\omega^{n}
+ & =\intop_{\mbox{-}\infty}^{\infty}f(t)\sum_{n=0}^{\infty}\frac{(\mbox{-}i\omega)^{n}t^{n}}{n!}dt\\
+ & =\sum_{n=0}^{\infty}\frac{(\mbox{-}i)^{n}\intop_{\mbox{-}\infty}^{\infty}t^{n}f(t)dt}{n!}\omega^{n}
 \end{align*}
 
 \end_inset
@@ -544,14 +552,38 @@ Find
 \begin_inset Formula $\f\left\{ e^{\mbox{-}\alpha t^{2}}\right\} $
 \end_inset
 
+.
+ First we compute 
+\begin_inset Formula $\int t^{n}e^{-\alpha t^{2}}dt.$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\intinf t^{n}e^{-\alpha t^{2}}dt=\intinf t^{n}\sum_{k=0}^{\infty}\frac{\left(\mbox{-}\alpha\right)^{k}t^{2k}}{k!}dt
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Find 
+\begin_inset Formula $\f\left\{ e^{\mbox{-}\alpha t^{2}}\right\} $
+\end_inset
+
 :
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \begin{align*}
-\f\left\{ e^{\mbox{-}\alpha t^{2}}\right\}  & =\sum_{k=0}^{\infty}\frac{(\mbox{-}i)^{n}\intop_{\mbox{-}\infty}^{\infty}t^{n}e^{\mbox{-}\alpha t^{2}}dt}{n!}\omega^{n}\\
- & =\sum_{k=0}^{\infty}\frac{(\mbox{-}i)^{n}\intop_{\mbox{-}\infty}^{\infty}t^{n}e^{\mbox{-}\alpha t^{2}}dt}{n!}\omega^{n}
+\f\left\{ e^{\mbox{-}\alpha t^{2}}\right\}  & =\sum_{n=0}^{\infty}\frac{(\mbox{-}i)^{n}\intop_{\mbox{-}\infty}^{\infty}t^{n}e^{\mbox{-}\alpha t^{2}}dt}{n!}\omega^{n}\\
+ & =\sum_{n=0}^{\infty}\frac{(\mbox{-}i)^{n}\intop_{\mbox{-}\infty}^{\infty}t^{n}e^{\mbox{-}\alpha t^{2}}dt}{n!}\omega^{n}
 \end{align*}
 
 \end_inset
