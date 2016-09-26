@@ -126,6 +126,14 @@ Latest #12
 \end_layout
 
 \begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\mi}{\mbox{-}i}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset CommandInset toc
 LatexCommand tableofcontents
 
@@ -585,6 +593,163 @@ Find
 \f\left\{ e^{\mbox{-}\alpha t^{2}}\right\}  & =\sum_{n=0}^{\infty}\frac{(\mbox{-}i)^{n}\intop_{\mbox{-}\infty}^{\infty}t^{n}e^{\mbox{-}\alpha t^{2}}dt}{n!}\omega^{n}\\
  & =\sum_{n=0}^{\infty}\frac{(\mbox{-}i)^{n}\intop_{\mbox{-}\infty}^{\infty}t^{n}e^{\mbox{-}\alpha t^{2}}dt}{n!}\omega^{n}
 \end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+TODO: complete this
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Bump function
+\end_layout
+
+\begin_layout Standard
+Compute the FT and IFT of a bump function 
+\begin_inset Formula $P_{h}(t)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [->] (0,-0.5) -- (0,2);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [->] (-2,0) -- (2,0);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [ultra thick] (-1.5,0) -- (-.75,0) -- (-.75,1) -- (.75,1) -- (.75,0) --
+ (1.5,0);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node [below] at (.75,0) {$
+\backslash
+frac{h}{2}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node [below] at (-.75,0) {$
+\backslash
+mbox{-}
+\backslash
+frac{h}{2}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node [left] at (-.75,1) {1};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\intinf P_{h}(t)e^{\mbox{-}i\omega t}dt & =\intop_{\mbox{-}\frac{h}{2}}^{\frac{h}{2}}e^{\mbox{-}i\omega t}dt\\
+ & =\intop_{\mbox{-}\frac{h}{2}}^{\frac{h}{2}}e^{\mbox{-}i\omega t}dt\\
+ & =\left[\frac{e^{\mi\omega t}}{\mi\omega}\right]_{t=\mbox{-}\frac{h}{2}}^{\frac{h}{2}}\\
+ & =\frac{e^{i\omega\frac{h}{2}}-e^{\mi\omega\frac{h}{2}}}{i\omega}\\
+ & =h\frac{e^{i\omega\frac{h}{2}}-e^{\mi\omega\frac{h}{2}}}{2i\omega\frac{h}{2}}\\
+ & =h\mbox{sinc}(\frac{h}{2}\omega)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So 
+\begin_inset Formula $P_{h}(t)\iff h\mbox{sinc}(\frac{h}{2}\omega)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Using duality, and using that sinc is an even function, 
+\begin_inset Formula 
+\[
+\f^{-1}\left\{ P_{h}(\omega)\right\} =\frac{h}{2\pi}\mbox{sinc}(t\frac{h}{2})
+\]
 
 \end_inset
 
