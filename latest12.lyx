@@ -623,11 +623,11 @@ TODO: complete this
 \end_layout
 
 \begin_layout Section
-Bump function
+Rectangle function
 \end_layout
 
 \begin_layout Standard
-Compute the FT and IFT of a bump function 
+Compute the FT and IFT of a rectangle function 
 \begin_inset Formula $P_{h}(t)$
 \end_inset
 
@@ -753,6 +753,10 @@ Using duality, and using that sinc is an even function,
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Standard
 
 \end_layout
 
