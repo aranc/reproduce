@@ -197,13 +197,125 @@ Let's look on
 
 \begin_layout Standard
 \begin_inset Formula 
-\[
-\lim_{z\to\alpha}\frac{f(z)-f(\alpha)}{(z-\alpha)}
-\]
+\begin{align*}
+\lim_{h\to0}\frac{f(\alpha+h)-f(\alpha)}{h} & =\lim_{k\to0}\frac{f(\alpha+ik)-f(\alpha)}{ik}\\
+\lim_{h\to0}\frac{u(\alpha+h)+iv(\alpha+h)-u(\alpha)-iv(\alpha)}{h} & =\lim_{k\to0}\frac{u(\alpha+ik)+iv(\alpha+ik)-u(\alpha)-iv(\alpha)}{ik}\\
+u_{x}+iv_{x} & =-iu_{y}+v_{y}
+\end{align*}
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Therefore,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+u_{x} & =v_{y}\\
+u_{y} & =-v_{x}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Easily summarized with the infographics:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [help lines] (0,0) grid (2,2);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node at (0.5,1.5) {$u_x$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node at (0.5,0.5) {$u_y$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node at (1.5,1.5) {$v_x$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node at (1.5,0.5) {$v_y$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [double] (1.4,0.6) -- (0.6,1.4);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [thick] (0.6,0.6) -- (1.4,1.4);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(Notice similarity to matrix representation of complex numbers)
 \end_layout
 
 \end_body
