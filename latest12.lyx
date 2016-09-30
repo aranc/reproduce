@@ -571,8 +571,109 @@ Find
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\intinf t^{n}e^{-\alpha t^{2}}dt=\intinf t^{n}\sum_{k=0}^{\infty}\frac{\left(\mbox{-}\alpha\right)^{k}t^{2k}}{k!}dt
+I=\intinf t^{0}e^{-\alpha t^{2}}dt
 \]
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+I^{2} & =\left(\intop_{x=\mbox{-}\infty}^{\infty}e^{-\alpha x^{2}}dx\right)\left(\intop_{y=\mbox{-}\infty}^{\infty}e^{-\alpha y^{2}}dy\right)\\
+ & =\intop_{x=\mbox{-}\infty}^{\infty}\intop_{y=\mbox{-}\infty}^{\infty}e^{-\alpha x^{2}}e^{-\alpha y^{2}}dxdy\\
+ & =\intop_{x=\mbox{-}\infty}^{\infty}\intop_{y=\mbox{-}\infty}^{\infty}e^{-\alpha\left(x^{2}+y^{2}\right)}dxdy\\
+ & =\intop_{\theta=0}^{2\pi}\intop_{r=0}^{\infty}e^{-\alpha r^{2}}rdrd\theta\\
+ & =2\pi\cdot\frac{1}{2}\intop_{r^{2}=0}^{\infty}e^{-\alpha r^{2}}d\left(r^{2}\right)d\theta\\
+ & =\pi\left[\frac{e^{-\alpha r^{2}}}{\mbox{-}\alpha}\right]_{r^{2}=0}^{\infty}\\
+ & =\frac{\pi}{\alpha}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Therefore, 
+\begin_inset Formula 
+\[
+\intinf e^{-\alpha t^{2}}dt=\sqrt{\frac{\pi}{\alpha}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Derive w.r.t.
+ 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ under the integral to receive the next moments, (odd moments are 
+\begin_inset Formula $0$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{ccc}
+n=0 & M_{0}: & \intinf e^{-\alpha t^{2}}dt=\sqrt{\pi}\alpha^{\mbox{-}\frac{1}{2}}\\
+n=1 & M_{2}: & \intinf t^{2}e^{-\alpha t^{2}}dt=\sqrt{\pi}\left(\frac{1}{2}\right)\alpha^{\mbox{-}\frac{3}{2}}\\
+n=2 & M_{4}: & \intinf t^{4}e^{-\alpha t^{2}}dt=\sqrt{\pi}\left(\frac{1}{2}\right)\left(\frac{3}{2}\right)\alpha^{\mbox{-}\frac{5}{2}}\\
+\vdots & \vdots & \vdots\\
+n & M_{2n} & \intinf t^{2n}e^{-\alpha t^{2}}dt=\sqrt{\pi}\left(\frac{1}{2}\right)\left(\frac{3}{2}\right)\cdots\left(\frac{2n-1}{2}\right)\alpha^{\mbox{-}\frac{2n+1}{2}}
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Therefore,
+\begin_inset Formula 
+\begin{align*}
+M_{2n}=\intinf t^{2n}e^{-\alpha t^{2}}dt & =\sqrt{\pi}\left(\frac{1}{2}\right)\left(\frac{3}{2}\right)\cdots\left(\frac{2n-1}{2}\right)\alpha^{\mbox{-}\frac{2n+1}{2}}\\
+ & =\sqrt{\frac{\pi}{\alpha}}\frac{\left(2n-1\right)!!}{\left(2\alpha\right)^{n}}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Expand further, 
+\begin_inset Formula $(2n)!=(2n)!!(2n-1)!!=(n)!2^{n}(2n-1)!!$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+M_{2n}=\sqrt{\frac{\pi}{\alpha}}\frac{\left(2n\right)!}{\left(4\alpha\right)^{n}n!}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Phantom Phantom
+status open
+
+\begin_layout Plain Layout
+A
+\end_layout
 
 \end_inset
 
@@ -757,31 +858,7 @@ Using duality, and using that sinc is an even function,
 \end_layout
 
 \begin_layout Section
-Periodic function
-\end_layout
-
-\begin_layout Section
-Impulse train
-\end_layout
-
-\begin_layout Standard
-Find the FT of 
-\begin_inset Formula $\sum_{k=\mbox{-}\infty}^{\infty}\delta(t-kT)$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{align*}
-\intinf\sum_{k=\mbox{-}\infty}^{\infty}\delta(t-kT)e^{\mbox{-}i\omega t} & =\sum_{k=\mbox{-}\infty}^{\infty}\intinf\delta(t-kT)e^{\mbox{-}i\omega t}dt\\
- & =\sum_{k=\mbox{-}\infty}^{\infty}e^{\mi\omega kT}\\
-\end{align*}
-
-\end_inset
-
-
+Convolution 
 \end_layout
 
 \end_body
