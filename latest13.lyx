@@ -318,5 +318,131 @@ end{center}
 (Notice similarity to matrix representation of complex numbers)
 \end_layout
 
+\begin_layout Standard
+\begin_inset Phantom Phantom
+status open
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Some other not-necessarily-related to complex analysis tricks that come
+ to mind:
+\end_layout
+
+\begin_layout Standard
+1.
+ Show that 
+\begin_inset Formula $f_{xy}=f_{yx}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+First along the 
+\begin_inset Formula $x$
+\end_inset
+
+ axis 
+\begin_inset Formula $\begin{bmatrix}- & +\\
+- & +
+\end{bmatrix}$
+\end_inset
+
+, then along the 
+\begin_inset Formula $y$
+\end_inset
+
+ axis 
+\begin_inset Formula $\begin{bmatrix}- & +\\
++ & -
+\end{bmatrix}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+First along the 
+\begin_inset Formula $y$
+\end_inset
+
+ axis 
+\begin_inset Formula $\begin{bmatrix}+ & +\\
+- & -
+\end{bmatrix}$
+\end_inset
+
+, then along the x axis 
+\begin_inset Formula $\begin{bmatrix}- & +\\
++ & -
+\end{bmatrix}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+2.
+ Show derivation formula for division:
+\end_layout
+
+\begin_layout Standard
+We know that 
+\begin_inset Formula $\left(f\cdot g\right)'=f'g+fg'$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $h=\frac{f}{g}$
+\end_inset
+
+, then 
+\begin_inset Formula $f=hg$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f'=h'g+hg
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+h'=\frac{f'-hg'}{g}=\frac{f'-\frac{f}{g}g'}{g}=\frac{f'g-fg'}{g^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+\begin_inset Formula $u$
+\end_inset
+
+ and 
+\begin_inset Formula $v$
+\end_inset
+
+ are harmonic
+\end_layout
+
 \end_body
 \end_document
