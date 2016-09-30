@@ -692,7 +692,11 @@ Find
 \begin_inset Formula 
 \begin{align*}
 \f\left\{ e^{\mbox{-}\alpha t^{2}}\right\}  & =\sum_{n=0}^{\infty}\frac{(\mbox{-}i)^{n}\intop_{\mbox{-}\infty}^{\infty}t^{n}e^{\mbox{-}\alpha t^{2}}dt}{n!}\omega^{n}\\
- & =\sum_{n=0}^{\infty}\frac{(\mbox{-}i)^{n}\intop_{\mbox{-}\infty}^{\infty}t^{n}e^{\mbox{-}\alpha t^{2}}dt}{n!}\omega^{n}
+ & =\sum_{n=0}^{\infty}\frac{(\mbox{-}i)^{n}M_{n}}{n!}\omega^{n}\\
+ & =\sum_{n=0}^{\infty}\frac{(\mbox{-}1)^{n}M_{2n}}{\left(2n\right)!}\omega^{2n}\\
+ & =\sum_{n=0}^{\infty}\frac{(\mbox{-}1)^{n}}{\left(2n\right)!}\sqrt{\frac{\pi}{\alpha}}\frac{\left(2n\right)!}{\left(4\alpha\right)^{n}n!}\omega^{2n}\\
+ & =\sqrt{\frac{\pi}{\alpha}}\sum_{n=0}^{\infty}\frac{(\mbox{-}1)^{n}}{\left(4\alpha\right)^{n}n!}\omega^{2n}\\
+ & =\sqrt{\frac{\pi}{\alpha}}e^{-\frac{\omega^{2}}{4\alpha}}
 \end{align*}
 
 \end_inset
@@ -701,22 +705,18 @@ Find
 \end_layout
 
 \begin_layout Standard
-\begin_inset Box Boxed
-position "t"
-hor_pos "c"
-has_inner_box 1
-inner_pos "t"
-use_parbox 0
-use_makebox 0
-width "100col%"
-special "none"
-height "1in"
-height_special "totalheight"
-status open
+Specifically, for 
+\begin_inset Formula $\alpha=\frac{1}{2}$
+\end_inset
 
-\begin_layout Plain Layout
-TODO: complete this
+,
 \end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\f{e^{\mbox{-}\frac{t^{2}}{2}}}=\sqrt{2\alpha}e^{\mbox{-}\frac{\omega^{2}}{2}}
+\]
 
 \end_inset
 
