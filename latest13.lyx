@@ -143,6 +143,66 @@ LatexCommand tableofcontents
 \end_layout
 
 \begin_layout Section
+Cauchy–Riemann
+\end_layout
+
+\begin_layout Standard
+We want to look on analytic functions, that is complex functions that have
+ the following limit defined:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\lim_{z\to\alpha}\frac{f(z)-f(\alpha)}{(z-\alpha)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(
+\begin_inset Formula $\alpha$
+\end_inset
+
+ is a parameter)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Phantom Phantom
+status open
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Let's look on 
+\begin_inset Formula $z=\alpha+\left(h+i0\right)$
+\end_inset
+
+ and on 
+\begin_inset Formula $z=\alpha+\left(0+ik\right)$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\lim_{z\to\alpha}\frac{f(z)-f(\alpha)}{(z-\alpha)}
+\]
+
+\end_inset
+
 
 \end_layout
 
