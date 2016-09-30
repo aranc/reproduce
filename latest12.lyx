@@ -765,6 +765,22 @@ Impulse train
 \end_layout
 
 \begin_layout Standard
+Find the FT of 
+\begin_inset Formula $\sum_{k=\mbox{-}\infty}^{\infty}\delta(t-kT)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\intinf\sum_{k=\mbox{-}\infty}^{\infty}\delta(t-kT)e^{\mbox{-}i\omega t} & =\sum_{k=\mbox{-}\infty}^{\infty}\intinf\delta(t-kT)e^{\mbox{-}i\omega t}dt\\
+ & =\sum_{k=\mbox{-}\infty}^{\infty}e^{\mi\omega kT}\\
+\end{align*}
+
+\end_inset
+
 
 \end_layout
 
