@@ -444,5 +444,28 @@ h'=\frac{f'-hg'}{g}=\frac{f'-\frac{f}{g}g'}{g}=\frac{f'g-fg'}{g^{2}}
  are harmonic
 \end_layout
 
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\nabla^{2}\cdot u=
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+TODO: complete this and other stuff
+\end_layout
+
+\begin_layout Section
+Bounding an integral
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
 \end_body
 \end_document
