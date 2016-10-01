@@ -623,7 +623,7 @@ end{center}
 
 \begin_layout Standard
 Let's compute 
-\begin_inset Formula $\int_{\Gamma}f(x,y)\cdot\mathbf{dr}$
+\begin_inset Formula $\int_{\Gamma}\mathbf{A}(x,y)\cdot\mathbf{dr}$
 \end_inset
 
  along the path,
@@ -636,8 +636,8 @@ Divide to 4 line integrals:
 \begin_layout Standard
 \begin_inset Formula 
 \begin{align*}
-\intop_{\Gamma}f(x,y)\cdot\mathbf{dr} & =\intop_{\left(x_{0}-\frac{dx}{2},y_{0}-\frac{dy}{2}\right)}^{\left(x_{0}+\frac{dx}{2},y_{0}-\frac{dy}{2}\right)}f(x,y)\cdot\mathbf{dr}+\intop_{\left(x_{0}+\frac{dx}{2},y_{0}-\frac{dy}{2}\right)}^{\left(x_{0}+\frac{dx}{2},y_{0}+\frac{dy}{2}\right)}f(x,y)\cdot\mathbf{dr}+\\
- & +\intop_{\left(x_{0}+\frac{dx}{2},y_{0}+\frac{dy}{2}\right)}^{\left(x_{0}-\frac{dx}{2},y_{0}+\frac{dy}{2}\right)}f(x,y)\cdot\mathbf{dr}+\intop_{\left(x_{0}-\frac{dx}{2},y_{0}+\frac{dy}{2}\right)}^{\left(x_{0}-\frac{dx}{2},y_{0}-\frac{dy}{2}\right)}f(x,y)\cdot\mathbf{dr}
+\intop_{\Gamma}\mathbf{A}(x,y)\cdot\mathbf{dr} & =\intop_{\left(x_{0}-\frac{dx}{2},y_{0}-\frac{dy}{2}\right)}^{\left(x_{0}+\frac{dx}{2},y_{0}-\frac{dy}{2}\right)}\mathbf{A}(x,y)\cdot\mathbf{dr}+\intop_{\left(x_{0}+\frac{dx}{2},y_{0}-\frac{dy}{2}\right)}^{\left(x_{0}+\frac{dx}{2},y_{0}+\frac{dy}{2}\right)}\mathbf{A}(x,y)\cdot\mathbf{dr}+\\
+ & +\intop_{\left(x_{0}+\frac{dx}{2},y_{0}+\frac{dy}{2}\right)}^{\left(x_{0}-\frac{dx}{2},y_{0}+\frac{dy}{2}\right)}\mathbf{A}(x,y)\cdot\mathbf{dr}+\intop_{\left(x_{0}-\frac{dx}{2},y_{0}+\frac{dy}{2}\right)}^{\left(x_{0}-\frac{dx}{2},y_{0}-\frac{dy}{2}\right)}\mathbf{A}(x,y)\cdot\mathbf{dr}
 \end{align*}
 
 \end_inset
@@ -652,7 +652,9 @@ Open each integral,
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\intop_{\left(x_{0}-\frac{dx}{2},y_{0}-\frac{dy}{2}\right)}^{\left(x_{0}+\frac{dx}{2},y_{0}-\frac{dy}{2}\right)}f(x,y)\cdot\mathbf{dr}=\intop_{x=x_{0}-\frac{dx}{2}}^{x_{0}+\frac{dx}{2}}f(x,y_{0}-\frac{dy}{2})dx\to f(x_{0},y_{0}-\frac{dy}{2})dx
+\intop_{\left(x_{0}-\frac{dx}{2},y_{0}-\frac{dy}{2}\right)}^{\left(x_{0}+\frac{dx}{2},y_{0}-\frac{dy}{2}\right)}\mathbf{A}(x,y)\cdot\mathbf{dr}=\intop_{x=x_{0}-\frac{dx}{2}}^{x_{0}+\frac{dx}{2}}\mathbf{A}(x,y_{0}-\frac{dy}{2})\cdot\begin{pmatrix}dx\\
+0
+\end{pmatrix}\to A_{1}(x_{0},y_{0}-\frac{dy}{2})dx
 \]
 
 \end_inset
@@ -667,9 +669,9 @@ Combine,
 \begin_layout Standard
 \begin_inset Formula 
 \begin{align*}
-\intop_{\Gamma}f(x,y)\cdot\mathbf{dr} & =f(x_{0},y_{0}-\frac{dy}{2})dx+f(x_{0}+\frac{dx}{2},y_{0})dy-f(x_{0},y_{0}+\frac{dy}{2})dx-f(x_{0}-\frac{dx}{2},y_{0})dy\\
- & =\frac{f(x_{0},y_{0}-\frac{dy}{2})-f(x_{0},y_{0}+\frac{dy}{2})}{dy}dx\,dy+\frac{f(x_{0}+\frac{dx}{2},y_{0})-f(x_{0}-\frac{dx}{2},y_{0})}{dx}dx\,dy\\
- & =\left(f_{x}-f_{y}\right)dx\,dy
+\intop_{\Gamma}\mathbf{A}(x,y)\cdot\mathbf{dr} & =A_{1}(x_{0},y_{0}-\frac{dy}{2})dx+A_{2}(x_{0}+\frac{dx}{2},y_{0})dy-A_{1}(x_{0},y_{0}+\frac{dy}{2})dx-A_{2}(x_{0}-\frac{dx}{2},y_{0})dy\\
+ & =\frac{A_{1}(x_{0},y_{0}-\frac{dy}{2})-A_{1}(x_{0},y_{0}+\frac{dy}{2})}{dy}dx\,dy+\frac{A_{2}(x_{0}+\frac{dx}{2},y_{0})-A_{2}(x_{0}-\frac{dx}{2},y_{0})}{dx}dx\,dy\\
+ & =\left(\frac{d}{dx}A_{1}-\frac{d}{dy}A_{2}\right)dx\,dy
 \end{align*}
 
 \end_inset
