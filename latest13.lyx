@@ -464,6 +464,245 @@ Bounding an integral
 \end_layout
 
 \begin_layout Standard
+Let 
+\begin_inset Formula $\Gamma$
+\end_inset
+
+ be a path with length 
+\begin_inset Formula $\ell$
+\end_inset
+
+, and let 
+\begin_inset Formula $f$
+\end_inset
+
+ be an analytic function 
+\begin_inset Formula $\left|f(z)\right|\le M$
+\end_inset
+
+ for any 
+\begin_inset Formula $z\in\Gamma$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\left|\intop_{\Gamma}f(z)dz\right| & \approx\left|\sum_{k}f(\xi_{k})(z_{k+1}-z_{k})\right|\\
+ & \le\sum_{k}\left|f(\xi_{k})\right|\left|(z_{k+1}-z_{k})\right|\\
+ & \le\sum_{k}M\left|(z_{k+1}-z_{k})\right|\\
+ & =M\sum_{k}\left|(z_{k+1}-z_{k})\right|\\
+ & \approx M\ell
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Green theorem
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw (-1,-1) -- (-1,1) -- (1, 1) -- (1, -1) -- (-1,-1);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [->] (-1,-1) -- (0,-1);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [->] (1,1) -- (0,1);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [->] (1,-1) -- (1,0);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [->] (-1,1) -- (-1,0);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node at (0,0) {$(x_0,y_0)$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node [below] at (-1,-1) {$x_0-
+\backslash
+frac{dx}{2}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node [below] at (1,-1) {$x_0+
+\backslash
+frac{dx}{2}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node [right] at (1,-.7) {$y_0-
+\backslash
+frac{dy}{2}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node [right] at (1,1) {$y_0+
+\backslash
+frac{dy}{2}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Let's compute 
+\begin_inset Formula $\int_{\Gamma}f(x,y)\cdot\mathbf{dr}$
+\end_inset
+
+ along the path,
+\end_layout
+
+\begin_layout Standard
+Divide to 4 line integrals:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\intop_{\Gamma}f(x,y)\cdot\mathbf{dr} & =\intop_{\left(x_{0}-\frac{dx}{2},y_{0}-\frac{dy}{2}\right)}^{\left(x_{0}+\frac{dx}{2},y_{0}-\frac{dy}{2}\right)}f(x,y)\cdot\mathbf{dr}+\intop_{\left(x_{0}+\frac{dx}{2},y_{0}-\frac{dy}{2}\right)}^{\left(x_{0}+\frac{dx}{2},y_{0}+\frac{dy}{2}\right)}f(x,y)\cdot\mathbf{dr}+\\
+ & +\intop_{\left(x_{0}+\frac{dx}{2},y_{0}+\frac{dy}{2}\right)}^{\left(x_{0}-\frac{dx}{2},y_{0}+\frac{dy}{2}\right)}f(x,y)\cdot\mathbf{dr}+\intop_{\left(x_{0}-\frac{dx}{2},y_{0}+\frac{dy}{2}\right)}^{\left(x_{0}-\frac{dx}{2},y_{0}-\frac{dy}{2}\right)}f(x,y)\cdot\mathbf{dr}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Open each integral,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\intop_{\left(x_{0}-\frac{dx}{2},y_{0}-\frac{dy}{2}\right)}^{\left(x_{0}+\frac{dx}{2},y_{0}-\frac{dy}{2}\right)}f(x,y)\cdot\mathbf{dr}=\intop_{x=x_{0}-\frac{dx}{2}}^{x_{0}+\frac{dx}{2}}f(x,y_{0}-\frac{dy}{2})dx\to f(x_{0},y_{0}-\frac{dy}{2})dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Combine,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\intop_{\Gamma}f(x,y)\cdot\mathbf{dr} & =f(x_{0},y_{0}-\frac{dy}{2})dx+f(x_{0}+\frac{dx}{2},y_{0})dy-f(x_{0},y_{0}+\frac{dy}{2})dx-f(x_{0}-\frac{dx}{2},y_{0})dy\\
+ & =\frac{f(x_{0},y_{0}-\frac{dy}{2})-f(x_{0},y_{0}+\frac{dy}{2})}{dy}dx\,dy+\frac{f(x_{0}+\frac{dx}{2},y_{0})-f(x_{0}-\frac{dx}{2},y_{0})}{dx}dx\,dy\\
+ & =\left(f_{x}-f_{y}\right)dx\,dy
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Integral of an analytic function on a closed path is zero
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $f$
+\end_inset
+
+ be an analytic function, and let 
+\begin_inset Formula $\Gamma$
+\end_inset
+
+ be a closed path.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\intop_{\Gamma}f(z)dz & =\intop_{\Gamma}\left(u(x,y)+iv(x,y)\right)\left(dx+idy\right)\\
+ & =\intop_{\Gamma}udx-vdy+i(udy+vdx)\\
+ & =\iint\left(u_{x}+v_{y}\right)dxdy+i\iint\left(v_{x}-u_{y}\right)dxdy
+\end{align*}
+
+\end_inset
+
 
 \end_layout
 
