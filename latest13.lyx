@@ -706,5 +706,86 @@ Let
 
 \end_layout
 
+\begin_layout Section
+\begin_inset Formula $f(\alpha)=\frac{-i}{2\pi}\intop_{\Gamma}\frac{f(z)}{(z-a)}dz$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $f$
+\end_inset
+
+ be analytic, and let 
+\begin_inset Formula $\Gamma$
+\end_inset
+
+ be a closed path around 
+\begin_inset Formula $\alpha$
+\end_inset
+
+.
+ Since 
+\begin_inset Formula $\frac{f(z)}{z-\alpha}$
+\end_inset
+
+ is analytic everywhere except 
+\begin_inset Formula $\alpha$
+\end_inset
+
+, the integral will not change if we will take instead another path around
+ 
+\begin_inset Formula $\alpha$
+\end_inset
+
+, e.g.
+ 
+\begin_inset Formula $\alpha+re^{i\theta}$
+\end_inset
+
+, for some 
+\begin_inset Formula $r>0$
+\end_inset
+
+ and for 
+\begin_inset Formula $\theta$
+\end_inset
+
+ going from 
+\begin_inset Formula $0$
+\end_inset
+
+ to 
+\begin_inset Formula $2\pi$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\begin{array}{c}
+z=\alpha+re^{i\theta}\\
+dz=ire^{i\theta}d\theta
+\end{array}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\intop_{\Gamma}\frac{f(z)}{(z-a)}dz & =\intop_{\theta=0}^{2\pi}\frac{f(\alpha+re^{i\theta})}{\alpha+re^{i\theta}-\alpha}\left(ire^{i\theta}\right)d\theta\\
+ & =i\intop_{\theta=0}^{2\pi}f(\alpha+re^{i\theta})d\theta\\
+ & \underset{r\to0}{\to}i2\pi f(a)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
 \end_body
 \end_document
