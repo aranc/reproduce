@@ -671,8 +671,22 @@ Combine,
 \begin{align*}
 \intop_{\Gamma}\mathbf{A}(x,y)\cdot\mathbf{dr} & =A_{1}(x_{0},y_{0}-\frac{dy}{2})dx+A_{2}(x_{0}+\frac{dx}{2},y_{0})dy-A_{1}(x_{0},y_{0}+\frac{dy}{2})dx-A_{2}(x_{0}-\frac{dx}{2},y_{0})dy\\
  & =\frac{A_{1}(x_{0},y_{0}-\frac{dy}{2})-A_{1}(x_{0},y_{0}+\frac{dy}{2})}{dy}dx\,dy+\frac{A_{2}(x_{0}+\frac{dx}{2},y_{0})-A_{2}(x_{0}-\frac{dx}{2},y_{0})}{dx}dx\,dy\\
- & =\left(\frac{d}{dy}A_{1}-\frac{d}{dx}A_{2}\right)dx\,dy
+ & =\left(\frac{\partial}{\partial x}A_{2}-\frac{\partial}{\partial y}A_{1}\right)dx\,dy
 \end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Or in short,
+\begin_inset Formula 
+\[
+\intop_{\Gamma}A_{1}dx+A_{2}dy=\iintop_{R}\begin{vmatrix}\frac{\partial}{\partial x} & A_{1}\\
+\frac{\partial}{\partial y} & A_{2}
+\end{vmatrix}dxdy
+\]
 
 \end_inset
 
