@@ -828,7 +828,7 @@ Also, we can derive w.r.t.
 \begin_layout Standard
 \begin_inset Formula 
 \[
-i2\pi f^{(n)}(\alpha)=(-1)^{n}n!\intop_{\Gamma}\frac{f(z)}{(z-\alpha)^{n+1}}dz
+f^{(n)}(\alpha)=\frac{n!}{i2\pi}\intop_{\Gamma}\frac{f(z)}{(z-\alpha)^{n+1}}dz
 \]
 
 \end_inset
