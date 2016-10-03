@@ -862,22 +862,17 @@ Convolution
 \end_layout
 
 \begin_layout Standard
-\begin_inset Box Boxed
-position "t"
-hor_pos "c"
-has_inner_box 1
-inner_pos "t"
-use_parbox 0
-use_makebox 0
-width "100col%"
-special "none"
-height "1in"
-height_special "totalheight"
-status open
-
-\begin_layout Plain Layout
-TODO: complete this
-\end_layout
+\begin_inset Formula 
+\begin{align*}
+\f\left\{ f*g\right\}  & =\f\left\{ \lambda t.\intop_{\tau=\mbox{-}\infty}^{\infty}f(\tau)g(t-\tau)d\tau\right\} \\
+ & =\lambda\omega.\intop_{t=\mbox{-}\infty}^{\infty}\left(\intop_{\tau=\mbox{-}\infty}^{\infty}f(\tau)g(t-\tau)d\tau\right)e^{\mbox{-}i\omega t}dt\\
+ & =\lambda\omega.\intop_{t=\mbox{-}\infty}^{\infty}\intop_{\tau=\mbox{-}\infty}^{\infty}f(\tau)g(t-\tau)e^{\mbox{-}i\omega t}d\tau\,dt\\
+\begin{bmatrix}\xi=\tau\\
+\eta=t-\tau
+\end{bmatrix} & =\lambda\omega.\intop_{\xi=\mbox{-}\infty}^{\infty}\intop_{\eta=\mbox{-}\infty}^{\infty}f(\xi)g(\eta)e^{\mbox{-}i\omega\left(\xi+\eta\right)}d\xi\,d\eta\\
+ & =\lambda\omega.\left(\intop_{\xi=\mbox{-}\infty}^{\infty}f(\xi)e^{\mbox{-}i\omega\xi}d\xi\right)\left(\intop_{\eta=\mbox{-}\infty}^{\infty}g(\eta)e^{\mbox{-}i\omega\eta}d\eta\right)\\
+ & =\f(f)\cdot\f(g)
+\end{align*}
 
 \end_inset
 
