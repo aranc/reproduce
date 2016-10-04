@@ -843,5 +843,9 @@ f^{(n)}(\alpha)=\frac{n!}{i2\pi}\intop_{\Gamma}\frac{f(z)}{(z-\alpha)^{n+1}}dz
 
 \end_layout
 
+\begin_layout Section
+Residue theorem
+\end_layout
+
 \end_body
 \end_document
