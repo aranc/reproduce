@@ -446,9 +446,9 @@ h'=\frac{f'-hg'}{g}=\frac{f'-\frac{f}{g}g'}{g}=\frac{f'g-fg'}{g^{2}}
 
 \begin_layout Standard
 \begin_inset Formula 
-\[
-\nabla^{2}\cdot u=
-\]
+\begin{align*}
+\nabla^{2}\cdot u & =u_{xx}+u_{yy}=\left(v_{y}\right)_{x}+\left(\mbox{-}v_{x}\right)_{y}=0
+\end{align*}
 
 \end_inset
 
@@ -456,7 +456,14 @@ h'=\frac{f'-hg'}{g}=\frac{f'-\frac{f}{g}g'}{g}=\frac{f'g-fg'}{g^{2}}
 \end_layout
 
 \begin_layout Standard
-TODO: complete this and other stuff
+\begin_inset Formula 
+\[
+\nabla^{2}\cdot v=v_{xx}+v_{yy}=\left(\mbox{-}u_{y}\right)_{x}+\left(u_{x}\right)_{y}=0
+\]
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
