@@ -306,6 +306,74 @@ a_{1}+a_{2}+a_{3}+\ldots+a_{n+1} & \ge n+1
 \end_layout
 
 \begin_layout Standard
+\begin_inset Phantom Phantom
+status open
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Onward to the general claim,
+\end_layout
+
+\begin_layout Standard
+Look at 
+\begin_inset Formula $\frac{a_{1}}{G},\dots,\frac{a_{n}}{G}$
+\end_inset
+
+, they satisfy the condition.
+ Therefore,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\frac{a_{1}}{G}+\dots+\frac{a_{n}}{G} & \ge n\\
+\frac{a_{1}+\ldots+a_{n}}{n} & \ge G
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For the harmonic average, use 
+\begin_inset Formula $\frac{1}{a_{i}}$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\frac{1}{a_{1}}+\dots+\frac{1}{a_{n}}}{n}\ge\sqrt[n]{\frac{1}{a_{1}}\ldots\frac{1}{a_{n}}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+therefore,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{n}{\frac{1}{a_{1}}+\dots+\frac{1}{a_{n}}}\le\sqrt[n]{a_{1}\dots a_{n}}
+\]
+
+\end_inset
+
 
 \end_layout
 
