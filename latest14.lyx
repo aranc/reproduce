@@ -377,5 +377,26 @@ therefore,
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Phantom Phantom
+status open
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Note: 
+\begin_inset Formula $\frac{a}{b}+\frac{b}{a}=\frac{a^{2}+b^{2}}{ab}\ge\frac{2ab}{ab}=2$
+\end_inset
+
+
+\end_layout
+
 \end_body
 \end_document
