@@ -188,6 +188,124 @@ Limits of averages
 \end_layout
 
 \begin_layout Standard
+We want to show that 
+\begin_inset Formula $\underset{\mbox{(Harmonic)}}{\frac{n}{\frac{1}{a_{1}}+\ldots+\frac{1}{a_{n}}}}\le\underset{\mbox{(Geometric)}}{\sqrt[n]{a_{1}\ldots a_{n}}}\le\underset{\mbox{(Arithmatic)}}{\frac{a_{1}+\ldots+a_{n}}{n}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Lemma: Let 
+\begin_inset Formula $\prod a_{i}=1$
+\end_inset
+
+, then 
+\begin_inset Formula $\sum a_{i}\ge n$
+\end_inset
+
+, and equality iff all 
+\begin_inset Formula $a_{i}$
+\end_inset
+
+ are equal.
+\end_layout
+
+\begin_layout Standard
+proof by induction.
+ let it be true for 
+\begin_inset Formula $n$
+\end_inset
+
+ elements.
+ look at 
+\begin_inset Formula $a_{1}\ldots a_{n+1}$
+\end_inset
+
+, move the smallest of them to be the first element, and largest of them
+ to be the second element.
+ Look at 
+\begin_inset Formula $a_{1}a_{2},a_{3},\ldots,a_{n+1}$
+\end_inset
+
+, these are now 
+\begin_inset Formula $n$
+\end_inset
+
+ numbers that satisfy the condition.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+a_{1}a_{2}+a_{3}+\ldots+a_{n+1}\ge n
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Note that
+\begin_inset Formula 
+\begin{align*}
+a_{2} & \ge1\\
+1-a_{1} & \ge0
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Since 
+\begin_inset Formula $1-a_{1}\ge0$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+a_{2}\cdot(1-a_{1})\ge1\cdot(1-a_{1})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+And,
+\begin_inset Formula 
+\begin{align*}
+a_{2}-a_{1}a_{2} & \ge1-a_{1}\\
+a_{1}+a_{2}-1 & \ge a_{1}a_{2}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Therefore,
+\begin_inset Formula 
+\begin{align*}
+a_{1}a_{2}+a_{3}+\ldots+a_{n+1} & \ge n\\
+-1+a_{1}+a_{2}+a_{3}+\ldots+a_{n+1} & \ge n\\
+a_{1}+a_{2}+a_{3}+\ldots+a_{n+1} & \ge n+1
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 
 \end_layout
 
