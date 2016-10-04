@@ -143,6 +143,51 @@ LatexCommand tableofcontents
 \end_layout
 
 \begin_layout Section
+Limit of sequences multiplication
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $a_{n}\to a$
+\end_inset
+
+ and 
+\begin_inset Formula $b_{n}\to b$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\left|a_{n}b_{n}-ab\right| & =\begin{vmatrix}a_{n} & b\\
+a & b_{n}
+\end{vmatrix}\\
+ & =\begin{vmatrix}a_{n}-a & b-b_{n}\\
+a & b_{n}
+\end{vmatrix}\\
+ & \le\left|a_{n}-a\right|\left|b_{n}\right|+\left|b-b_{n}\right|\left|a\right|
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and it follows since 
+\begin_inset Formula $b_{n}$
+\end_inset
+
+ is bounded.
+\end_layout
+
+\begin_layout Section
+Limits of averages
+\end_layout
+
+\begin_layout Standard
 
 \end_layout
 
