@@ -398,5 +398,152 @@ Note:
 
 \end_layout
 
+\begin_layout Section
+Limit of weighted mean
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $\frac{a_{n}}{b_{n}}\to\ell$
+\end_inset
+
+ and 
+\begin_inset Formula $b_{1}+\ldots+b_{n}\to\infty$
+\end_inset
+
+, 
+\begin_inset Formula $b_{i}>0$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $\frac{a_{1}+\ldots+a_{n}}{b_{1}+\ldots+b_{n}}\to\ell$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Proof:
+\end_layout
+
+\begin_layout Standard
+If 
+\begin_inset Formula $\ell=0$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left|\frac{a_{1}+\ldots+a_{n}}{b_{1}+\ldots+b_{n}}\right|\le\frac{\left|a_{1}+\ldots+a_{N}\right|}{b_{1}+\ldots+b_{n}}+\frac{\left|a_{N+1}\right|}{b_{1}+\ldots+b_{n}}+\ldots+\frac{\left|a_{n}\right|}{b_{1}+\ldots+b_{n}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Find 
+\begin_inset Formula $N$
+\end_inset
+
+ big enough such that 
+\begin_inset Formula $\left|a_{N+...}\right|<\frac{\epsilon}{2}$
+\end_inset
+
+, and 
+\begin_inset Formula $n$
+\end_inset
+
+ big enough such that the first element is 
+\begin_inset Formula $<\frac{\epsilon}{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+If 
+\begin_inset Formula $\ell\ne0$
+\end_inset
+
+, look at 
+\begin_inset Formula $\frac{a_{n}-\ell b_{n}}{b_{n}}\to0$
+\end_inset
+
+, therefore 
+\begin_inset Formula $\frac{a_{1}-\ell b_{1}+\ldots+a_{n}-\ell b_{n}}{b_{1}+\ldots+b_{n}}=\frac{a_{1}+\ldots+a_{n}-\ell\left(b_{1}+\ldots+b_{n}\right)}{b_{1}+\ldots+b_{n}}\to0$
+\end_inset
+
+ i.e.
+ 
+\begin_inset Formula $\frac{a_{1}+\ldots+a_{n}}{b_{1}+\ldots+b_{n}}-\ell\to0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Stolz and friends
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{ccc}
+\mbox{Give} & \mbox{Get} & \mbox{Proof}\\
+a_{n}\to\ell & \frac{a_{1}+\ldots+a_{n}}{n}\to\ell & B_{n}=n\\
+a_{n+1}-a_{n}\to\ell & \frac{a_{n}}{n}\to\ell & A_{n}=a_{n+1}-a_{n}\\
+a_{n}\to\ell & \sqrt[n]{a_{1}\ldots a_{n}}\to\ell & \mbox{sandwich}\\
+\frac{a_{n+1}}{a_{n}}\to\ell & \sqrt[n]{a_{n}}\to\ell & \mbox{one above}
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The previous section can also be formulated as:
+\end_layout
+
+\begin_layout Standard
+Give: 
+\begin_inset Formula $\frac{a_{n+1}-a_{n}}{b_{n+1}-b_{n}}\to\ell$
+\end_inset
+
+ and 
+\begin_inset Formula $b_{n}\to\infty$
+\end_inset
+
+, Get: 
+\begin_inset Formula $\frac{a_{n}}{b_{n}}\to\ell$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Phantom Phantom
+status open
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
 \end_body
 \end_document
