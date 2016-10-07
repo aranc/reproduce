@@ -417,7 +417,7 @@ Let
 
 .
  Then 
-\begin_inset Formula $\frac{a_{1}+\ldots+a_{n}}{b_{1}+\ldots+b_{n}}\to\ell$
+\begin_inset Formula $\frac{a_{1}b_{1}+\ldots+a_{n}b_{n}}{b_{1}+\ldots+b_{n}}\to\ell$
 \end_inset
 
 .
@@ -438,7 +438,7 @@ If
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\left|\frac{a_{1}+\ldots+a_{n}}{b_{1}+\ldots+b_{n}}\right|\le\frac{\left|a_{1}+\ldots+a_{N}\right|}{b_{1}+\ldots+b_{n}}+\frac{\left|a_{N+1}\right|}{b_{1}+\ldots+b_{n}}+\ldots+\frac{\left|a_{n}\right|}{b_{1}+\ldots+b_{n}}
+\left|\frac{a_{1}b_{1}+\ldots+a_{n}b_{n}}{b_{1}+\ldots+b_{n}}\right|\le\frac{\left|a_{1}b_{1}+\ldots+a_{N}b_{N}\right|}{b_{1}+\ldots+b_{n}}+\frac{\left|a_{N+1}\right|b_{N+1}}{b_{1}+\ldots+b_{n}}+\ldots+\frac{\left|a_{n}\right|b_{n}}{b_{1}+\ldots+b_{n}}
 \]
 
 \end_inset
@@ -463,7 +463,19 @@ Find
 \begin_inset Formula $<\frac{\epsilon}{2}$
 \end_inset
 
-.
+,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+ & \le\frac{\epsilon}{2}+\frac{\frac{\epsilon}{2}b_{N+1}}{b_{1}+\ldots+b_{n}}+\ldots+\frac{\frac{\epsilon}{2}b_{n}}{b_{1}+\ldots+b_{n}}\\
+ & \le\frac{\epsilon}{2}+\frac{\epsilon}{2}\frac{b_{N+1}+\ldots+b_{n}}{b_{1}+\ldots+b_{n}}\le\frac{\epsilon}{2}+\frac{\epsilon}{2}=\epsilon
+\end{align*}
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -487,6 +499,18 @@ If
 
 \end_layout
 
+\begin_layout Standard
+An identical proof will work for 
+\begin_inset Formula 
+\[
+\frac{a_{1}+\ldots+a_{n}}{b_{1}+\ldots+b_{n}}
+\]
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Stolz and friends
 \end_layout
@@ -496,10 +520,12 @@ Stolz and friends
 \[
 \begin{array}{ccc}
 \mbox{Give} & \mbox{Get} & \mbox{Proof}\\
-a_{n}\to\ell & \frac{a_{1}+\ldots+a_{n}}{n}\to\ell & B_{n}=n\\
-a_{n+1}-a_{n}\to\ell & \frac{a_{n}}{n}\to\ell & A_{n}=a_{n+1}-a_{n}\\
+a_{n}\to\ell & \frac{a_{1}+\ldots+a_{n}}{n}\to\ell & b_{n}^{\prime}=1\\
+a_{n+1}-a_{n}\to\ell & \frac{a_{n}}{n}\to\ell & a_{n}^{\prime}=a_{n+1}-a_{n}\\
 a_{n}\to\ell & \sqrt[n]{a_{1}\ldots a_{n}}\to\ell & \mbox{sandwich}\\
-\frac{a_{n+1}}{a_{n}}\to\ell & \sqrt[n]{a_{n}}\to\ell & \mbox{one above}
+\frac{a_{n+1}}{a_{n}}\to\ell & \sqrt[n]{a_{n}}\to\ell & \uparrow\\
+ &  & a_{n}^{\prime}=\frac{a_{n}}{b_{n}}\\
+\\
 \end{array}
 \]
 
@@ -509,7 +535,7 @@ a_{n}\to\ell & \sqrt[n]{a_{1}\ldots a_{n}}\to\ell & \mbox{sandwich}\\
 \end_layout
 
 \begin_layout Standard
-The previous section can also be formulated as:
+Reformulate the section above:
 \end_layout
 
 \begin_layout Standard
@@ -525,23 +551,6 @@ Give:
 \begin_inset Formula $\frac{a_{n}}{b_{n}}\to\ell$
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Phantom Phantom
-status open
-
-\begin_layout Plain Layout
-A
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 
 \end_layout
 
